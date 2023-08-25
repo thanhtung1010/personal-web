@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
+import { AppLoadingHelper } from './helpers/app-loading.helper';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'tung-root',
+  templateUrl: './app.component.html'
 })
-export class AppComponent {
-  title = 'personal-web';
+export class AppComponent implements AfterViewInit {
+  ngAfterViewInit(): void {
+    AppLoadingHelper.Toggle(false);
+  }
 }
