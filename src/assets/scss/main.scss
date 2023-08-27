@@ -1,1 +1,11 @@
-@import "./components/index.scss";
+@import 'variable.scss';
+
+.#{$mainCls} {
+  @import 'components/index.scss';
+  @import 'shared.scss';
+
+  &-theme-primary {
+    margin: unset;
+    position: relative;
+  }
+}
