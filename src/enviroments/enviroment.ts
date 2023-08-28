@@ -1,4 +1,5 @@
 export const enviroment = {
   production: false,
-  defaultLang: 'vi'
+  defaultLang: 'vi',
+  ASSETS_URL: '',
 }

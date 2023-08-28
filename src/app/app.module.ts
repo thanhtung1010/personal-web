@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, TransferState } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,10 +9,16 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { enviroment } from '@src/enviroments/enviroment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { SvgIconPipe } from './pipes/svg-icon.pipe';
+import { AngularSvgIconModule, SvgLoader, SvgHttpLoader } from 'angular-svg-icon';
 
-export function HTTPLoaderFactory(http: HttpClient) {
+function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
+// function svgLoaderFactory(http: HttpClient, transferState: TransferState) {
+//   return new SvgHttpLoader('browser/assets/svg/icons', transferState);
+// }
 
 @NgModule({
   declarations: [
@@ -21,11 +27,14 @@ export function HTTPLoaderFactory(http: HttpClient) {
     HeaderComponent,
     NavBarComponent,
     WebLayoutComponent,
+
+    SvgIconPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+
     TranslateModule.forRoot(
       {
         defaultLanguage: enviroment.defaultLang,
@@ -35,6 +44,15 @@ export function HTTPLoaderFactory(http: HttpClient) {
           deps: [HttpClient]
         }
       },
+    ),
+    AngularSvgIconModule.forRoot(
+    //   {
+    //   loader: {
+    //     provide: SvgLoader,
+    //     useFactory: svgLoaderFactory,
+    //     deps: [ HttpClient, TransferState ],
+    //   }
+    // }
     ),
   ],
   providers: [
