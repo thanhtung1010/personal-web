@@ -83,23 +83,23 @@
 }
 
 &-b {
-  border: 1px solid $shadow;
+  border: 1px solid #{$shadow};
 }
 
 &-bt {
-  border-top: 1px solid $shadow;
+  border-top: 1px solid #{$shadow};
 }
 
 &-bb {
-  border-bottom: 1px solid $shadow;
+  border-bottom: 1px solid #{$shadow};
 }
 
 &-bl {
-  border-left: 1px solid $shadow;
+  border-left: 1px solid #{$shadow};
 }
 
 &-br {
-  border-right: 1px solid $shadow;
+  border-right: 1px solid #{$shadow};
 }
 
 $size: 0,
