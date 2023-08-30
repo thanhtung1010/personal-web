@@ -1,24 +1,21 @@
-import { NgModule, TransferState } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent, NavBarComponent, PageLayoutComponent, WebLayoutComponent } from './components';
+import { AdjustLangComponent, HeaderComponent, NavBarComponent, PageLayoutComponent, WebLayoutComponent } from './components';
 import { MenuService } from './services';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { enviroment } from '@src/enviroments/enviroment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { SvgIconPipe } from './pipes/svg-icon.pipe';
-import { AngularSvgIconModule, SvgLoader, SvgHttpLoader } from 'angular-svg-icon';
+import { AngularSvgIconModule } from 'angular-svg-icon';
+import { LangService } from './services/lang.service';
 
-function HTTPLoaderFactory(http: HttpClient) {
+export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
-
-// function svgLoaderFactory(http: HttpClient, transferState: TransferState) {
-//   return new SvgHttpLoader('browser/assets/svg/icons', transferState);
-// }
 
 @NgModule({
   declarations: [
@@ -27,6 +24,7 @@ function HTTPLoaderFactory(http: HttpClient) {
     HeaderComponent,
     NavBarComponent,
     WebLayoutComponent,
+    AdjustLangComponent,
 
     SvgIconPipe,
   ],
@@ -45,19 +43,12 @@ function HTTPLoaderFactory(http: HttpClient) {
         }
       },
     ),
-    AngularSvgIconModule.forRoot(
-    //   {
-    //   loader: {
-    //     provide: SvgLoader,
-    //     useFactory: svgLoaderFactory,
-    //     deps: [ HttpClient, TransferState ],
-    //   }
-    // }
-    ),
+    AngularSvgIconModule.forRoot(),
   ],
   providers: [
     MenuService,
-    Title
+    Title,
+    LangService,
   ],
   bootstrap: [AppComponent]
 })
