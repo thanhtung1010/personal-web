@@ -1,4 +1,6 @@
 export const enviroment = {
   production: true,
-  defaultLang: 'vi'
+  cookieStorageLangKey: '_lang',
+  defaultLang: 'vi',
+  ASSETS_URL: '',
 }

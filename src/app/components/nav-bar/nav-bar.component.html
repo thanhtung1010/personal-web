@@ -1,3 +1,9 @@
-<p>
-  nav-bar works!
-</p>
+<nav class="tung-nav">
+  <ng-container *ngFor="let item of menus">
+    <div class="tung-nav-item">
+      <a class="tung-nav-link" (click)="onClickNav(item)" [ngClass]="{'tung-nav-active': item.queryParams === currentMenu.queryParams}">
+        {{item.label | translate}}
+      </a>
+    </div>
+  </ng-container>
+</nav>

@@ -1,5 +1,7 @@
-export enum ROUTE {
-  HOME = "HOME",
-  PORTFOLIO = "portfolio",
-
+export enum QUERYPARAMS_NAV {
+  ABOUT_ME = "ABOUT_ME",
+  WORK_EXP = "WORK_EXP",
+  SKILL = "SKILL",
+  CONTACT_INFOR = "CONTACT_INFOR",
+  PERSONAL_PROJECT = "PERSONAL_PROJECT",
 }

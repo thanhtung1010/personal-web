@@ -1,5 +1,16 @@
 {
   "SEO": {
-    "TITLE": "I'm Tùng"
+    "TITLE": "Tùng here"
+  },
+  "LANG": {
+    "VI": "Vietnamese",
+    "EN": "English"
+  },
+  "MENU": {
+    "ABOUT_ME": "About Me",
+    "WORK_EXP": "Work Experience",
+    "SKILL": "Skill",
+    "CONTACT_INFOR": "Contact Information",
+    "PERSONAL_PROJECT": "Personal Project"
   }
 }

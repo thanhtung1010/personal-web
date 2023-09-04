@@ -1,5 +1,46 @@
 &-header {
-  height: #{$heightHeader};
   padding: 50px;
+
+  &-wrap {
+    height: #{$heightHeader};
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-left {
+    cursor: pointer;
+  }
+}
+
+&-adjust-lang {
+  width: 105px;
+}
+
+&-nav {
   display: flex;
+  justify-content: space-between;
+
+  &-item {
+    text-decoration: none;
+    height: 50px;
+    width: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &-link {
+    color: #{$mainTextColor};
+    height: fit-content;
+  }
+
+  &-active {
+    color: #A36B21;
+  }
 }

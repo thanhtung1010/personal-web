@@ -16,17 +16,22 @@ export class SvgIconPipe implements PipeTransform {
     returnText?: boolean,
     args?: any
   ): any {
-    if (!iconId || _.isEmpty(iconId)) return null;
-    const _style = custom ? custom["style"] : null;
-    const _cls = custom ? custom["class"] : null;
-    const _text = `<svg ${_style
-      ? 'style="' +
-      JSON.stringify(_style)
-        .replace(/\"|{|}/g, "")
-        .replace(/,/g, ";") +
-      '"'
-      : ""
-      } ${_cls ? "class=" + _cls : ""}><use xlink:href="#${iconId}"></use></svg>`;
-    return returnText ? _text : this.sanitizer.bypassSecurityTrustHtml(_text);
+    try {
+      if (!iconId || _.isEmpty(iconId)) return null;
+      const _style = custom ? custom["style"] : null;
+      const _cls = custom ? custom["class"] : null;
+      const _text = `<svg ${_style
+        ? 'style="' +
+        JSON.stringify(_style)
+          .replace(/\"|{|}/g, "")
+          .replace(/,/g, ";") +
+        '"'
+        : ""
+        } ${_cls ? "class=" + _cls : ""}><use xlink:href="#${iconId}"></use></svg>`;
+      return returnText ? _text : this.sanitizer.bypassSecurityTrustHtml(_text);
+    } catch (error) {
+      console.error("SvgIconPipe not implemented.");
+      return '';
+    }
   }
 }

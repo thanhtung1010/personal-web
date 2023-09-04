@@ -1,5 +1,16 @@
 {
   "SEO": {
     "TITLE": "Tùng nè"
+  },
+  "LANG": {
+    "VI": "Tiếng Việt",
+    "EN": "Tiếng Anh"
+  },
+  "MENU": {
+    "ABOUT_ME": "Sơ Lược",
+    "WORK_EXP": "Kinh Nghiệm",
+    "SKILL": "Kỹ Năng",
+    "CONTACT_INFOR": "Contact Information",
+    "PERSONAL_PROJECT": "Dự Án Cá Nhân"
   }
 }
