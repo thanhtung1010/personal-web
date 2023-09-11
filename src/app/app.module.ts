@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,7 @@ import { enviroment } from '@enviroments/enviroment';
 
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NavLinkPipe } from './pipes/nav-link.pipe';
+import { AboutMeComponent } from './components/about-me/about-me.component';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -30,6 +31,7 @@ export function HTTPLoaderFactory(http: HttpClient) {
     NavBarComponent,
     WebLayoutComponent,
     AdjustLangComponent,
+    AboutMeComponent,
 
     SvgIconPipe,
     NavLinkPipe,

@@ -1,0 +1,67 @@
+import { Component, OnInit } from '@angular/core';
+import { IContact } from '@app/interfaces';
+
+@Component({
+  selector: 'tung-about-me',
+  templateUrl: './about-me.component.html',
+})
+export class AboutMeComponent implements OnInit {
+  contacts: IContact[] = [
+    {
+      content: "Tân Bình, thành phố Hồ Chí Minh",
+      svgId: 'position-location',
+      customClass: {
+        height: '45px',
+        width: '45px',
+      },
+    },
+    {
+      content: "0836450670",
+      svgId: 'phone',
+      customClass: {
+        height: '45px',
+        width: '45px',
+      },
+    },
+    {
+      content: "trinhthanhtung1010@gmail.com",
+      svgId: 'email',
+      customClass: {
+        height: '45px',
+        width: '45px',
+      },
+    },
+    {
+      content: "live:trinhthanhtung1010",
+      svgId: 'logo-skype',
+      customClass: {
+        height: '45px',
+        width: '45px',
+      },
+    },
+    {
+      content: "linkedin.com/in/tung-trinh-frontend",
+      svgId: 'logo-linked-in',
+      link: true,
+      customClass: {
+        height: '45px',
+        width: '45px',
+      },
+    },
+    {
+      content: "github.com/thanhtung1010",
+      svgId: 'logo-github',
+      link: true,
+      customClass: {
+        height: '45px',
+        width: '45px',
+      },
+    },
+  ];
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}

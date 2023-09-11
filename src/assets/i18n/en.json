@@ -12,5 +12,11 @@
     "SKILL": "Skill",
     "CONTACT_INFOR": "Contact Information",
     "PERSONAL_PROJECT": "Personal Project"
+  },
+  "ABOUT_ME": {
+    "NAME": "I’m Trịnh Thanh Tùng",
+    "POSITION": "Front End Developer",
+    "SUMARY_1": "My plan is to elevate my English proficiency while learning various platforms, libraries, frameworks, and programming languages. I aim to broaden my project exposure, with the goal of becoming a full-stack developer or even progressing to a higher role, such as a technical lead.",
+    "SUMARY_2": "My advantage is swiftly comprehend and analyze front-end source code, effective communication skills, adept at researching via Google or ChatGPT, proficient in self-study and rapid acquisition of new programming languages and libraries."
   }
 }

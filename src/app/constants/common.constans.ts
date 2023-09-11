@@ -26,16 +26,16 @@ export const NAVS: Array<INav> = [
     queryParams: QUERYPARAMS_NAV.ABOUT_ME,
     show: true,
   },
-  {
-    label: "MENU.WORK_EXP",
-    queryParams: QUERYPARAMS_NAV.WORK_EXP,
-    show: true,
-  },
-  {
-    label: "MENU.SKILL",
-    queryParams: QUERYPARAMS_NAV.SKILL,
-    show: true,
-  },
+  // {
+  //   label: "MENU.WORK_EXP",
+  //   queryParams: QUERYPARAMS_NAV.WORK_EXP,
+  //   show: true,
+  // },
+  // {
+  //   label: "MENU.SKILL",
+  //   queryParams: QUERYPARAMS_NAV.SKILL,
+  //   show: true,
+  // },
   {
     label: "MENU.PERSONAL_PROJECT",
     queryParams: QUERYPARAMS_NAV.PERSONAL_PROJECT,

@@ -8,3 +8,10 @@ export interface INav {
 }
 
 export interface ILang {label: string, lang: LANG_TYPE}
+
+export interface IContact {
+  svgId: string;
+  content: string;
+  link?: boolean;
+  customClass: Record<string, string>;
+}

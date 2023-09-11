@@ -1,0 +1,26 @@
+<div id="ABOUT_ME" class="tung-am-wrap">
+  <div class="tung-am-content">
+    <section class="tung-am-description">
+      <h1 class="tung-am-description-name">{{"ABOUT_ME.NAME" | translate}}</h1>
+      <h3 class="tung-am-description-position">{{"ABOUT_ME.POSITION" | translate}}</h3>
+      <p class="tung-am-description-sumary">{{"ABOUT_ME.SUMARY_1" | translate}}</p>
+      <p class="tung-am-description-sumary">{{"ABOUT_ME.SUMARY_2" | translate}}</p>
+    </section>
+    <section class="tung-am-avatar">
+      <div class="tung-am-avatar-border">
+        <img src="../../../assets/imgs/png/avatar.png" alt="avatar">
+      </div>
+    </section>
+    <section class="tung-am-contact-info">
+      <ng-container *ngFor="let contact of contacts">
+        <div class="tung-am-contact-info-item">
+          <svg [outerHTML]="contact.svgId | SvgIcon:{style: contact.customClass}"></svg>
+          <p>{{contact.content}}</p>
+        </div>
+      </ng-container>
+    </section>
+  </div>
+
+  <div class="tung-am-left"></div>
+  <div class="tung-am-right"></div>
+</div>
