@@ -6,18 +6,20 @@
       <p class="tung-am-description-sumary">{{"ABOUT_ME.SUMARY_1" | translate}}</p>
       <p class="tung-am-description-sumary">{{"ABOUT_ME.SUMARY_2" | translate}}</p>
     </section>
-    <section class="tung-am-avatar">
-      <div class="tung-am-avatar-border">
-        <img src="../../../assets/imgs/png/avatar.png" alt="avatar">
-      </div>
-    </section>
-    <section class="tung-am-contact-info">
-      <ng-container *ngFor="let contact of contacts">
-        <div class="tung-am-contact-info-item">
-          <svg [outerHTML]="contact.svgId | SvgIcon:{style: contact.customClass}"></svg>
-          <p>{{contact.content}}</p>
+    <section class="tung-am-info">
+      <section class="tung-am-avatar">
+        <div class="tung-am-avatar-border">
+          <img src="../../../assets/imgs/png/avatar.png" alt="avatar">
         </div>
-      </ng-container>
+      </section>
+      <section class="tung-am-contact">
+        <ng-container *ngFor="let contact of contacts">
+          <div class="tung-am-contact-item">
+            <svg [outerHTML]="contact.svgId | SvgIcon:{style: contact.customClass}"></svg>
+            <p>{{contact.content}}</p>
+          </div>
+        </ng-container>
+      </section>
     </section>
   </div>
 

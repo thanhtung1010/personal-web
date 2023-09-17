@@ -10,7 +10,7 @@
     width: 60%;
     top: 0;
     left: 0;
-    background-color: #EAD5BA;
+    background-color: #{$borderColorLightBrown};
     z-index: 1;
   }
 
@@ -21,14 +21,6 @@
     top: 0;
     right: 0;
     z-index: 1;
-  }
-
-  &-content {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    z-index: 2;
-    position: relative;
   }
 
   &-description {
@@ -56,6 +48,20 @@
     }
   }
 
+  &-info {
+    width: calc(40% + 175px);
+    display: flex;
+  }
+
+  &-content {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+  }
+
   &-avatar {
     width: 350px;
 
@@ -76,8 +82,8 @@
     }
   }
 
-  &-contact-info {
-    width: calc(40% - 175px);
+  &-contact {
+    width: calc(100% - 350px);
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -100,4 +106,106 @@
     }
   }
 
+}
+
+@media only screen and (max-width: 1500px) {
+  .tung-am {
+
+    &-description {
+
+      &-name {
+        font-size: #{$mHeadFontSize};
+      }
+
+      &-position {
+        font-size: #{$lMainFontSize};
+      }
+
+      &-sumary {
+        font-size: #{$mMainFontSize};
+      }
+    }
+
+    &-contact {
+
+      &-item {
+        font-size: #{$mMainFontSize};
+        padding: 0 15px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .tung-am {
+
+    &-description {
+      gap: 10px;
+
+      &-name {
+        font-size: 40px;
+      }
+    }
+
+    &-contact {
+      gap: 10px;
+
+      &-item {
+        font-size: #{$sMainFontSize};
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .tung-am {
+    &-wrap {
+      height: fit-content;
+    }
+
+    &-left {
+      width: 50%;
+    }
+
+    &-right {
+      width: 50%;
+    }
+
+    &-description {
+      width: 50%;
+    }
+
+    &-info {
+      width: 50%;
+      flex-wrap: wrap;
+    }
+
+    &-avatar {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &-border {
+        height: 300px;
+        width: 300px;
+        border-color: #{$borderColorLightBrown};
+      }
+
+      img {
+        border-radius: 50%;
+        height: 250px;
+        width: 250px;
+      }
+    }
+
+    &-contact {
+      width: 100%;
+      align-items: center;
+
+      &-item {
+        border: unset;
+      }
+    }
+  }
 }
