@@ -9,7 +9,7 @@ export class AboutMeComponent implements OnInit {
   contacts: IContact[] = [
     {
       content: "Tân Bình, thành phố Hồ Chí Minh",
-      svgId: 'position-location',
+      svgId: 'position',
       customClass: {
         height: '45px',
         width: '45px',
@@ -33,7 +33,7 @@ export class AboutMeComponent implements OnInit {
     },
     {
       content: "live:trinhthanhtung1010",
-      svgId: 'logo-skype',
+      svgId: 'skype',
       customClass: {
         height: '45px',
         width: '45px',
@@ -41,7 +41,7 @@ export class AboutMeComponent implements OnInit {
     },
     {
       content: "linkedin.com/in/tung-trinh-frontend",
-      svgId: 'logo-linked-in',
+      svgId: 'linkedin',
       link: true,
       customClass: {
         height: '45px',
@@ -50,7 +50,7 @@ export class AboutMeComponent implements OnInit {
     },
     {
       content: "github.com/thanhtung1010",
-      svgId: 'logo-github',
+      svgId: 'github',
       link: true,
       customClass: {
         height: '45px',
