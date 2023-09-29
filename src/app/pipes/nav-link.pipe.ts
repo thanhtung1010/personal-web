@@ -1,7 +1,7 @@
 import { Pipe, PipeTransform } from "@angular/core";
 
 @Pipe({
-  name: 'NavLink'
+  name: 'TTNavLink'
 })
 
 export class NavLinkPipe implements PipeTransform {

@@ -1,13 +1,13 @@
 <header class="tung-header">
   <div class="tung-header-wrap">
     <div class="tung-header-left" (click)="onClickLogo()">
-      <svg [outerHTML]="logoSVGIcon | SvgIcon : { style: { width: '111px' , height: '50px' } } "></svg>
+      <svg [outerHTML]="logoSVGIcon | TTSvgIcon : { style: { width: '111px' , height: '50px' } } "></svg>
     </div>
     <div class="tung-header-center">
       <tung-nav-bar></tung-nav-bar>
     </div>
     <div class="tung-header-right">
-      <tung-adjust-lang></tung-adjust-lang>
+      <tt-adjust-lang></tt-adjust-lang>
     </div>
   </div>
 </header>

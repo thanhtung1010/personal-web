@@ -5,7 +5,7 @@ import { LangService } from '@app/services/lang.service';
 import { LANG_TYPE } from '@app/types';
 
 @Component({
-  selector: 'tung-adjust-lang',
+  selector: 'tt-adjust-lang',
   templateUrl: './adjust-lang.component.html'
 })
 export class AdjustLangComponent implements OnInit {

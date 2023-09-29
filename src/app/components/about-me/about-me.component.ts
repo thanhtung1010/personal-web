@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IContact } from '@app/interfaces';
 
 @Component({
-  selector: 'tung-about-me',
+  selector: 'tt-about-me',
   templateUrl: './about-me.component.html',
 })
 export class AboutMeComponent implements OnInit {

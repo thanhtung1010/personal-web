@@ -1,4 +1,4 @@
-<nz-select class="tung-adjust-lang" [(ngModel)]="lang" (ngModelChange)="onChangeLang($event)">
+<nz-select class="tt-adjust-lang" [(ngModel)]="lang" (ngModelChange)="onChangeLang($event)">
   <ng-container *ngFor="let lang of langs">
     <nz-option [nzValue]="lang.lang" [nzLabel]="lang.label | translate"></nz-option>
   </ng-container>

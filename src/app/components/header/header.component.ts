@@ -5,7 +5,7 @@ import { INav } from '@app/interfaces';
 import { MenuService } from '@app/services';
 
 @Component({
-  selector: 'tung-header',
+  selector: 'tt-header',
   templateUrl: './header.component.html'
 })
 export class HeaderComponent implements OnInit {

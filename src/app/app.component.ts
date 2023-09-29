@@ -8,7 +8,7 @@ import { MenuService } from './services';
 import * as _ from 'lodash';
 
 @Component({
-  selector: 'tung-root',
+  selector: 'tt-root',
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit, AfterViewInit {

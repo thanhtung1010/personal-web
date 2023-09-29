@@ -23,7 +23,7 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "tung",
+            "prefix": "tt",
             "style": "camelCase"
           }
         ],
@@ -31,8 +31,14 @@
           "error",
           {
             "type": "element",
-            "prefix": "tung",
+            "prefix": "tt",
             "style": "kebab-case"
+          }
+        ],
+        "@angular-eslint/pipe-prefix": [
+          "error",
+          {
+            "prefixes": ["TT"]
           }
         ]
       }

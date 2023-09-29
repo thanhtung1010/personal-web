@@ -6,7 +6,7 @@ import * as _ from "lodash";
  * Base on file menu-icons to generate
  */
 @Pipe({
-  name: "SvgIcon",
+  name: "TTSvgIcon",
 })
 export class SvgIconPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) { }
