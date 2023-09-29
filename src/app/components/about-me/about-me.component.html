@@ -17,7 +17,16 @@
           <svg [outerHTML]="contact.svgId | TTSvgIcon:{style: contact.customClass}"></svg>
           <p>{{contact.content}}</p>
         </div>
-      </ng-container>
+      </section>
+      <section class="tung-am-contact">
+        <ng-container *ngFor="let contact of contacts">
+          <div class="tung-am-contact-item">
+            <svg-icon [src]="'../../../assets/svg/' + contact.svgId + '.svg'"></svg-icon>
+            <!-- <svg [outerHTML]="contact.svgId | SvgIcon:{style: contact.customClass}"></svg> -->
+            <p>{{contact.content}}</p>
+          </div>
+        </ng-container>
+      </section>
     </section>
   </div>
 

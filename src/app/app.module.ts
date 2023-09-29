@@ -14,7 +14,7 @@ import { LangService } from './services/lang.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { enviroment } from '@enviroments/enviroment';
-
+import { NgOptimizedImage } from '@angular/common'
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NavLinkPipe } from './pipes/nav-link.pipe';
 import { AboutMeComponent } from './components/about-me/about-me.component';
@@ -42,6 +42,7 @@ export function HTTPLoaderFactory(http: HttpClient) {
     HttpClientModule,
     FormsModule,
     BrowserAnimationsModule,
+    NgOptimizedImage,
 
     TranslateModule.forRoot(
       {

@@ -9,7 +9,10 @@
     position: relative;
     width: 100vw;
     height: calc(100vh - 150px);
-    overflow: auto;
+    overflow: hidden auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   @import 'components/index.scss';
@@ -36,6 +39,19 @@
 
     ::-webkit-scrollbar-thumb:hover {
         background: $scrollBarHoverColor;
+    }
+
+    * {
+      transition: all .5s ease;
+    }
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .#{$mainCls} {
+
+    &-content {
+      height: calc(100vh - 100px);
     }
   }
 }
