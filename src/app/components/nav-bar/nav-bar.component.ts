@@ -5,7 +5,7 @@ import { INav } from '@app/interfaces';
 import { MenuService } from '@app/services';
 
 @Component({
-  selector: 'tung-nav-bar',
+  selector: 'tt-nav-bar',
   templateUrl: './nav-bar.component.html'
 })
 export class NavBarComponent implements OnInit {

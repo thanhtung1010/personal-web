@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'tung-page-layout',
+  selector: 'tt-page-layout',
   templateUrl: './page-layout.component.html'
 })
 export class PageLayoutComponent implements OnInit {

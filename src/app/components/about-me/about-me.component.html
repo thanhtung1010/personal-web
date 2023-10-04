@@ -1,35 +1,37 @@
-<div id="ABOUT_ME" class="tung-am-wrap">
-  <div class="tung-am-content">
-    <section class="tung-am-description">
-      <h1 class="tung-am-description-name">{{"ABOUT_ME.NAME" | translate}}</h1>
-      <h3 class="tung-am-description-position">{{"ABOUT_ME.POSITION" | translate}}</h3>
-      <p class="tung-am-description-sumary">{{"ABOUT_ME.SUMARY_1" | translate}}</p>
-      <p class="tung-am-description-sumary">{{"ABOUT_ME.SUMARY_2" | translate}}</p>
+<div id="ABOUT_ME" class="tt-am-wrap">
+  <div class="tt-am-content">
+    <section class="tt-am-description">
+      <h1 class="tt-am-description-name">{{"ABOUT_ME.NAME" | translate}}</h1>
+      <h3 class="tt-am-description-position">{{"ABOUT_ME.POSITION" | translate}}</h3>
+      <p class="tt-am-description-sumary">{{"ABOUT_ME.SUMARY_1" | translate}}</p>
+      <p class="tt-am-description-sumary">{{"ABOUT_ME.SUMARY_2" | translate}}</p>
     </section>
-    <section class="tung-am-avatar">
-      <div class="tung-am-avatar-border">
-        <img src="../../../assets/imgs/png/avatar.png" alt="avatar">
-      </div>
-    </section>
-    <section class="tung-am-contact-info">
-      <ng-container *ngFor="let contact of contacts">
-        <div class="tung-am-contact-info-item">
-          <svg [outerHTML]="contact.svgId | TTSvgIcon:{style: contact.customClass}"></svg>
-          <p>{{contact.content}}</p>
+    <section class="tt-am-info">
+      <section class="tt-am-avatar">
+        <div class="tt-am-avatar-border">
+          <img src="../../../assets/imgs/png/avatar.png" alt="avatar">
         </div>
       </section>
-      <section class="tung-am-contact">
+      <!-- <section class="tt-am-contact-info"> -->
+        <!-- <ng-container *ngFor="let contact of contacts">
+          <div class="tt-am-contact-info-item">
+            <svg [outerHTML]="contact.svgId | TTSvgIcon:{style: contact.customClass}"></svg>
+            <p>{{contact.content}}</p>
+          </div>
+        </section> -->
+      <section class="tt-am-contact">
         <ng-container *ngFor="let contact of contacts">
-          <div class="tung-am-contact-item">
+          <div class="tt-am-contact-item">
             <svg-icon [src]="'../../../assets/svg/' + contact.svgId + '.svg'"></svg-icon>
             <!-- <svg [outerHTML]="contact.svgId | SvgIcon:{style: contact.customClass}"></svg> -->
             <p>{{contact.content}}</p>
           </div>
         </ng-container>
       </section>
+      <!-- </section> -->
     </section>
   </div>
 
-  <div class="tung-am-left"></div>
-  <div class="tung-am-right"></div>
+  <div class="tt-am-left"></div>
+  <div class="tt-am-right"></div>
 </div>

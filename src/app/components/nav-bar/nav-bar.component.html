@@ -1,7 +1,7 @@
-<nav class="tung-nav">
+<nav class="tt-nav">
   <ng-container *ngFor="let item of menus">
-    <div class="tung-nav-item">
-      <a class="tung-nav-link" (click)="onClickNav(item)" [ngClass]="{'tung-nav-active': item.queryParams === currentMenu.queryParams}">
+    <div class="tt-nav-item">
+      <a class="tt-nav-link" (click)="onClickNav(item)" [ngClass]="{'tt-nav-active': item.queryParams === currentMenu.queryParams}">
         {{item.label | translate}}
       </a>
     </div>

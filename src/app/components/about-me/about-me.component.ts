@@ -40,7 +40,7 @@ export class AboutMeComponent implements OnInit {
       },
     },
     {
-      content: "linkedin.com/in/tung-trinh-frontend",
+      content: "linkedin.com/in/tt-trinh-frontend",
       svgId: 'linkedin',
       link: true,
       customClass: {

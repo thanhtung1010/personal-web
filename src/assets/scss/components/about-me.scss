@@ -7,6 +7,15 @@
     align-items: center;
   }
 
+  &-content {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 2;
+    position: relative;
+  }
+
   &-left {
     position: absolute;
     height: 100%;
@@ -56,15 +65,6 @@
     display: flex;
   }
 
-  &-content {
-    height: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    z-index: 2;
-    position: relative;
-  }
-
   &-avatar {
     width: 350px;
 
@@ -111,10 +111,7 @@
     }
   }
 
-}
-
-@media only screen and (max-width: 1500px) {
-  .tung-am {
+  @media only screen and (max-width: 1500px) {
 
     &-description {
 
@@ -139,10 +136,8 @@
       }
     }
   }
-}
 
-@media only screen and (max-width: 1300px) {
-  .tung-am {
+  @media only screen and (max-width: 1300px) {
 
     &-description {
       gap: 10px;
@@ -160,10 +155,8 @@
       }
     }
   }
-}
 
-@media only screen and (max-width: 1150px) {
-  .tung-am {
+  @media only screen and (max-width: 1150px) {
 
     &-wrap {
       min-height: calc(100vh - 100px);
@@ -206,10 +199,8 @@
       justify-content: center;
     }
   }
-}
 
-@media only screen and (max-width: 950px) {
-  .tung-am {
+  @media only screen and (max-width: 950px) {
 
     &-description {
       width: 90%;
@@ -219,10 +210,8 @@
       width: 90%;
     }
   }
-}
 
-@media only screen and (max-width: 800px) {
-  .tung-am {
+  @media only screen and (max-width: 800px) {
 
     &-description {
       width: 100%;
@@ -232,10 +221,8 @@
       width: 100%;
     }
   }
-}
 
-@media only screen and (max-width: 700px) {
-  .tung-am {
+  @media only screen and (max-width: 700px) {
 
     &-avatar {
 
@@ -250,10 +237,8 @@
       }
     }
   }
-}
 
-@media only screen and (max-width: 600px) {
-  .tung-am {
+  @media only screen and (max-width: 600px) {
 
     &-avatar {
 
@@ -278,10 +263,8 @@
       }
     }
   }
-}
 
-@media only screen and (max-width: 500px) {
-  .tung-am {
+  @media only screen and (max-width: 500px) {
 
     &-description {
 
