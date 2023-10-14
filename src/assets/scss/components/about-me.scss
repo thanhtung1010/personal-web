@@ -47,16 +47,16 @@
     }
 
     &-name {
-      font-size: #{$lHeadFontSize};
+      font-size: #{$xxxLaggerFontSize};
       font-weight: 700;
     }
 
     &-position {
-      font-size: #{$sHeadFontSize};
+      font-size: #{$mediumFontSize};
     }
 
     &-sumary {
-      font-size: #{$mMainFontSize};
+      font-size: #{$smallFontSize};
     }
   }
 
@@ -96,7 +96,7 @@
       width: fit-content;
       border-radius: 25px;
       border: 3px solid #{$borderColorLightBrown};
-      font-size: #{$lMainFontSize};
+      font-size: #{$laggerFontSize};
       display: flex;
       justify-content: center;
       align-items: center;
@@ -116,22 +116,22 @@
     &-description {
 
       &-name {
-        font-size: #{$mHeadFontSize};
+        font-size: #{$mediumFontSize};
       }
 
       &-position {
-        font-size: #{$lMainFontSize};
+        font-size: #{$laggerFontSize};
       }
 
       &-sumary {
-        font-size: #{$mMainFontSize};
+        font-size: #{$mediumFontSize};
       }
     }
 
     &-contact {
 
       &-item {
-        font-size: #{$mMainFontSize};
+        font-size: #{$mediumFontSize};
         padding: 0 15px;
       }
     }
@@ -151,7 +151,7 @@
       gap: 10px;
 
       &-item {
-        font-size: #{$sMainFontSize};
+        font-size: #{$smallFontSize};
       }
     }
   }
@@ -269,7 +269,7 @@
     &-description {
 
       &-name {
-        font-size: #{$sHeadFontSize};
+        font-size: #{$smallFontSize};
       }
     }
 
