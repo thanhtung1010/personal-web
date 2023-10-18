@@ -21,28 +21,19 @@ export class AppComponent implements OnInit, AfterViewInit {
     private titleSer: Title,
     private translateSer: TranslateService,
     private langSer: LangService,
-    private menuSer: MenuService,
   ) {}
 
   ngOnInit(): void {
     this.langSer.init();
-    this.menuSer.init();
 
     this.translateSer.onLangChange.subscribe(resp => {
       this.translateSer.get(this.title).subscribe(resp => {
         this.titleSer.setTitle(resp);
       });
     });
-
-    this.menuSer.currentMenu$.subscribe(resp => {
-      const _screenByQueryParams = document.getElementById(resp.queryParams);
-      if (_screenByQueryParams) {
-        _screenByQueryParams.scrollIntoView();
-      }
-    });
   }
 
   ngAfterViewInit(): void {
-    AppLoadingHelper.Toggle(false);
+    // AppLoadingHelper.Toggle(false);
   }
 }
