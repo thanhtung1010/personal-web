@@ -40,7 +40,8 @@
           {
             "prefixes": ["TT"]
           }
-        ]
+        ],
+        "@angular-eslint/no-empty-lifecycle-method": "off"
       }
     },
     {

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService } from '@app/services';
 
 @Component({
   selector: 'tt-portfolio',
@@ -7,19 +6,9 @@ import { MenuService } from '@app/services';
 })
 export class PortfolioComponent implements OnInit {
 
-  constructor(
-    private menuSer: MenuService,
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.menuSer.init();
-
-    this.menuSer.currentMenu$.subscribe(resp => {
-      const _screenByQueryParams = document.getElementById(resp.queryParams);
-      if (_screenByQueryParams) {
-        _screenByQueryParams.scrollIntoView();
-      }
-    });
   }
 
 }

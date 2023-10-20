@@ -1,9 +1,0 @@
-<nav class="tt-nav">
-  <ng-container *ngFor="let item of menus">
-    <div class="tt-nav-item">
-      <a class="tt-nav-link" (click)="onClickNav(item)" [ngClass]="{'tt-nav-active': item.queryParams === currentMenu.queryParams}">
-        {{item.label | translate}}
-      </a>
-    </div>
-  </ng-container>
-</nav>

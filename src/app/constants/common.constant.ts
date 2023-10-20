@@ -14,12 +14,6 @@ export const LANG_LIST: Array<ILang> = [
   }
 ];
 
-export const DEFAULT_QUERYPARAMS_NAV: QUERYPARAMS_NAV = QUERYPARAMS_NAV.ABOUT_ME;
-export const DEFAULT_NAV: INav = {
-  label: "MENU.ABOUT_ME",
-  queryParams: QUERYPARAMS_NAV.ABOUT_ME,
-  show: true,
-};
 export const NAVS: Array<INav> = [
   {
     label: "MENU.ABOUT_ME",

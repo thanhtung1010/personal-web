@@ -1,7 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { DEFAULT_NAV, NAVS } from "@app/constants";
-import { URLHelper } from "@app/helpers/url.helper";
+import { NAVS } from "@app/constants";
 import { INav } from "@app/interfaces";
 import { BehaviorSubject } from "rxjs";
 
@@ -10,35 +9,21 @@ import { BehaviorSubject } from "rxjs";
 })
 
 export class MenuService {
-  menus$: BehaviorSubject<Array<INav>> = new BehaviorSubject([] as Array<INav>);
-  currentMenu$: BehaviorSubject<INav> = new BehaviorSubject(DEFAULT_NAV);
+  menu$: BehaviorSubject<Array<INav>> = new BehaviorSubject([] as Array<INav>);
   constructor(
     private router: Router,
   ) {}
 
   init() {
     const _menu = NAVS.filter(navItem => !!navItem.show);
-    this.menus$.next(_menu);
-    const _queryParamsObj = URLHelper.convertParamsToObject(URLHelper.getParamString()) || {};
-    const _menuByQueryParams = this.menus$.value.find(menu => menu.queryParams === _queryParamsObj['view']);
-    if (_menuByQueryParams) {
-      this.setCurrentMenu = _menuByQueryParams;
-    } else {
-      this.setCurrentMenu = DEFAULT_NAV;
-    }
-    this.router.navigate([''], {
-      queryParams: {
-        view: this.currentMenu$.value.queryParams
-      },
-      queryParamsHandling: 'merge'
-    })
+    this.setMenu = _menu;
   }
 
-  get getCurrentMenu(): INav {
-    return this.currentMenu$.value;
+  get getMenu(): INav[] {
+    return this.menu$.value;
   }
 
-  set setCurrentMenu(menu: INav) {
-    this.currentMenu$.next(menu);
+  set setMenu(menu: INav[]) {
+    this.menu$.next(menu);
   }
 }

@@ -21,10 +21,12 @@ export class AppComponent implements OnInit, AfterViewInit {
     private titleSer: Title,
     private translateSer: TranslateService,
     private langSer: LangService,
+    private menuSer: MenuService,
   ) {}
 
   ngOnInit(): void {
     this.langSer.init();
+    this.menuSer.init();
 
     this.translateSer.onLangChange.subscribe(resp => {
       this.translateSer.get(this.title).subscribe(resp => {
@@ -34,6 +36,6 @@ export class AppComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // AppLoadingHelper.Toggle(false);
+    AppLoadingHelper.Toggle(false);
   }
 }
