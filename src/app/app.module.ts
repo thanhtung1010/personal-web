@@ -10,7 +10,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LangService } from './services/lang.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LinkButtonLayoutComponent } from './components';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -19,7 +18,6 @@ export function HTTPLoaderFactory(http: HttpClient) {
 @NgModule({
   declarations: [
     AppComponent,
-    LinkButtonLayoutComponent,
   ],
   imports: [
     AppRoutingModule,

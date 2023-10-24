@@ -1,3 +1,6 @@
-<p>
-  page-layout works!
-</p>
+<ng-container *ngIf="option.showHeader">
+  <tt-header></tt-header>
+</ng-container>
+<ng-container *ngIf="option.showFooter">
+  <tt-footer></tt-footer>
+</ng-container>

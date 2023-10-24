@@ -1,0 +1,11 @@
+<ng-container *ngIf="type === 'href'">
+  <a [class]="'tt-link-btn ' + customCls" [href]="href" [target]="target">
+    <ng-content select="[content]"></ng-content>
+  </a>
+</ng-container>
+
+<ng-container *ngIf="type === 'download'">
+  <a [class]="'tt-link-btn ' + customCls" [download]="download">
+    <ng-content select="[content]"></ng-content>
+  </a>
+</ng-container>
