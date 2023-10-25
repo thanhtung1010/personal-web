@@ -51,6 +51,10 @@
     "YEAR": "Year",
     "VERSION": "Version"
   },
+  "MESSAGE": {
+    "SYSTEM_ERROR": "Error",
+    "SYSTEM_SUCCESS": "Success"
+  },
   "BUTTON": {
     "DOWNLOAD_MY_CV": "Download my CV",
     "MORE_ABOUT_ME": "More about me",

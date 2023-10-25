@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { enviroment } from '@enviroments/enviroment';
 import { ISocialNetwork } from '../../interface';
+import { TranslateService } from '@ngx-translate/core';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { CommonService } from '@app/services/common.service';
 
 @Component({
   selector: 'tt-footer',
@@ -31,6 +34,7 @@ export class FooterComponent implements OnInit {
       name: 'skype-logo',
       type: 'svg',
       action: 'copy',
+      content: 'live:trinhthanhtung1010'
     },
     {
       name: 'github-logo',
@@ -40,9 +44,13 @@ export class FooterComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(private commonSer: CommonService) { }
 
   ngOnInit() {
+  }
+
+  copyContent(content: any) {
+    this.commonSer.copyToClipboard(content);
   }
 
 }

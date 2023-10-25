@@ -3,6 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
+import { LinkButtonLayoutComponent, LogoComponent } from '@app/components';
+import { ROUTE } from '@app/constants';
 import {
   AboutMeComponent,
   AdjustLangComponent,
@@ -11,18 +13,16 @@ import {
   HomeComponent,
   PageLayoutComponent,
 } from '@app/modules/portfolio/components';
+import { AssetsLink } from '@app/pipes/assets-link.pipe';
 import { NavLinkPipe } from '@app/pipes/nav-link.pipe';
 import { SvgIconPipe } from '@app/pipes/svg-icon.pipe';
 import { MenuService } from '@app/services';
 import { TranslateModule } from '@ngx-translate/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NzSelectModule } from 'ng-zorro-antd/select';
-import { PortfolioComponent } from './portfolio.component';
-import { ROUTE } from '@app/constants';
-import { LinkButtonLayoutComponent, LogoComponent } from '@app/components';
 import { MenuComponent } from './components/menu/menu.component';
 import { VersionComponent } from './components/version/version.component';
-import { AssetsLink } from '@app/pipes/assets-link.pipe';
+import { PortfolioComponent } from './portfolio.component';
 
 const routes: Route[] = [
   {

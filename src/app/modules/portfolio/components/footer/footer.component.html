@@ -36,7 +36,11 @@
               </tt-link-button-layout>
             </ng-container>
 
-            <ng-container *ngIf="item.action === 'copy'"></ng-container>
+            <ng-container *ngIf="item.action === 'copy'">
+              <button (click)="copyContent(item.content)">
+                <img [src]="item.name| TTAssetsLink:item.type" [alt]="item.name">
+              </button>
+            </ng-container>
           </ng-container>
         </figure>
       </section>
