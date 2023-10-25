@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
+import { htmlATagTarget } from '@app/enums';
 
 @Component({
   selector: 'tt-link-button-layout',
@@ -11,8 +12,8 @@ export class LinkButtonLayoutComponent implements OnInit {
   @Input() type: 'href' | 'download' = 'href';
   @Input() customCls: string = '';
   @Input() href: string = '';
-  @Input() target: '_blank' |  '_parent' | '_self' | '_top' = '_blank';
-  @Input() download: string | undefined = undefined;
+  @Input() target: htmlATagTarget = '_blank';
+  @Input() download: string = '';
 
   constructor() { }
 

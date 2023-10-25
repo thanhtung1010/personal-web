@@ -7,16 +7,53 @@
     "EN": "Tiếng Anh"
   },
   "MENU": {
-    "ABOUT_ME": "Sơ Lược",
-    "WORK_EXP": "Kinh Nghiệm",
-    "SKILL": "Kỹ Năng",
-    "CONTACT_INFOR": "Contact Information",
-    "PERSONAL_PROJECT": "Dự Án Cá Nhân"
+    "HOME": "Trang chủ",
+    "ABOUT_ME": "Sơ Lược"
   },
-  "ABOUT_ME": {
-    "NAME": "Tôi là Trịnh Thanh Tùng",
-    "POSITION": "Front End Developer",
-    "SUMARY_1": "My plan is to elevate my English proficiency while learning various platforms, libraries, frameworks, and programming languages. I aim to broaden my project exposure, with the goal of becoming a full-stack developer or even progressing to a higher role, such as a technical lead.",
-    "SUMARY_2": "My advantage is swiftly comprehend and analyze front-end source code, effective communication skills, adept at researching via Google or ChatGPT, proficient in self-study and rapid acquisition of new programming languages and libraries."
+  "COMMON": {
+    "LOGO": "Tungne",
+    "FULL_NAME": "Trinh Thanh Tung",
+    "MY_POSITION": "Front-end Developer",
+    "CONTACT_ME": "Contact Me",
+    "HI_FULL_NAME": "Hi, I'm Trinh Thanh Tung",
+    "IM_POSITION": "I’m Front-end Developer.",
+    "BASIC_DESCRIPTION": "With VS Code and coffee, i’ll help designers and client bring their ideas to life. ",
+    "INTRO_GO_TO_ABOUT_ME": "Since starting my journey as a front-end developer over 2 years ago, I began as a software engineer. Throughout projects, I have consistently held the position of a front-end developer. My upcoming goal is to enhance my front-end technical skills and eventually transition into a full-stack developer role or specialize in the data/Backend side, aspiring to become a data engineer.",
+    "COMPANIES_WORKED": "Companies Worked",
+    "COMPLETED_PROJECTS": "Completed Projects",
+    "YEARS_EXPERIENCE": "Years Experience",
+    "INTERESTED_WORKING_TOGETHER": "Interested in working together? Let's schedule a time to chat. I’ll buy the coffee.",
+    "CONTACT": "Contact",
+    "ADDRESS": "Tan Binh, Ho Chi Minh City, Viet Nam",
+    "LET_BE_INTERNET_FRIEND": "Let's be internet BFFs",
+    "AUTHOR": "© 2023, designed & coded by me",
+    "HI_FIRST_NAME": "Hi, i’m Tung",
+    "ABOUT_ME_DESCRIPTION": "Almost 2 years, I code beautifully simple things, and I love what I do.",
+    "LEARN_FOREVER": "“Learn, learn more, learn forever.”",
+    "LEARN_FOREVER_AUTHOR": "- Lenin -",
+    "DESIGN": "Design",
+    "DESIGN_DESCTIPTION": "I can use design tools but i design without design thinking.",
+    "ENJOY_DESGIN": "Things i enjoy designing:",
+    "DESIGN_TOOLS": "Design tools:",
+    "POSITION_DESCRIPTION": "I like to code with coffee, and enjoy bringing ideas to life.",
+    "SOMETHING_I_SPEAK": "Something i speak:",
+    "DEV_TOOLS": "Dev tools:",
+    "SELF_STUDY": "Self-study",
+    "SELF_STUDY_DESCRIPTION": "Code and coffee again, but not for work.",
+    "SOMETHING_I_CAN_DO": "Something i can do:",
+    "EXPERIENCES": "Experiences",
+    "TIME": "Time",
+    "JOB_TITLE": "Job title",
+    "COMPANY_NAME": "Company name",
+    "PROJECT": "Project",
+    "TITLE": "Title",
+    "POSITION": "Position",
+    "YEAR": "Year",
+    "VERSION": "Version"
+  },
+  "BUTTON": {
+    "DOWNLOAD_MY_CV": "Download my CV",
+    "MORE_ABOUT_ME": "More about me",
+    "SAY_HI": "Say hi to me"
   }
 }

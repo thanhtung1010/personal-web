@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LangService } from './services/lang.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { VersionService } from './services/version.service';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -40,6 +41,7 @@ export function HTTPLoaderFactory(http: HttpClient) {
   providers: [
     Title,
     LangService,
+    VersionService,
   ],
   bootstrap: [AppComponent]
 })

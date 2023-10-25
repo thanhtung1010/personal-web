@@ -35,6 +35,9 @@
       ],
       "@helpers/*": [
         "./src/app/helpers/*"
+      ],
+      "@global/*": [
+        "./*"
       ]
     }
   },

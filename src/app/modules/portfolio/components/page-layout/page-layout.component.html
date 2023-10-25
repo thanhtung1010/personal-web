@@ -1,6 +1,11 @@
-<ng-container *ngIf="option.showHeader">
+<ng-container *ngIf="showHeader">
   <tt-header></tt-header>
 </ng-container>
-<ng-container *ngIf="option.showFooter">
+
+<main>
+  <ng-content select="[main]"></ng-content>
+</main>
+
+<ng-container *ngIf="showFooter">
   <tt-footer></tt-footer>
 </ng-container>

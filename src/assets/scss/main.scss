@@ -15,6 +15,10 @@
     overflow: auto;
     display: flex;
     flex-direction: column;
+    font-size: $mainFontSize;
+    font-weight: $mainFontweight;
+    font-style: normal;
+    line-height: normal;
 
     ::-webkit-scrollbar {
       width: 8px;
@@ -35,13 +39,14 @@
       background: $scrollBarHoverColor;
     }
 
-    * {
-      transition: all .5s ease;
-      font-family: 'KoHo', sans-serif;
-      font-size: $mainFontSize;
-      font-weight: $mainFontweight;
-      box-sizing: border-box;
+    p, span, h1, h2, h3, h4, h5, h6 {
       margin: unset;
+    }
+
+    * {
+      transition: all .3s ease;
+      font-family: 'KoHo', sans-serif;
+      box-sizing: border-box;
     }
   }
 }

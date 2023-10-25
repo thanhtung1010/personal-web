@@ -6,6 +6,7 @@ import { AppLoadingHelper } from './helpers';
 import { LangService } from './services/lang.service';
 import { MenuService } from './services';
 import * as _ from 'lodash';
+import { VersionService } from './services/version.service';
 
 @Component({
   selector: 'tt-root',
@@ -22,17 +23,23 @@ export class AppComponent implements OnInit, AfterViewInit {
     private translateSer: TranslateService,
     private langSer: LangService,
     private menuSer: MenuService,
+    private versionSer: VersionService,
   ) {}
 
   ngOnInit(): void {
-    this.langSer.init();
-    this.menuSer.init();
+    this.initService();
 
     this.translateSer.onLangChange.subscribe(resp => {
       this.translateSer.get(this.title).subscribe(resp => {
         this.titleSer.setTitle(resp);
       });
     });
+  }
+
+  initService() {
+    this.langSer.init();
+    this.menuSer.init();
+    this.versionSer.init();
   }
 
   ngAfterViewInit(): void {

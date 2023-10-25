@@ -1,3 +1,48 @@
-<p>
-  footer works!
-</p>
+<footer class="tt-footer">
+  <section class="tt-footer-content">
+    <section class="tt-footer-contact">
+      <p>{{'COMMON.INTERESTED_WORKING_TOGETHER' | translate}}</p>
+      <tt-link-button-layout [target]="'_self'" [href]="'mailto:' + (env.email) + '?Subject=Hi,%20i\'m%20from%20your%20portfolio'">
+        <ng-container content>
+          <button class="tt-mailto">
+            <img [src]="'chat' | TTAssetsLink:'svg'" alt="chat">
+            <p>{{'BUTTON.SAY_HI' | translate}}</p>
+          </button>
+        </ng-container>
+      </tt-link-button-layout>
+    </section>
+
+    <section class="tt-footer-info">
+      <section class="tt-footer-info-content">
+        <tt-logo [customCls]="'tt-logo-footer'"></tt-logo>
+      </section>
+
+      <section class="tt-footer-info-content">
+        <h3>{{'COMMON.CONTACT' | translate}}</h3>
+        <p>{{'COMMON.ADDRESS' | translate}}</p>
+        <p>{{env.email}}</p>
+        <p>{{env.phoneNumber}}</p>
+      </section>
+
+      <section class="tt-footer-info-content">
+        <h3>{{'COMMON.LET_BE_INTERNET_FRIEND' | translate}}</h3>
+        <figure class="tt-footer-info-social_network">
+          <ng-container *ngFor="let item of socialNetworks">
+            <ng-container *ngIf="item.action === 'url'">
+              <tt-link-button-layout [href]="item.href || ''" [target]="item.target || '_blank'">
+                <ng-container content>
+                  <img [src]="item.name| TTAssetsLink:item.type" [alt]="item.name">
+                </ng-container>
+              </tt-link-button-layout>
+            </ng-container>
+
+            <ng-container *ngIf="item.action === 'copy'"></ng-container>
+          </ng-container>
+        </figure>
+      </section>
+    </section>
+
+    <div class="tt-footer-line"></div>
+    <tt-version></tt-version>
+  </section>
+</footer>

@@ -19,7 +19,10 @@ import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { PortfolioComponent } from './portfolio.component';
 import { ROUTE } from '@app/constants';
-import { LinkButtonLayoutComponent } from '@app/components';
+import { LinkButtonLayoutComponent, LogoComponent } from '@app/components';
+import { MenuComponent } from './components/menu/menu.component';
+import { VersionComponent } from './components/version/version.component';
+import { AssetsLink } from '@app/pipes/assets-link.pipe';
 
 const routes: Route[] = [
   {
@@ -57,6 +60,8 @@ const routes: Route[] = [
     NzSelectModule,
 
     LinkButtonLayoutComponent,
+    LogoComponent,
+    AssetsLink,
   ],
   declarations: [
     PortfolioComponent,
@@ -66,6 +71,8 @@ const routes: Route[] = [
     AboutMeComponent,
     FooterComponent,
     PageLayoutComponent,
+    MenuComponent,
+    VersionComponent,
 
     SvgIconPipe,
     NavLinkPipe,

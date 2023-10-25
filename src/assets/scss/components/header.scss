@@ -19,6 +19,13 @@
     font-weight: 800;
     line-height: normal;
   }
+
+  &-footer {
+
+    h1 {
+      color: #{$whiteColor};
+    }
+  }
 }
 
 &-menu-icon {
