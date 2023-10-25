@@ -1,0 +1,43 @@
+&-home {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100vh;
+
+  &-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-left: 100px;
+    gap: 20px;
+
+    h3 {
+      font-size: #{$xxLaggerFontSize};
+      font-weight: 500;
+    }
+
+    h1 {
+      font-size: #{$xxxLaggerFontSize};
+      font-weight: 700;
+    }
+  }
+
+  &-float_icon {
+    position: absolute;
+    top: var(--top);
+    right: var(--right);
+    left: var(--left);
+    bottom: var(--bottom);
+    transform: translate(var(--translateX), var(--translateY));
+  }
+}
+
+&-download_cv {
+  background-color: #{$blackColor};
+  color: #{$whiteColor};
+  height: fit-content;
+  width: fit-content;
+  padding: 10px 10px;
+  border-radius: 20px;
+}

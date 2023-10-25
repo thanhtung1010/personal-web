@@ -8,3 +8,14 @@ export interface ISocialNetwork {
   href?: string;
   target?: htmlATagTarget;
 }
+
+export interface IFloatItem {
+  name: string;
+  type: ASSETS_TYPE;
+  translateX: string;
+  translateY: string;
+  top?: string;
+  right?: string;
+  left?: string;
+  bottom?: string;
+}

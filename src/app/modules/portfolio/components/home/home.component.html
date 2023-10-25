@@ -1,1 +1,27 @@
-<tt-page-layout></tt-page-layout>
+<tt-page-layout>
+  <ng-container main>
+    <section class="tt-home">
+      <section class="tt-home-description">
+        <h3>{{'COMMON.HI_FULL_NAME' | translate}}</h3>
+        <h1>{{'COMMON.IM_POSITION' | translate}}</h1>
+        <p>{{'COMMON.BASIC_DESCRIPTION' | translate}}</p>
+        <tt-link-button-layout [type]="'download'" [download]="'cv'">
+          <ng-container downloadContent>
+            <div class="tt-download_cv">
+              <p>{{'BUTTON.DOWNLOAD_MY_CV' | translate}}</p>
+            </div>
+          </ng-container>
+        </tt-link-button-layout>
+      </section>
+
+      <ng-container *ngFor="let icon of floatIcons">
+        <img class="tt-home-float_icon" [src]="icon.name | TTAssetsLink:icon.type" [alt]="icon.name"
+          [style]="'--top:' + (icon.top || '') + '; --right:' + (icon.right || '') + '; --left:' + (icon.left || '') + '; --bottom:' + (icon.bottom || '') + '; --translateX:' + icon.translateX + '; --translateY:' + icon.translateY">
+      </ng-container>
+    </section>
+
+    <section class="tt-summary_exp"></section>
+
+    <section class="tt-summary_about_me"></section>
+  </ng-container>
+</tt-page-layout>
