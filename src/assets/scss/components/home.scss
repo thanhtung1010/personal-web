@@ -4,13 +4,15 @@
   justify-content: flex-start;
   align-items: center;
   height: 100vh;
+  z-index: inherit;
 
   &-description {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     margin-left: 100px;
-    gap: 20px;
+    gap: 10px;
+    z-index: 10;
 
     h3 {
       font-size: #{$xxLaggerFontSize};
@@ -24,12 +26,17 @@
   }
 
   &-float_icon {
+    z-index: 2;
     position: absolute;
     top: var(--top);
     right: var(--right);
     left: var(--left);
     bottom: var(--bottom);
     transform: translate(var(--translateX), var(--translateY));
+
+    &-mouse {
+      z-index: 5;
+    }
   }
 }
 
