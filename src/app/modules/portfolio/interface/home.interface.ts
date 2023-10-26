@@ -17,3 +17,8 @@ export interface ISummaryExp {
   count: number;
   label: string;
 }
+
+export interface ISummaryAboutMe {
+  name: string;
+  type: ASSETS_TYPE;
+}

@@ -23,6 +23,7 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { MenuComponent } from './components/menu/menu.component';
 import { VersionComponent } from './components/version/version.component';
 import { PortfolioComponent } from './portfolio.component';
+import { AppRoutingModule } from '@app/app-routing.module';
 
 const routes: Route[] = [
   {

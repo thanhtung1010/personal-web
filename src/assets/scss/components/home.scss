@@ -5,6 +5,7 @@
   align-items: center;
   height: 100vh;
   z-index: inherit;
+  margin-bottom: 50px;
 
   &-description {
     display: flex;
@@ -46,5 +47,114 @@
   height: fit-content;
   width: fit-content;
   padding: 10px 10px;
+  border-radius: 20px;
+}
+
+&-summary_exp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 50px 0;
+  width: 100%;
+  margin-bottom: 50px;
+
+  &-item {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 1px 1px 10px 0px rgba(188, 188, 188, 0.25) inset, 5px 5px 10px 0px rgba(110, 7, 243, 0.25) inset;
+    cursor: pointer;
+
+    h3, h2 {
+      width: 100%;
+    }
+
+    span {
+      font-size: #{$xxLaggerFontSize};
+      font-weight: 700;
+    }
+
+    * {
+      color: #{$purpleColor};
+      font-size: #{$xLaggerFontSize};
+      font-weight: 600;
+    }
+  }
+
+  &-title_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+&-summary_about_me {
+  color: #{$whiteColor};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: url('../../imgs/jpg/summary-about-me.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: inherit;
+  position: relative;
+  margin-bottom: 50px;
+  gap: 20px;
+
+  &-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #{$blackColor};
+    opacity: .85;
+  }
+
+  &-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 5;
+    min-height: 400px;
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 5;
+    min-height: 400px;
+  }
+
+  &-content {
+    z-index: 5;
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+&-more_about_me {
+  color: #{$whiteColor};
+  border: 1px solid #{$whiteColor};
+  background: transparent;
+  font-size: 16px;
+  padding: 10px 15px;
   border-radius: 20px;
 }

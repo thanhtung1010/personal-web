@@ -20,8 +20,43 @@
       </ng-container>
     </section>
 
-    <section class="tt-summary_exp"></section>
+    <section class="tt-summary_exp">
+      <ng-container *ngFor="let expItem of summaryExpItems">
+        <section class="tt-summary_exp-item">
+          <h3 class="tt-summary_exp-title_item">
+            <img [src]="expItem.iconName | TTAssetsLink:expItem.iconType" [alt]="expItem.iconName">
+            <span>{{expItem.count}}</span>
+          </h3>
+          <h2>{{expItem.label | translate}}</h2>
+        </section>
+      </ng-container>
+    </section>
 
-    <section class="tt-summary_about_me"></section>
+    <section class="tt-summary_about_me">
+      <section class="tt-summary_about_me-background"></section>
+
+      <section class="tt-summary_about_me-left">
+        <ng-container *ngFor="let abItem of leftAboutMeItems">
+          <img [src]="abItem.name | TTAssetsLink:abItem.type" [alt]="abItem.name">
+        </ng-container>
+      </section>
+
+      <section class="tt-summary_about_me-content">
+        <p>{{'COMMON.INTRO_GO_TO_ABOUT_ME' | translate}}</p>
+        <tt-link-button-layout [target]="'_self'" [href]="ROUTE.PORTFOLIO + '/' + ROUTE.PORTFOLIO_ABOUT_ME">
+          <ng-container hrefContent>
+            <button class="tt-more_about_me">
+              <p>{{'BUTTON.MORE_ABOUT_ME' | translate}}</p>
+            </button>
+          </ng-container>
+        </tt-link-button-layout>
+      </section>
+
+      <section class="tt-summary_about_me-right">
+        <ng-container *ngFor="let abItem of rightAboutMeItems">
+          <img [src]="abItem.name | TTAssetsLink:abItem.type" [alt]="abItem.name">
+        </ng-container>
+      </section>
+    </section>
   </ng-container>
 </tt-page-layout>

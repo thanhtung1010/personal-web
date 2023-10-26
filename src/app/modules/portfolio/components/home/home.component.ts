@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IFloatItem, ISummaryExp } from '../../interface';
+import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interface';
+import { ROUTE } from '@app/constants';
 
 @Component({
   selector: 'tt-home',
@@ -100,6 +101,35 @@ export class HomeComponent implements OnInit {
       label: 'COMMON.YEARS_EXPERIENCE'
     },
   ];
+  leftAboutMeItems: ISummaryAboutMe[] = [
+    {
+      name: 'hobbies-travel',
+      type: 'svg',
+    },
+    {
+      name: 'hobbies-picture',
+      type: 'svg',
+    },
+    {
+      name: 'hobbies-cat',
+      type: 'svg',
+    },
+  ];
+  rightAboutMeItems: ISummaryAboutMe[] = [
+    {
+      name: 'hobbies-note',
+      type: 'svg',
+    },
+    {
+      name: 'hobbies-draw',
+      type: 'svg',
+    },
+    {
+      name: 'hobbies-music',
+      type: 'svg',
+    },
+  ];
+  ROUTE = ROUTE;
 
   constructor() { }
 
