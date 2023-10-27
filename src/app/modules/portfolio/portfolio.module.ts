@@ -27,24 +27,18 @@ import { AppRoutingModule } from '@app/app-routing.module';
 
 const routes: Route[] = [
   {
-    path: '',
-    component: PortfolioComponent,
-    children: [
-      {
-        path: '**',
-        pathMatch: 'full',
-        redirectTo: ROUTE.PORTFOLIO_HOME
-      },
-      {
-        path: ROUTE.PORTFOLIO_HOME,
-        component: HomeComponent
-      },
-      {
-        path: ROUTE.PORTFOLIO_ABOUT_ME,
-        component: AboutMeComponent
-      },
-    ]
-  }
+    path: ROUTE.PORTFOLIO_HOME,
+    component: HomeComponent
+  },
+  {
+    path: ROUTE.PORTFOLIO_ABOUT_ME,
+    component: AboutMeComponent
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: ROUTE.PORTFOLIO_HOME
+  },
 ];
 
 @NgModule({

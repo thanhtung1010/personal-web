@@ -5,18 +5,18 @@ import { managementActiveGuard } from './guards';
 
 const routes: Routes = [
   {
-    path: '**',
-    pathMatch: 'full',
-    redirectTo: ROUTE.PORTFOLIO,
-  },
-  {
     path: ROUTE.PORTFOLIO,
     loadChildren: () => import('./modules/portfolio/portfolio.module').then((e) => e.PortfolioModule),
   },
   {
     path: ROUTE.MANAGEMENT,
-    loadChildren: () => import('./modules/management/management.component').then((e) => e.ManagementComponent),
+    loadChildren: () => import('./modules/management/management.module').then((e) => e.ManagementModule),
     canActivate: [managementActiveGuard]
+  },
+  {
+    path: '**',
+    pathMatch: 'full',
+    redirectTo: ROUTE.PORTFOLIO,
   },
 ];
 
