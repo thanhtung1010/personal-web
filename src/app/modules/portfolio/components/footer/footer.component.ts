@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { enviroment } from '@enviroments/enviroment';
-import { ISocialNetwork } from '../../interface';
+import { ISocialNetwork } from '../../interfaces';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { CommonService } from '@app/services/common.service';

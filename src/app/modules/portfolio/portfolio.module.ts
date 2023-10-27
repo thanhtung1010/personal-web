@@ -24,6 +24,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { VersionComponent } from './components/version/version.component';
 import { PortfolioComponent } from './portfolio.component';
 import { AppRoutingModule } from '@app/app-routing.module';
+import { HiddenOnSrollDirective } from './directives/hidden-on-scroll.directive';
 
 const routes: Route[] = [
   {
@@ -71,6 +72,8 @@ const routes: Route[] = [
 
     SvgIconPipe,
     NavLinkPipe,
+
+    HiddenOnSrollDirective,
   ],
   providers: [
     MenuService,

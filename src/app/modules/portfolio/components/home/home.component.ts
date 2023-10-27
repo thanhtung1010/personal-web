@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interface';
+import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
 import { ROUTE } from '@app/constants';
 
 @Component({
