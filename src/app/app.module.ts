@@ -12,6 +12,7 @@ import { LangService } from './services/lang.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VersionService } from './services/version.service';
 import { NzMessageModule } from 'ng-zorro-antd/message';
+import { MenuService } from './services';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -44,6 +45,7 @@ export function HTTPLoaderFactory(http: HttpClient) {
     Title,
     LangService,
     VersionService,
+    MenuService,
   ],
   bootstrap: [AppComponent]
 })

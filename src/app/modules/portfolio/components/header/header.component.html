@@ -6,7 +6,9 @@
     </ng-container>
   </tt-link-button-layout>
 
-  <div class="tt-menu-icon">
+  <div class="tt-menu-icon" (click)="onToggleVisibleMenu(!visibleMenu)">
     <img src="../../../../../assets/svg/menu.svg" alt="logo">
   </div>
 </header>
+
+<tt-menu></tt-menu>

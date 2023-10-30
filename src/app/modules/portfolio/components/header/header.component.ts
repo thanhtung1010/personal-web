@@ -13,10 +13,11 @@ export class HeaderComponent implements OnInit {
   currentNav: INav | null = null;
   hiddenCls: string = 'tt-header-hidden';
   whiteBGCls: string = 'tt-white_bg';
+  visibleMenu: boolean = false;
 
   constructor(
-    private menuSer: MenuService,
     private router: Router,
+    private menuService: MenuService
   ) { }
 
   ngOnInit() {
@@ -38,7 +39,11 @@ export class HeaderComponent implements OnInit {
 
     let _headerCls = this.header.nativeElement.className;
     if (position > 0) {
-      this.header.nativeElement.className = `${_headerCls} ${this.hiddenCls}`;
+      this.header.nativeElement.className = `${_headerCls} ${this.whiteBGCls}`;
     }
+  }
+
+  onToggleVisibleMenu(visible: boolean) {
+    this.menuService.onToggleMenu(visible);
   }
 }

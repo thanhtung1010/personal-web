@@ -16,15 +16,13 @@ import {
 import { AssetsLink } from '@app/pipes/assets-link.pipe';
 import { NavLinkPipe } from '@app/pipes/nav-link.pipe';
 import { SvgIconPipe } from '@app/pipes/svg-icon.pipe';
-import { MenuService } from '@app/services';
 import { TranslateModule } from '@ngx-translate/core';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { MenuComponent } from './components/menu/menu.component';
 import { VersionComponent } from './components/version/version.component';
-import { PortfolioComponent } from './portfolio.component';
-import { AppRoutingModule } from '@app/app-routing.module';
 import { HiddenOnSrollDirective } from './directives/hidden-on-scroll.directive';
+import { PortfolioComponent } from './portfolio.component';
 
 const routes: Route[] = [
   {
@@ -75,8 +73,6 @@ const routes: Route[] = [
 
     HiddenOnSrollDirective,
   ],
-  providers: [
-    MenuService,
-  ]
+  providers: []
 })
 export class PortfolioModule { }

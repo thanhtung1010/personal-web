@@ -1,4 +1,3 @@
-import { QUERYPARAMS_NAV } from "@app/enums";
 import { LANG_TYPE } from "@app/types";
 
 export interface IAppConfig {
@@ -12,7 +11,6 @@ export interface IAppConfig {
 
 export interface INav {
   label: string;
-  queryParams: QUERYPARAMS_NAV;
   show: boolean;
 }
 

@@ -1,11 +1,13 @@
 import { AfterViewInit, Directive, ElementRef, EventEmitter, Input, OnDestroy, Output, Renderer2 } from "@angular/core";
-import { Observable, Subject, distinctUntilChanged, filter, fromEvent, map, pairwise, share, takeUntil } from "rxjs";
+import * as _ from "lodash";
+import { BehaviorSubject, Observable, Subject, distinctUntilChanged, filter, fromEvent, map, pairwise, share, takeUntil } from "rxjs";
 
 @Directive({
   selector: '[tt-hidden-on-scroll]'
 })
 
 export class HiddenOnSrollDirective implements OnDestroy, AfterViewInit {
+  @Input() event: string = 'scroll';
   @Input() hideOnScroll: 'Down' | 'Up' = 'Down';
   @Input() classNameWhenHidden: string = '';
   @Input() scrollElement: string = '';
@@ -19,6 +21,7 @@ export class HiddenOnSrollDirective implements OnDestroy, AfterViewInit {
   private scrollingElement: HTMLElement | null = null;
   private listenScrollingElement: HTMLElement | (Window & typeof globalThis) | Document | null = null;
   private unsubscribeNotifier: Subject<number> = new Subject();
+  private initScroll: BehaviorSubject<number | null> = new BehaviorSubject(null as any);
   private scrollEvent!: Observable<IListenScroll>;
   private scrollUp!: Observable<IListenScroll>;
   private scrollDown!: Observable<IListenScroll>;
@@ -40,11 +43,16 @@ export class HiddenOnSrollDirective implements OnDestroy, AfterViewInit {
       if (!this.scrollingElement || !this.listenScrollingElement) {
         console.error(`tt-hidden-on-scroll: selector: "${this.scrollElement}" or "${this.listenScrollEventElement}" not found.`);
       } else {
-        this.onInitPosition(this.elementCheckingPosition === 'windown' ? window.scrollY : this.scrollingElement?.scrollTop || 0);
-        this.scrollEvent = fromEvent(this.listenScrollingElement, 'scroll', { capture: true })
+        this.scrollEvent = fromEvent(this.listenScrollingElement, this.event, { capture: true })
         .pipe(
           takeUntil(this.unsubscribeNotifier),
-          map(() => this.scrollingElement?.scrollTop || 0),
+          map(() => {
+            const resp = this.scrollingElement?.scrollTop || 0;
+            if (!_.isNumber(this.initScroll.value)) {
+              this.initScroll.next(resp);
+            }
+            return resp;
+          }),
           pairwise(),
           map(([y1, y2]) => {
             return {
@@ -75,6 +83,12 @@ export class HiddenOnSrollDirective implements OnDestroy, AfterViewInit {
           this.scrollDownAction(resp)
         });
       }
+
+      this.initScroll.subscribe(resp => {
+        if (_.isNumber(resp)) {
+          this.onInitPosition(this.elementCheckingPosition === 'windown' ? window.scrollY : this.scrollingElement?.scrollTop || 0);
+        }
+      });
     } catch (error) {
       console.error(`tt-hidden-on-scroll: ${error}`);
     }
