@@ -1,4 +1,5 @@
-<header tt-hidden-on-scroll [classNameWhenHidden]="'tt-header-hidden'" [scrollElement]="'html'" class="tt-header">
+<header #header tt-hidden-on-scroll [classNameWhenHidden]="hiddenCls" class="tt-header" (shownElement)="handleShowHeaderScrollUp($event)"
+  (initPosition)="handleHeaderInit($event)">
   <tt-link-button-layout [href]="'#'" [target]="'_self'">
     <ng-container hrefContent>
       <tt-logo></tt-logo>

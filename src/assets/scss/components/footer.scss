@@ -3,6 +3,7 @@
   padding-top: 100px;
   color: #{$whiteColor};
   font-size: #{$mediumFontSize};
+  z-index: 5;
 
   &-content {
     position: relative;
@@ -66,13 +67,4 @@
     height: 2px;
     background: #{$greenColor};
   }
-}
-
-&-mailto {
-  display: flex;
-  gap: 20px;
-  padding: 13px 28px;
-  border-radius: 25px;
-  border: 1px solid #{$greenColor};
-  color: #{$whiteColor};
 }

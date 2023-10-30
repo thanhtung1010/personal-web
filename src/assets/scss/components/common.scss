@@ -1,5 +1,22 @@
+&-main {
+  z-index: 5;
+}
+
 &-link-btn {
   height: fit-content;
   width: fit-content;
   cursor: pointer;
+}
+
+&-white_bg {
+  background-color: #{$whiteColor} !important;
+}
+
+&-mailto {
+  display: flex;
+  gap: 20px;
+  padding: 13px 28px;
+  border-radius: 25px;
+  border: 1px solid #{$greenColor};
+  color: #{$whiteColor};
 }
