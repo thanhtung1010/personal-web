@@ -1,3 +1,28 @@
-<!-- <nav class="tt-menu" #menu>
-  menu works!
-</nav> -->
+<nav class="tt-menu_container">
+  <div class="tt-menu_wrap">
+    <img [src]="'close' | TTAssetsLink:'svg'" alt="close" class="tt-close_menu">
+    <div class="tt-menu_background"></div>
+    <div class="tt-menu_content">
+      <aside class="tt-menu_aside">
+        <ng-container *ngFor="let item of menu">
+          <tt-link-button-layout [href]="item.href" [target]="'_self'">
+            <ng-container hrefContent>
+              <p>{{item.label | translate}}</p>
+            </ng-container>
+          </tt-link-button-layout>
+        </ng-container>
+      </aside>
+      <section class="tt-menu_section">
+        <section class="tt-menu_section-item">
+          <h3 class="tt-menu_section-header">{{'COMMON.MY_POSITION'| translate}}</h3>
+          <p class="tt-menu_section-content">{{'COMMON.FULL_NAME'| translate}}</p>
+        </section>
+        <section class="tt-menu_section-item">
+          <h3 class="tt-menu_section-header">{{'COMMON.CONTACT_ME'| translate}}</h3>
+          <p class="tt-menu_section-content">{{env.email}}</p>
+          <p class="tt-menu_section-content">{{env.phoneNumber}}</p>
+        </section>
+      </section>
+    </div>
+  </div>
+</nav>

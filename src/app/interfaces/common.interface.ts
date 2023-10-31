@@ -9,9 +9,10 @@ export interface IAppConfig {
   phoneNumber: string;
 }
 
-export interface INav {
+export interface IMenuItem {
   label: string;
   show: boolean;
+  href: string
 }
 
 export interface ILang {label: string, lang: LANG_TYPE}

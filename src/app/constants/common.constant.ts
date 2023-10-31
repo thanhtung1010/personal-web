@@ -1,5 +1,6 @@
-import { ILang, INav } from "@app/interfaces";
+import { ILang, IMenuItem } from "@app/interfaces";
 import { LANG_TYPE } from "@app/types";
+import { ROUTE } from "./route.constant";
 
 export const DEFAULT_LANG: LANG_TYPE = 'vi';
 export const LANG_LIST: Array<ILang> = [
@@ -13,14 +14,16 @@ export const LANG_LIST: Array<ILang> = [
   }
 ];
 
-export const NAVS: Array<INav> = [
+export const MENU: Array<IMenuItem> = [
   {
     label: "MENU.HOME",
     show: true,
+    href: ROUTE.PORTFOLIO + '/' + ROUTE.PORTFOLIO_HOME,
   },
   {
     label: "MENU.ABOUT_ME",
     show: true,
+    href: ROUTE.PORTFOLIO + '/' + ROUTE.PORTFOLIO_ABOUT_ME,
   },
   // {
   //   label: "MENU.WORK_EXP",

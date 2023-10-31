@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { INav } from '@app/interfaces';
 import { MenuService } from '@app/services';
 
 @Component({
@@ -9,8 +8,8 @@ import { MenuService } from '@app/services';
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('header') header!: ElementRef<HTMLHeadingElement>;
+
   logoSVGIcon: string = "simple-icon";
-  currentNav: INav | null = null;
   hiddenCls: string = 'tt-header-hidden';
   whiteBGCls: string = 'tt-white_bg';
   visibleMenu: boolean = false;
