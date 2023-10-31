@@ -5,6 +5,7 @@
   z-index: 99999;
   width: 100vw;
   height: 100vh;
+  transition: unset !important;
 }
 
 &-menu_wrap {
@@ -17,6 +18,7 @@
   width: 100%;
   height: 100%;
   display: flex;
+  transition: unset !important;
 }
 
 &-menu_background {
@@ -26,6 +28,7 @@
   opacity: .85;
   width: 100%;
   height: 100%;
+  transition: unset !important;
 }
 
 &-menu_content {
@@ -63,6 +66,23 @@
 
   a {
     color: #{$whiteColor} !important;
+  }
+}
+
+&-active_router {
+  position: relative;
+
+  &::after {
+    content: '';
+    height: 3px;
+    border-radius: 3px;
+    width: 100%;
+    bottom: -5px;
+    left: 0;
+    background-color: #{$whiteColor};
+    display: block;
+    position: absolute;
+
   }
 }
 

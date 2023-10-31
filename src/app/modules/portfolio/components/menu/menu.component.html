@@ -1,15 +1,16 @@
 <nav class="tt-menu_container">
   <div class="tt-menu_wrap">
-    <img [src]="'close' | TTAssetsLink:'svg'" alt="close" class="tt-close_menu">
+    <img [src]="'close' | TTAssetsLink:'svg'" alt="close" class="tt-close_menu" (click)="closeMenu()">
     <div class="tt-menu_background"></div>
     <div class="tt-menu_content">
       <aside class="tt-menu_aside">
         <ng-container *ngFor="let item of menu">
-          <tt-link-button-layout [href]="item.href" [target]="'_self'">
+          <a [routerLink]="item.href" routerLinkActive="tt-active_router" target="_self" class="tt-link-btn">{{item.label | translate}}</a>
+          <!-- <tt-link-button-layout [href]="item.href" [target]="'_self'">
             <ng-container hrefContent>
               <p>{{item.label | translate}}</p>
             </ng-container>
-          </tt-link-button-layout>
+          </tt-link-button-layout> -->
         </ng-container>
       </aside>
       <section class="tt-menu_section">

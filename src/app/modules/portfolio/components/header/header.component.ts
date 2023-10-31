@@ -12,7 +12,6 @@ export class HeaderComponent implements OnInit {
   logoSVGIcon: string = "simple-icon";
   hiddenCls: string = 'tt-header-hidden';
   whiteBGCls: string = 'tt-white_bg';
-  visibleMenu: boolean = false;
 
   constructor(
     private router: Router,
@@ -42,7 +41,7 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  onToggleVisibleMenu(visible: boolean) {
-    this.menuService.onToggleMenu(visible);
+  openMenu() {
+    this.menuService.toggleVisibleMenu$.next(true);
   }
 }

@@ -53,7 +53,8 @@
   },
   "MESSAGE": {
     "SYSTEM_ERROR": "Error",
-    "SYSTEM_SUCCESS": "Success"
+    "SYSTEM_SUCCESS": "Success",
+    "EMPTY": "Oops! The content for this page is being updated."
   },
   "BUTTON": {
     "DOWNLOAD_MY_CV": "Download my CV",

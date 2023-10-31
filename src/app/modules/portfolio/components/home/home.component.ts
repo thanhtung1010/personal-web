@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
 import { ROUTE } from '@app/constants';
+import { MenuService } from '@app/services';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'tt-home',
   templateUrl: './home.component.html'
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
+  destroyComponentNotier: Subject<number> = new Subject();
+
   floatIcons: IFloatItem[] = [
     {
       name: 'avatar',
@@ -129,11 +133,26 @@ export class HomeComponent implements OnInit {
       type: 'svg',
     },
   ];
+
   ROUTE = ROUTE;
+  visibleMenu: boolean = false;
 
-  constructor() { }
+  constructor(private menuService: MenuService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.menuService.toggleVisibleMenu$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {
+      if (resp) {
+        this.menuService.scrollBody(false);
+      } else {
+        this.menuService.scrollBody(true);
+      }
+      this.visibleMenu = resp;
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.destroyComponentNotier.next(Date.now());
+  }
 
   toggleMousePosition() {
     const existIdx = this.floatIcons.findIndex(icon => icon.name === 'mouse');

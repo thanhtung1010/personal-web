@@ -59,4 +59,8 @@
       </section>
     </section>
   </ng-container>
+
+  <ng-container *ngIf="visibleMenu" overlay-container>
+    <tt-menu></tt-menu>
+  </ng-container>
 </tt-page-layout>

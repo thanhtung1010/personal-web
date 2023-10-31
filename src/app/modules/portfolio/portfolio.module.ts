@@ -3,7 +3,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
-import { LinkButtonLayoutComponent, LogoComponent } from '@app/components';
+import {
+  EmptyComponent,
+  LinkButtonLayoutComponent,
+  LogoComponent,
+} from '@app/components';
 import { ROUTE } from '@app/constants';
 import {
   AboutMeComponent,
@@ -56,6 +60,7 @@ const routes: Route[] = [
     LinkButtonLayoutComponent,
     LogoComponent,
     AssetsLink,
+    EmptyComponent
   ],
   declarations: [
     PortfolioComponent,
