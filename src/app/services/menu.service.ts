@@ -11,6 +11,7 @@ import { BehaviorSubject } from "rxjs";
 
 export class MenuService {
   menu$: BehaviorSubject<Array<IMenuItem>> = new BehaviorSubject([] as Array<IMenuItem>);
+  toggleVisibleMenu$: BehaviorSubject<boolean> = new BehaviorSubject(false)
 
   hiddenScrollCls: string = 'tt-hidden_scroll';
 
@@ -57,5 +58,13 @@ export class MenuService {
 
   get getMenu(): IMenuItem[] {
     return this.menu$.value;
+  }
+
+  set onToggleVisibleMenu(visible: boolean) {
+    this.toggleVisibleMenu$.next(visible);
+  }
+
+  get visibleMenu(): boolean {
+    return this.toggleVisibleMenu$.value;
   }
 }
