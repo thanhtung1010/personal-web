@@ -27,4 +27,19 @@
 
 &-empty_main {
   margin-top: 100px !important;
+
+  .ant-empty-image {
+    display: flex;
+    height: 500px;
+
+    img {
+      margin: auto;
+    }
+  }
+
+  .ant-empty-description {
+    font-weight: bold;
+    opacity: .7;
+    font-size: #{$xLaggerFontSize};
+  }
 }

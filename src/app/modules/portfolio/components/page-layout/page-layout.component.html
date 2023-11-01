@@ -5,8 +5,8 @@
 <main #main class="tt-main">
   <ng-content select="[main]"></ng-content>
 
-  <ng-container *ngIf="!haveMainContent">
-    <tt-empty [customCls]="customClsEmptyMain" [nzNotFoundContent]="emptyMainMsg | translate"></tt-empty>
+  <ng-container *ngIf="haveNoMainContent">
+    <tt-empty [customCls]="customClsEmptyMain" [nzNotFoundContent]="emptyMainMsg | translate" [nzNotFoundImage]="emptyMainImg | TTAssetsLink:'svg'"></tt-empty>
   </ng-container>
 </main>
 
