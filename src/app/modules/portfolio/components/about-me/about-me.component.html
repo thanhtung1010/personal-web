@@ -1,4 +1,27 @@
-<tt-page-layout [haveNoMainContent]="true">
+<tt-page-layout>
   <ng-container main>
+    <section class="tt-intro_am">
+      <h1 class="tt-intro_am-header">{{'COMMON.HI_FIRST_NAME' | translate}}</h1>
+      <p class="tt-intro_am-description">{{'COMMON.ABOUT_ME_DESCRIPTION' | translate}}</p>
+      <img class="tt-intro_am-img" [src]="'all-device' | TTAssetsLink:'svg'" [alt]="'all-device'">
+    </section>
+
+    <section class="tt-content_am">
+      <section class="tt-my_skill" [style]="'--marginQuote:' + marginQuote + '; --marginSkill: -' + marginQuote + ';'">
+        <section class="tt-quote">
+          <p class="quote">{{'COMMON.LEARN_FOREVER' | translate}}</p>
+          <p class="author">{{'COMMON.LEARN_FOREVER_AUTHOR' | translate}}</p>
+        </section>
+        <section class="tt-my_skill-container">
+          <section class="tt-my_skill-content"></section>
+        </section>
+      </section>
+
+      <div class="tt-space_am"></div>
+      <section class="tt-experiences"></section>
+
+      <div class="tt-space_am"></div>
+      <section class="tt-projects"></section>
+    </section>
   </ng-container>
 </tt-page-layout>
