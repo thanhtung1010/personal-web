@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IMenuItem } from '@app/interfaces';
 import { MenuService } from '@app/services';
-import { enviroment } from '@enviroments/enviroment';
+import { enviroment } from '@environments/environments';
 
 @Component({
   selector: 'tt-menu',

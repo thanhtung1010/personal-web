@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { enviroment } from '@enviroments/enviroment';
+import { enviroment } from '@environments/environments';
 import { ISocialNetwork } from '../../interfaces';
 import { TranslateService } from '@ngx-translate/core';
 import { NzMessageService } from 'ng-zorro-antd/message';

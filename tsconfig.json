@@ -30,8 +30,8 @@
       "@assets/*": [
         "./src/assets/*"
       ],
-      "@enviroments/*": [
-        "./src/enviroments/*"
+      "@environments/*": [
+        "src/environments/*"
       ],
       "@helpers/*": [
         "./src/app/helpers/*"

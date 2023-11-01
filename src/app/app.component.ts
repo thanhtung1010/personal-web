@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { TranslateService } from '@ngx-translate/core';
-import { enviroment } from '@enviroments/enviroment';
+import { enviroment } from '@environments/environments';
 import { AppLoadingHelper } from './helpers';
 import { LangService } from './services/lang.service';
 import { MenuService } from './services';
