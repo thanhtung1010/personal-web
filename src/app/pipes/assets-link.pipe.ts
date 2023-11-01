@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 import { ASSETS_TYPE } from "@app/enums";
-import { enviroment } from "@environments/environments";
+import { enviroment } from "@environments/environment";
 
 @Pipe({
   name: 'TTAssetsLink',

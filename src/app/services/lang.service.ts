@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { LANG_TYPE } from "../types/lang.type";
-import { enviroment } from "@environments/environments";
+import { enviroment } from "@environments/environment";
 import { DEFAULT_LANG, LANG_LIST } from "@app/constants";
 import { TranslateService } from "@ngx-translate/core";
 import { BehaviorSubject } from "rxjs";
