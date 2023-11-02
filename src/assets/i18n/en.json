@@ -45,20 +45,29 @@
     "TIME": "Time",
     "JOB_TITLE": "Job title",
     "COMPANY_NAME": "Company name",
-    "PROJECT": "Project",
+    "PROJECTS": "Projects",
     "TITLE": "Title",
     "POSITION": "Position",
     "YEAR": "Year",
     "VERSION": "Version"
   },
+  "JOB_DETAIL": {
+    "SOFTWARE_ENGINEER": "Software Engieer",
+    "FULL_TIME": "Full-time",
+    "PART_TIME": "Part-time",
+    "FREELANCER": "Freelancer",
+    "FRONTEND_DEVELOPER": "Front-end Developer"
+  },
   "MESSAGE": {
     "SYSTEM_ERROR": "Error",
     "SYSTEM_SUCCESS": "Success",
-    "EMPTY": "Oops! The content for this page is being updated."
+    "EMPTY": "Oops! The content for this page is being updated.",
+    "NO_DATA": "No data."
   },
   "BUTTON": {
     "DOWNLOAD_MY_CV": "Download my CV",
     "MORE_ABOUT_ME": "More about me",
     "SAY_HI": "Say hi to me"
-  }
+  },
+  "EMPTY": ""
 }

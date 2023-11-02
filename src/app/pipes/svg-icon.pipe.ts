@@ -7,6 +7,7 @@ import * as _ from "lodash";
  */
 @Pipe({
   name: "TTSvgIcon",
+  standalone: true
 })
 export class SvgIconPipe implements PipeTransform {
   constructor(private sanitizer: DomSanitizer) { }

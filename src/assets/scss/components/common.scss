@@ -43,3 +43,7 @@
     font-size: #{$xLaggerFontSize};
   }
 }
+
+&-unset_border {
+  border-right: unset;
+}

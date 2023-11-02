@@ -7,21 +7,68 @@
     </section>
 
     <section class="tt-content_am">
-      <section class="tt-my_skill" [style]="'--marginQuote:' + marginQuote + '; --marginSkill: -' + marginQuote + ';'">
+      <section class="tt-my_skill"
+        [style]="'--marginQuote:' + marginQuote + '; --marginBottomSkill:' + marginBottomSkill + '; --marginTopSkill: -' + marginQuote + ';'">
         <section class="tt-quote">
           <p class="quote">{{'COMMON.LEARN_FOREVER' | translate}}</p>
           <p class="author">{{'COMMON.LEARN_FOREVER_AUTHOR' | translate}}</p>
         </section>
         <section class="tt-my_skill-container">
-          <section class="tt-my_skill-content"></section>
+          <section class="tt-my_skill-content">
+            <ng-container *ngFor="let item of skillData; let last = last">
+              <section class="tt-my_skill-item" [ngClass]="{'tt-unset_border': last}">
+                <section class="tt-my_skill-header_item">
+                  <img [src]="item.iconName | TTAssetsLink:item.iconType" [alt]="item.iconName">
+                  <h5>{{item.title | translate}}</h5>
+                  <p>{{item.description | translate}}</p>
+                </section>
+                <ng-container *ngFor="let child of item.childs">
+                  <div class="tt-my_skill-content_item">
+                    <h6 class="tt-my_skill-header_content">{{child.title | translate}}</h6>
+
+                    <ng-container *ngIf="child.showType === 'join'">
+                      <p>{{child.skills.join(', ')}}</p>
+                    </ng-container>
+                    <ng-container *ngIf="child.showType === 'full'">
+                      <ng-container *ngFor="let skill of child.skills">
+                        <p>{{skill}}</p>
+                      </ng-container>
+                    </ng-container>
+                  </div>
+                </ng-container>
+              </section>
+            </ng-container>
+          </section>
         </section>
       </section>
 
       <div class="tt-space_am"></div>
-      <section class="tt-experiences"></section>
+      <section class="tt-am_item tt-experiences">
+        <h3>{{'COMMON.EXPERIENCES' | translate}}</h3>
+        <nz-table [nzData]="experienceData" [nzFrontPagination]="false" [nzShowPagination]="false">
+          <thead>
+            <tr>
+              <ng-container *ngFor="let head of experienceTableHeader">
+                <th [nzWidth]="head.width ? head.width + 'px' : 'auto'">{{head.title | translate}}</th>
+              </ng-container>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-template nz-virtual-scroll let-item let-index="index">
+              <tr>
+                <td>{{[item.fromWorkingTime, item.toWorkingDate] | TTFromToDate}}</td>
+                <td>{{('JOB_DETAIL.' + item.jobTitle) | translate}}</td>
+                <td>{{item.companyName}}</td>
+              </tr>
+            </ng-template>
+          </tbody>
+        </nz-table>
+      </section>
 
       <div class="tt-space_am"></div>
-      <section class="tt-projects"></section>
+      <section class="tt-am_item tt-projects">
+        <h3>{{'COMMON.PROJECTS' | translate}}</h3>
+      </section>
     </section>
   </ng-container>
 </tt-page-layout>

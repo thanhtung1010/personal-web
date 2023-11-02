@@ -27,6 +27,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { VersionComponent } from './components/version/version.component';
 import { HiddenOnSrollDirective } from './directives/hidden-on-scroll.directive';
 import { PortfolioComponent } from './portfolio.component';
+import { NzTableModule } from 'ng-zorro-antd/table';
+import { FromToDatePipe } from './pipes';
 
 const routes: Route[] = [
   {
@@ -56,11 +58,13 @@ const routes: Route[] = [
     RouterModule.forChild(routes),
 
     NzSelectModule,
+    NzTableModule,
 
     LinkButtonLayoutComponent,
     LogoComponent,
     AssetsLink,
-    EmptyComponent
+    EmptyComponent,
+    SvgIconPipe,
   ],
   declarations: [
     PortfolioComponent,
@@ -73,8 +77,8 @@ const routes: Route[] = [
     MenuComponent,
     VersionComponent,
 
-    SvgIconPipe,
     NavLinkPipe,
+    FromToDatePipe,
 
     HiddenOnSrollDirective,
   ],

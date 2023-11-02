@@ -8,11 +8,3 @@ export interface ISocialNetwork {
   href?: string;
   target?: htmlATagTarget;
 }
-
-export interface ISkillItem {
-  iconName: string;
-  iconType: ASSETS_TYPE;
-  title: string;
-  description: string;
-  childs: {title: string, skills: string[]}[];
-}

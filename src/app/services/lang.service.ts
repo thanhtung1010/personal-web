@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { LANG_TYPE } from "../types/lang.type";
+import { LANG_TYPE } from "../types/index";
 import { enviroment } from "@environments/environment";
 import { DEFAULT_LANG, LANG_LIST } from "@app/constants";
 import { TranslateService } from "@ngx-translate/core";

@@ -1,1 +1,1 @@
-export * from './lang.type'
+export * from './common.type'
