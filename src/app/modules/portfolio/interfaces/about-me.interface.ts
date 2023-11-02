@@ -1,4 +1,5 @@
 import { ASSETS_TYPE } from "@app/enums";
+import { IAntTableElement } from "@app/interfaces";
 
 export interface ISkillItem {
   iconName: string;
@@ -39,4 +40,8 @@ export interface IProjectItem {
   position: string;
   updatedAt: number;
   detail: string[];
+}
+
+export interface IAMTable<T> extends IAntTableElement<T> {
+  minWidth: number | string | null;
 }

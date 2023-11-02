@@ -28,7 +28,7 @@ export class LangService {
 
   initLang() {
     const _lang = CookieStorageHelper.get(enviroment.cookieStorageLangKey);
-    this.setLang = _lang;
+    this.setLang = _lang || enviroment.defaultLang;
   }
 
   get getLang(): LANG_TYPE {

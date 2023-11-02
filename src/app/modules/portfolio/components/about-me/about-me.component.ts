@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
-import { IAntTableElement } from '@app/interfaces';
+import { IAMTable, IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
+import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
+import { LANG_TYPE } from '@app/types';
+import { enviroment } from '@environments/environment';
+import { LangService } from '@app/services/lang.service';
 
 @Component({
   selector: 'tt-about-me',
@@ -65,45 +68,52 @@ export class AboutMeComponent implements OnInit {
       ],
     },
   ];
-  experienceTableHeader: IAntTableElement<string>[] = [
+  experienceTableHeader: IAMTable<EXPERIENCES_TABLE_HEADER_FIELD_TYPE>[] = [
     {
       field: '',
       title: 'EMPTY',
-      width: 100,
+      width: '10%',
+      minWidth: '100px',
       align: 'center',
     },
     {
       field: 'time',
       title: 'COMMON.TIME',
-      width: 250,
+      width: '25%',
+      minWidth: '250px',
     },
     {
       field: 'jobTitle',
       title: 'COMMON.JOB_TITLE',
-      width: 250,
+      width: '25%',
+      minWidth: '250px',
     },
     {
       field: 'companyName',
       title: 'COMMON.COMPANY_NAME',
-      width: 400,
+      width: '40%',
+      minWidth: '400px',
     },
   ];
-  projectTableHeader: IAntTableElement<string>[] = [
+  projectTableHeader: IAMTable<PROJECTS_TABLE_HEADER_FIELD_TYPE>[] = [
     {
       field: '',
       title: 'EMPTY',
-      width: 100,
+      width: '10%',
+      minWidth: '100px',
       align: 'center',
     },
     {
       field: 'projectTitle',
       title: 'COMMON.TITLE',
-      width: 750,
+      width: '65%',
+      minWidth: '650px',
     },
     {
       field: 'position',
       title: 'COMMON.POSITION',
-      width: 300,
+      width: '25%',
+      minWidth: '250px',
     },
   ];
   experienceData: IExperienceItem[] = [
@@ -120,7 +130,7 @@ export class AboutMeComponent implements OnInit {
       companyName: 'Bstar Solutions',
       updatedAt: 0,
       detail: [],
-    }
+    },
   ];
   projectData: IProjectItem[] = [
     {
@@ -153,8 +163,14 @@ export class AboutMeComponent implements OnInit {
 
   marginQuote: string = '150px';
   marginBottomSkill: string = '100px';
+  currentLang: LANG_TYPE = 'vi';
 
-  constructor() {}
+  constructor(private langService: LangService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.currentLang = this.langService.lang$.value;
+    this.langService.lang$.subscribe(resp => {
+      this.currentLang = resp;
+    });
+  }
 }

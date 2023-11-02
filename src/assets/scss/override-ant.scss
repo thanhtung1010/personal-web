@@ -8,3 +8,59 @@
     }
   }
 }
+
+.am-table {
+
+  .ant-table-thead {
+    .ant-table-row {
+      th {
+        background: transparent;
+        border: unset;
+        color: #727272;
+        font-size: 40px;
+        font-weight: 600;
+
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .ant-table-tbody {
+    .ant-table-row {
+      background: transparent !important;
+      cursor: pointer;
+
+      .icon {
+        vertical-align: middle !important;
+      }
+
+      .ant-table-cell {
+        border-bottom: unset;
+        font-size: #{$laggerFontSize};
+        font-weight: 500;
+        padding-left: 32px;
+        vertical-align: baseline;
+
+        div {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          justify-content: flex-start;
+          align-items: flex-start;
+
+          .extra {
+            color: #727272;
+            font-size: 20px;
+          }
+        }
+      }
+
+      :hover {
+        border-radius: 20px;
+        box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}

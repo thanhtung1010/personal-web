@@ -45,29 +45,81 @@
       <div class="tt-space_am"></div>
       <section class="tt-am_item tt-experiences">
         <h3>{{'COMMON.EXPERIENCES' | translate}}</h3>
-        <nz-table [nzData]="experienceData" [nzFrontPagination]="false" [nzShowPagination]="false">
-          <thead>
-            <tr>
-              <ng-container *ngFor="let head of experienceTableHeader">
-                <th [nzWidth]="head.width ? head.width + 'px' : 'auto'">{{head.title | translate}}</th>
-              </ng-container>
-            </tr>
-          </thead>
-          <tbody>
-            <ng-template nz-virtual-scroll let-item let-index="index">
-              <tr>
-                <td>{{[item.fromWorkingTime, item.toWorkingDate] | TTFromToDate}}</td>
-                <td>{{('JOB_DETAIL.' + item.jobTitle) | translate}}</td>
-                <td>{{item.companyName}}</td>
-              </tr>
-            </ng-template>
-          </tbody>
-        </nz-table>
+        <section class="tt-experiences-table">
+          <div class="tt-experiences-table_header">
+            <ng-container *ngFor="let head of experienceTableHeader">
+              <div class="tt-experiences-header_item"
+                [style]="'--tableHeaderWidth: ' + head.width + ';--tableHeaderMinWidth: ' + head.minWidth">
+                {{head.title | translate}}
+              </div>
+            </ng-container>
+          </div>
+
+          <ng-container *ngFor="let data of experienceData">
+            <div class="tt-experiences-wrap_table_data">
+              <div class="tt-experiences-table_data">
+                <ng-container *ngFor="let head of experienceTableHeader">
+                  <div class="tt-experiences-data_item" [ngClass]="{'icon': head.field === ''}"
+                    [style]="'--tableHeaderWidth: ' + head.width + ';--tableHeaderMinWidth: ' + head.minWidth">
+                    <ng-container *ngIf="head.field === ''">
+                      <img [src]="'expand' | TTAssetsLink:'svg'" alt="expand">
+                    </ng-container>
+                    <ng-container *ngIf="head.field === 'time'">
+                      <p class="main">{{[data.fromWorkingTime, data.toWorkingTime] | TTFromToDate}}</p>
+                      <p class="extra">{{(data.wokingTime.year ? data.wokingTime.year + ' ' + ('COMMON.YEAR' | translate)
+                        : '') + ' ' +
+                        (data.wokingTime.month ? data.wokingTime.month + ' ' + ('COMMON.MONTH' | translate) : '')}}</p>
+                    </ng-container>
+                    <ng-container *ngIf="head.field === 'jobTitle'">
+                      <p class="main">{{('JOB_DETAIL.' + data.jobTitle) | translate}}</p>
+                      <p class="extra">{{('JOB_DETAIL.' + data.jobType) | translate}}</p>
+                    </ng-container>
+                    <ng-container *ngIf="head.field === 'companyName'">
+                      {{data.companyName}}
+                    </ng-container>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </ng-container>
+        </section>
       </section>
 
       <div class="tt-space_am"></div>
       <section class="tt-am_item tt-projects">
         <h3>{{'COMMON.PROJECTS' | translate}}</h3>
+        <section class="tt-experiences-table">
+          <div class="tt-experiences-table_header">
+            <ng-container *ngFor="let head of projectTableHeader">
+              <div class="tt-experiences-header_item"
+                [style]="'--tableHeaderWidth: ' + head.width + ';--tableHeaderMinWidth: ' + head.minWidth">
+                {{head.title | translate}}
+              </div>
+            </ng-container>
+          </div>
+
+          <ng-container *ngFor="let data of projectData">
+            <div class="tt-experiences-wrap_table_data">
+              <div class="tt-experiences-table_data">
+                <ng-container *ngFor="let head of projectTableHeader">
+                  <div class="tt-experiences-data_item" [ngClass]="{'icon': head.field === ''}"
+                    [style]="'--tableHeaderWidth: ' + head.width + ';--tableHeaderMinWidth: ' + head.minWidth">
+                    <ng-container *ngIf="head.field === ''">
+                      <img [src]="'expand' | TTAssetsLink:'svg'" alt="expand">
+                    </ng-container>
+                    <ng-container *ngIf="head.field === 'projectTitle'">
+                      <p class="main">{{data.projectName + ' | ' + ([data.fromWorkingTime, data.toWorkingTime] | TTFromToDate)}}</p>
+                      <p class="extra">{{data.basicDescription[currentLang]}}</p>
+                    </ng-container>
+                    <ng-container *ngIf="head.field === 'position'">
+                      {{('JOB_DETAIL.' + data.position) | translate}}
+                    </ng-container>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </ng-container>
+        </section>
       </section>
     </section>
   </ng-container>

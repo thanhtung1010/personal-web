@@ -49,7 +49,9 @@
     "TITLE": "Title",
     "POSITION": "Position",
     "YEAR": "Year",
-    "VERSION": "Version"
+    "MONTH": "Month",
+    "VERSION": "Version",
+    "TO": "to"
   },
   "JOB_DETAIL": {
     "SOFTWARE_ENGINEER": "Software Engieer",
