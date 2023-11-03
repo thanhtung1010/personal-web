@@ -14,4 +14,16 @@ export const enviroment = {
       portfolioDate: "MMM - yyyy"
     },
   },
+  FIREBASE_CONFIG: {
+    apiKey: "AIzaSyADMzU8kiEIosqyvJiopulcmF2ff3ppCus",
+    authDomain: "my-project-8c416.firebaseapp.com",
+    projectId: "my-project-8c416",
+    storageBucket: "my-project-8c416.appspot.com",
+    messagingSenderId: "468318730006",
+    appId: "1:468318730006:web:6de7ec8edebad31bb60237",
+    measurementId: "G-P115SDW2ZT"
+  },
+  GOOGLE_CONFIG: {
+    downloadCV: "https://drive.google.com/uc?export=download&id=13GFK_OWfcxseMy5gjG2TyLLbIPcc8LML",
+  },
 }

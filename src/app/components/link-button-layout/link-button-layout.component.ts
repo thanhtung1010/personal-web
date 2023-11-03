@@ -13,7 +13,6 @@ export class LinkButtonLayoutComponent implements OnInit {
   @Input() customCls: string = '';
   @Input() href: string = '';
   @Input() target: htmlATagTarget = '_blank';
-  @Input() download: string = '';
 
   constructor() { }
 

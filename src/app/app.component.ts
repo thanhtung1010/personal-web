@@ -7,6 +7,7 @@ import { LangService } from './services/lang.service';
 import { MenuService } from './services';
 import * as _ from 'lodash';
 import { VersionService } from './services/version.service';
+import { FirebaseService } from './modules/firebase/firebase.service';
 
 @Component({
   selector: 'tt-root',
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     private langSer: LangService,
     private menuSer: MenuService,
     private versionSer: VersionService,
+    private firebaseSer: FirebaseService,
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +42,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.langSer.init();
     this.menuSer.init();
     this.versionSer.init();
+    this.firebaseSer.init();
   }
 
   ngAfterViewInit(): void {

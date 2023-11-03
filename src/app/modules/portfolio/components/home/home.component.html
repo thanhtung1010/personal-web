@@ -5,7 +5,7 @@
         <h3>{{'COMMON.HI_FULL_NAME' | translate}}</h3>
         <h1>{{'COMMON.IM_POSITION' | translate}}</h1>
         <p>{{'COMMON.BASIC_DESCRIPTION' | translate}}</p>
-        <tt-link-button-layout [type]="'download'" [download]="'cv'">
+        <tt-link-button-layout [type]="'download'" [href]="downloadCVURL" [customCls]="'tt-display_block'" [target]="'_blank'">
           <ng-container downloadContent>
             <div class="tt-download_cv">
               <p>{{'BUTTON.DOWNLOAD_MY_CV' | translate}}</p>

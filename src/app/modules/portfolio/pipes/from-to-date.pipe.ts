@@ -20,7 +20,6 @@ export class FromToDatePipe implements PipeTransform {
         return 'Now'
       } else {
         const _afterFormat = format(elm, _format);
-        console.log(_afterFormat);
         return _afterFormat;
       }
     }).join(` ${letterJoin || this.translateService.instant(this.defaultLetterJoin)} `);

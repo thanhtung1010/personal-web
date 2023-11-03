@@ -13,10 +13,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VersionService } from './services/version.service';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { MenuService } from './services';
+import { FirebaseModule } from './modules/firebase/firebase.module';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
 }
+
+const fireBaseConfig = enviroment.FIREBASE_CONFIG;
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ export function HTTPLoaderFactory(http: HttpClient) {
       },
     ),
     AngularSvgIconModule.forRoot(),
+    FirebaseModule.forRoot(fireBaseConfig),
   ],
   providers: [
     Title,

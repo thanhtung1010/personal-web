@@ -5,7 +5,7 @@
 </ng-container>
 
 <ng-container *ngIf="type === 'download'">
-  <a [class]="'tt-link-btn ' + customCls" [download]="download">
+  <a [class]="'tt-link-btn ' + customCls" [href]="href" [target]="target" download>
     <ng-content select="[downloadContent]"></ng-content>
   </a>
 </ng-container>

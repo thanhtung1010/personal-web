@@ -10,7 +10,7 @@
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
+    "sourceMap": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -24,21 +24,24 @@
       "dom"
     ],
     "paths": {
+      "@global/*": [
+        "./*"
+      ],
       "@app/*": [
         "./src/app/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
       ],
       "@environments/*": [
         "src/environments/*"
       ],
+      "@assets/*": [
+        "./src/assets/*"
+      ],
       "@helpers/*": [
         "./src/app/helpers/*"
       ],
-      "@global/*": [
-        "./*"
-      ]
+      "@module/*": [
+        "src/app/module/*"
+      ],
     }
   },
   "angularCompilerOptions": {
