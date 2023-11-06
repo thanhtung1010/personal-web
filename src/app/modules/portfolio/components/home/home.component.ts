@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   floatIcons: IFloatItem[] = [
     {
-      name: 'avatar',
+      name: 'avatar-home',
       type: 'svg',
       top: '50%',
       right: '5%',
