@@ -60,7 +60,7 @@
     </section>
   </ng-container>
 
-  <ng-container *ngIf="visibleMenu" overlay-container>
-    <tt-menu></tt-menu>
+  <ng-container overlay-container>
+    <tt-menu [visible]="visibleMenu"></tt-menu>
   </ng-container>
 </tt-page-layout>

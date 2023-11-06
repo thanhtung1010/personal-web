@@ -7,7 +7,7 @@ import { enviroment } from '@global/src/environments/environment';
 
 @Component({
   selector: 'tt-home',
-  templateUrl: './home.component.html'
+  templateUrl: './home.component.html',
 })
 export class HomeComponent implements OnInit, OnDestroy {
   destroyComponentNotier: Subject<number> = new Subject();
@@ -143,12 +143,15 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.menuService.toggleVisibleMenu$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {
+      this.visibleMenu = resp;
       if (resp) {
         this.menuService.scrollBody(false);
       } else {
-        this.menuService.scrollBody(true);
+        const timeout = setTimeout(() => {
+          this.menuService.scrollBody(true);
+          clearTimeout(timeout);
+        }, 500);
       }
-      this.visibleMenu = resp;
     })
   }
 

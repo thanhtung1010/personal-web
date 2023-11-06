@@ -1,15 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IAMTable, IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
 import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
 import { LANG_TYPE } from '@app/types';
 import { enviroment } from '@environments/environment';
 import { LangService } from '@app/services/lang.service';
+import { MenuService } from '@global/src/app/services';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'tt-about-me',
   templateUrl: './about-me.component.html',
 })
-export class AboutMeComponent implements OnInit {
+export class AboutMeComponent implements OnInit, OnDestroy {
+  destroyComponentNotier: Subject<number> = new Subject();
   skillData: ISkillItem[] = [
     {
       iconName: 'design',
@@ -164,13 +167,32 @@ export class AboutMeComponent implements OnInit {
   marginQuote: string = '150px';
   marginBottomSkill: string = '100px';
   currentLang: LANG_TYPE = 'vi';
+  visibleMenu: boolean = false;
 
-  constructor(private langService: LangService) {}
+  constructor(
+    private langService: LangService,
+    private menuService: MenuService,
+  ) {}
 
   ngOnInit() {
     this.currentLang = this.langService.lang$.value;
     this.langService.lang$.subscribe(resp => {
       this.currentLang = resp;
     });
+    this.menuService.toggleVisibleMenu$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {
+      this.visibleMenu = resp;
+      if (resp) {
+        this.menuService.scrollBody(false);
+      } else {
+        const timeout = setTimeout(() => {
+          this.menuService.scrollBody(true);
+          clearTimeout(timeout);
+        }, 500);
+      }
+    })
+  }
+
+  ngOnDestroy(): void {
+    this.destroyComponentNotier.next(Date.now());
   }
 }

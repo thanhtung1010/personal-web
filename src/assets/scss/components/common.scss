@@ -2,10 +2,14 @@
   z-index: 5;
 }
 
-&-link-btn {
+&-link_btn {
   height: fit-content;
   width: fit-content;
   cursor: pointer;
+}
+
+&-link_menu:hover {
+  color: #{$greenColor} !important;
 }
 
 &-white_bg {

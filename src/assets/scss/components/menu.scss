@@ -11,7 +11,7 @@
 &-menu_wrap {
   position: relative;
   z-index: inherit;
-  background: url('../../imgs/jpg/menu-background.jpg');
+  background: url('../../svg/menu-background.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -82,7 +82,13 @@
     background-color: #{$whiteColor};
     display: block;
     position: absolute;
+  }
+}
 
+&-active_router:hover {
+
+  &::after {
+    background-color: #{$greenColor};
   }
 }
 
