@@ -5,7 +5,8 @@
         <h3>{{'COMMON.HI_FULL_NAME' | translate}}</h3>
         <h1>{{'COMMON.IM_POSITION' | translate}}</h1>
         <p>{{'COMMON.BASIC_DESCRIPTION' | translate}}</p>
-        <tt-link-button-layout [type]="'download'" [href]="downloadCVURL" [customCls]="'tt-display_block'" [target]="'_blank'">
+        <tt-link-button-layout [type]="'download'" [href]="downloadCVURL" [customCls]="'tt-display_block'"
+          [target]="'_blank'">
           <ng-container downloadContent>
             <div class="tt-download_cv">
               <p>{{'BUTTON.DOWNLOAD_MY_CV' | translate}}</p>
@@ -14,9 +15,10 @@
         </tt-link-button-layout>
       </section>
 
-      <ng-container *ngFor="let icon of floatIcons">
-        <img class="tt-home-float_icon" [src]="icon.name | TTAssetsLink:icon.type" [alt]="icon.name"
-          [style]="'--top:' + (icon.top || '') + '; --right:' + (icon.right || '') + '; --left:' + (icon.left || '') + '; --bottom:' + (icon.bottom || '') + '; --translateX:' + icon.translateX + '; --translateY:' + icon.translateY">
+      <ng-container *ngFor="let icon of floatIcons; let index = index">
+        <img [class]="'tt-home-float_icon ' + 'float_icon_' + index" [src]="icon.name | TTAssetsLink:icon.type"
+          [alt]="icon.name"
+          [style]="'--top:' + (icon.top || '') + '; --right:' + (icon.right || '') + '; --left:' + (icon.left || '') + '; --bottom:' + (icon.bottom || '') + '; --translateX:' + icon.translateX + '; --translateY:' + icon.translateY + '; --timeDuration:' + icon.timeDuration">
       </ng-container>
     </section>
 
@@ -32,10 +34,10 @@
       </ng-container>
     </section>
 
-    <section class="tt-summary_about_me">
+    <section (tt-appear)="showSVGAboutMe($event)" class="tt-summary_about_me">
       <section class="tt-summary_about_me-background"></section>
 
-      <section class="tt-summary_about_me-left">
+      <section [@aboutMeLeftInOut]="appearAboutMe ? 'open' : 'close'" class="tt-summary_about_me-left">
         <ng-container *ngFor="let abItem of leftAboutMeItems">
           <img [src]="abItem.name | TTAssetsLink:abItem.type" [alt]="abItem.name">
         </ng-container>
@@ -52,7 +54,7 @@
         </tt-link-button-layout>
       </section>
 
-      <section class="tt-summary_about_me-right">
+      <section [@aboutMeRightInOut]="appearAboutMe ? 'open' : 'close'" class="tt-summary_about_me-right">
         <ng-container *ngFor="let abItem of rightAboutMeItems">
           <img [src]="abItem.name | TTAssetsLink:abItem.type" [alt]="abItem.name">
         </ng-container>

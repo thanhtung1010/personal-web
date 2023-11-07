@@ -4,10 +4,12 @@ import { MenuService } from '@app/services';
 import { Subject, takeUntil } from 'rxjs';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
 import { enviroment } from '@global/src/environments/environment';
+import { aboutMeLeftInOut, aboutMeRightInOut } from '../../animations';
 
 @Component({
   selector: 'tt-home',
   templateUrl: './home.component.html',
+  animations: [aboutMeLeftInOut, aboutMeRightInOut]
 })
 export class HomeComponent implements OnInit, OnDestroy {
   destroyComponentNotier: Subject<number> = new Subject();
@@ -19,6 +21,14 @@ export class HomeComponent implements OnInit, OnDestroy {
       top: '50%',
       right: '5%',
       translateX: '0%',
+      translateY: '-50%',
+    },
+    {
+      name: 'mouse',
+      type: 'svg',
+      top: '25%',
+      left: '33%',
+      translateX: '-50%',
       translateY: '-50%'
     },
     {
@@ -27,7 +37,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       top: '25%',
       left: '55%',
       translateX: '0%',
-      translateY: '0%'
+      translateY: '0%',
+      timeDuration: '10s'
     },
     {
       name: 'desktop-screen',
@@ -35,7 +46,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       top: '10%',
       right: '3%',
       translateX: '0%',
-      translateY: '0%'
+      translateY: '0%',
+      timeDuration: '9s'
     },
     {
       name: 'phone-screen',
@@ -43,15 +55,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       bottom: '5%',
       right: '7%',
       translateX: '0%',
-      translateY: '0%'
-    },
-    {
-      name: 'mouse',
-      type: 'svg',
-      top: '50%',
-      left: '50%',
-      translateX: '-50%',
-      translateY: '-50%'
+      translateY: '0%',
+      timeDuration: '9.3s'
     },
     {
       name: 'headphone',
@@ -59,7 +64,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       top: '8%',
       left: '53%',
       translateX: '0%',
-      translateY: '0%'
+      translateY: '0%',
+      timeDuration: '9.7s'
     },
     {
       name: 'book',
@@ -67,7 +73,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       top: '12%',
       left: '15%',
       translateX: '0%',
-      translateY: '0%'
+      translateY: '0%',
+      timeDuration: '9.9s'
     },
     {
       name: 'coffee',
@@ -75,7 +82,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       bottom: '19%',
       left: '43%',
       translateX: '0%',
-      translateY: '0%'
+      translateY: '0%',
+      timeDuration: '9.6s'
     },
     {
       name: 'code',
@@ -83,7 +91,8 @@ export class HomeComponent implements OnInit, OnDestroy {
       bottom: '7%',
       left: '18%',
       translateX: '0%',
-      translateY: '0%'
+      translateY: '0%',
+      timeDuration: '9.4s'
     },
   ];
   summaryExpItems: ISummaryExp[] = [
@@ -137,9 +146,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ROUTE = ROUTE;
   visibleMenu: boolean = false;
+  appearAboutMe: boolean = false;
   downloadCVURL: string = enviroment.GOOGLE_CONFIG.downloadCV;
 
-  constructor(private menuService: MenuService,) { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
     this.menuService.toggleVisibleMenu$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {
@@ -157,6 +167,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.destroyComponentNotier.next(Date.now());
+  }
+
+  showSVGAboutMe(appear: boolean) {
+    if (!this.appearAboutMe)
+    this.appearAboutMe = appear;
   }
 
   toggleMousePosition() {

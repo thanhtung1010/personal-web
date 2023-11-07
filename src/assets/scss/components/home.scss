@@ -39,6 +39,47 @@
       z-index: 5;
     }
   }
+
+  @for $i from 0 through 8 {
+    .float_icon_#{$i} {
+      animation-name: animate#{$i};
+      animation-duration: random(5)+10+s;
+      animation-iteration-count: infinite;
+    }
+  }
+  .float_icon_0 {
+    animation-duration: 20s !important;
+    z-index: 15;
+  }
+
+  @for $i from 1 through 8 {
+    @keyframes animate#{$i} {
+      25% {
+        transform: scale(random(10)*0.01+0.9) translateY((random(20))+px) translateX(random(20)+px);
+      }
+      50% {
+        transform: scale(random(10)*0.01+0.9) translateY((random(20))+px) translateX(random(20)+px);
+      }
+      75% {
+        transform: scale(random(10)*0.01+0.9) translateY((random(30))+px) translateX(random(30)+px);
+      }
+    }
+  }
+
+  @keyframes animate0 {
+    35% {
+      transform: translate(var(--translateX), var(--translateY));
+    }
+    45% {
+      transform: scale(1.2) translate(var(--translateX), var(--translateY));
+    }
+    55% {
+      transform: scale(1.2) translate(var(--translateX), var(--translateY));
+    }
+    65% {
+      transform: translate(var(--translateX), var(--translateY));
+    }
+  }
 }
 
 &-download_cv {
@@ -108,6 +149,7 @@
   position: relative;
   margin-bottom: 50px;
   gap: 20px;
+  overflow: hidden;
 
   &-background {
     position: absolute;

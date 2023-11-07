@@ -5,6 +5,7 @@ export interface IFloatItem {
   type: ASSETS_TYPE;
   translateX: string;
   translateY: string;
+  timeDuration?: string;
   top?: string;
   right?: string;
   left?: string;

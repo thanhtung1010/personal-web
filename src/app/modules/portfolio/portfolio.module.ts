@@ -29,6 +29,7 @@ import { HiddenOnSrollDirective } from './directives/hidden-on-scroll.directive'
 import { PortfolioComponent } from './portfolio.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { FromToDatePipe } from './pipes';
+import { AppearOnViewDirective } from './directives';
 
 const routes: Route[] = [
   {
@@ -81,6 +82,7 @@ const routes: Route[] = [
     FromToDatePipe,
 
     HiddenOnSrollDirective,
+    AppearOnViewDirective,
   ],
   providers: []
 })

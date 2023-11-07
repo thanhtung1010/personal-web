@@ -1,11 +1,11 @@
 export class AppLoadingHelper {
   public static Toggle(enable: boolean) {
-      const loading = document.getElementsByClassName('main-loading');
-      if (loading[0] !== undefined) {
+      const loading = document.querySelector('#main-loading');
+      if (loading) {
           if (enable) {
-              loading[0].setAttribute('style', 'display: flex');
+              loading.setAttribute('style', 'display: flex');
           } else {
-              loading[0].setAttribute('style', 'display: none');
+              loading.setAttribute('style', 'display: none');
           }
       }
   }
