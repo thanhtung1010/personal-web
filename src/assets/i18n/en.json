@@ -69,7 +69,8 @@
   "BUTTON": {
     "DOWNLOAD_MY_CV": "Download my CV",
     "MORE_ABOUT_ME": "More about me",
-    "SAY_HI": "Say hi to me"
+    "SAY_HI": "Say hi to me",
+    "BACK_TO_HOME": "Back to home"
   },
   "EMPTY": ""
 }

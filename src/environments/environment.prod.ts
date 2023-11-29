@@ -1,6 +1,7 @@
 export const enviroment = {
   production: true,
   cookieStorageLangKey: '_lang',
+  cookieStorageDeviceIdKey: 'device-id',
   defaultLang: 'vi',
   ASSETS_URL: 'https://personal-web-livid.vercel.app/',
   email: 'trinhthanhtung1010@gmail.com',

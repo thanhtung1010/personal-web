@@ -2,10 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IAMTable, IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
 import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
 import { LANG_TYPE } from '@app/types';
-import { enviroment } from '@environments/environment';
 import { LangService } from '@app/services/lang.service';
-import { MenuService } from '@global/src/app/services';
 import { Subject, takeUntil } from 'rxjs';
+import { MenuService } from '@app/services';
 
 @Component({
   selector: 'tt-about-me',

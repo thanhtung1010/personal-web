@@ -86,3 +86,8 @@ export interface IApiBaseMeta {
   totalPages: number;
   totalElements?: number;
 }
+
+export interface IDeviceID {
+  uuid: string;
+  accepted: boolean;
+}

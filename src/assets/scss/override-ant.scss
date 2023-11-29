@@ -64,3 +64,21 @@
     }
   }
 }
+
+.tt-not_found {
+
+  .ant-empty-image {
+    height: unset;
+  }
+
+  .ant-btn {
+    border-color: #{$purpleColor} !important;
+    color: #{$whiteColor} !important;
+    background-color: #{$purpleColor} !important;
+    opacity: .8;
+
+    &:hover {
+      border-color: #{$purpleColor} !important;
+    }
+  }
+}

@@ -5,6 +5,10 @@ import { managementActiveGuard } from './guards';
 
 const routes: Routes = [
   {
+    path: ROUTE.NOT_FOUND,
+    loadComponent: () => import('./components/not-found/not-found.component').then((e) => e.NotFoundComponent),
+  },
+  {
     path: ROUTE.PORTFOLIO,
     loadChildren: () => import('./modules/portfolio/portfolio.module').then((e) => e.PortfolioModule),
   },

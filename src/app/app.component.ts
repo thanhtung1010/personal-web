@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { enviroment } from '@environments/environment';
 import { AppLoadingHelper } from './helpers';
 import { LangService } from './services/lang.service';
-import { MenuService } from './services';
+import { DeviceIdService, MenuService } from './services';
 import * as _ from 'lodash';
 import { VersionService } from './services/version.service';
 import { FirebaseService } from './modules/firebase/firebase.service';
@@ -26,6 +26,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     private menuSer: MenuService,
     private versionSer: VersionService,
     private firebaseSer: FirebaseService,
+    private deviceIdSer: DeviceIdService,
   ) {}
 
   ngOnInit(): void {
@@ -43,6 +44,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.menuSer.init();
     this.versionSer.init();
     this.firebaseSer.init();
+    this.deviceIdSer.init();
   }
 
   ngAfterViewInit(): void {

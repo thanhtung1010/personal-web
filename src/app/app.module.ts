@@ -12,8 +12,9 @@ import { LangService } from './services/lang.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VersionService } from './services/version.service';
 import { NzMessageModule } from 'ng-zorro-antd/message';
-import { MenuService } from './services';
+import { DeviceIdService, MenuService } from './services';
 import { FirebaseModule } from './modules/firebase/firebase.module';
+import { NotFoundComponent } from './components';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -44,12 +45,14 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
     ),
     AngularSvgIconModule.forRoot(),
     FirebaseModule.forRoot(fireBaseConfig),
+    NotFoundComponent,
   ],
   providers: [
     Title,
     LangService,
     VersionService,
     MenuService,
+    DeviceIdService,
   ],
   bootstrap: [AppComponent]
 })

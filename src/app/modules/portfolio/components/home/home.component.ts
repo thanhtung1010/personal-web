@@ -3,8 +3,8 @@ import { ROUTE } from '@app/constants';
 import { MenuService } from '@app/services';
 import { Subject, takeUntil } from 'rxjs';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
-import { enviroment } from '@global/src/environments/environment';
 import { aboutMeLeftInOut, aboutMeRightInOut } from '../../animations';
+import { enviroment } from '@environments/environment';
 
 @Component({
   selector: 'tt-home',

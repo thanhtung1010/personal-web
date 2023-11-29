@@ -24,23 +24,14 @@
       "dom"
     ],
     "paths": {
-      "@global/*": [
-        "./*"
-      ],
       "@app/*": [
-        "./src/app/*"
+        "src/app/*"
       ],
       "@environments/*": [
         "src/environments/*"
       ],
       "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@helpers/*": [
-        "./src/app/helpers/*"
-      ],
-      "@module/*": [
-        "src/app/module/*"
+        "src/assets/*"
       ],
     }
   },

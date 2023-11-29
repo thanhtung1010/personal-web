@@ -1,5 +1,6 @@
 export const ROUTE = {
   MANAGEMENT: 'management',
+  NOT_FOUND: 'not-found',
   PORTFOLIO: '',
 
   PORTFOLIO_HOME: 'home',

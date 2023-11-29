@@ -10,7 +10,7 @@ export class VersionService {
   constructor() {}
 
   init() {
-    const pkjson = require('@global/package.json');
+    const pkjson = require('../../../package.json');
     if (pkjson) {
       this.version = pkjson.version || '';
     }
