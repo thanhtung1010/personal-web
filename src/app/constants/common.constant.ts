@@ -19,11 +19,13 @@ export const MENU: Array<IMenuItem> = [
     label: "MENU.HOME",
     show: true,
     href: ROUTE.PORTFOLIO + '/' + ROUTE.PORTFOLIO_HOME,
+    active: true,
   },
   {
     label: "MENU.ABOUT_ME",
     show: true,
     href: ROUTE.PORTFOLIO + '/' + ROUTE.PORTFOLIO_ABOUT_ME,
+    active: false,
   },
   // {
   //   label: "MENU.WORK_EXP",

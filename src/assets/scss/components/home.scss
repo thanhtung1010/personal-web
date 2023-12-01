@@ -11,9 +11,9 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-left: 100px;
+    margin: 0 100px;
     gap: 10px;
-    z-index: 10;
+    z-index: 20;
 
     h3 {
       font-size: #{$xxLaggerFontSize};
@@ -97,7 +97,7 @@
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
-  padding: 50px 0;
+  padding: 50px 20px;
   width: 100%;
   margin-bottom: 50px;
 
@@ -188,6 +188,7 @@
     font-weight: 500;
     display: flex;
     flex-direction: column;
+    padding: 0 20px;
     gap: 20px;
   }
 }
@@ -199,4 +200,139 @@
   font-size: 16px;
   padding: 10px 15px;
   border-radius: 20px;
+}
+
+@media only screen and (max-width: 1400px) {
+
+  &-home {
+
+    .float_icon_0 {
+      display: none;
+    }
+
+    .float_icon_2 {
+      top: 35%;
+      left: 65%;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 1250px) {
+
+  &-home {
+
+    .float_icon_2 {
+      display: none;
+    }
+  }
+
+  &-summary_about_me {
+    padding: 20px 0;
+    justify-content: center;
+
+    &-left {
+      display: none;
+    }
+
+    &-right {
+      display: none;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 950px) {
+
+  &-home {
+
+    &-description {
+
+      h3 {
+        font-size: #{$xLaggerFontSize};
+        font-weight: 500;
+      }
+
+      h1 {
+        font-size: #{$xxLaggerFontSize};
+        font-weight: 700;
+      }
+    }
+
+    .float_icon_3 {
+      display: none;
+    }
+  }
+
+  &-summary_about_me {
+
+    &-content {
+      font-size: #{$mediumFontSize};
+      font-weight: 600;
+    }
+  }
+
+  &-more_about_me {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+}
+
+@media only screen and (max-width: 750px) {
+
+  &-home {
+
+    &-description {
+      margin: 0 50px;
+    }
+
+    .float_icon_1 {
+      display: none;
+    }
+
+    .float_icon_7 {
+      display: none;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+  &-home {
+
+    .float_icon_4 {
+      display: none;
+    }
+
+    .float_icon_5 {
+      display: none;
+    }
+    .float_icon_6 {
+      display: none;
+    }
+
+    .float_icon_8 {
+      display: none;
+    }
+  }
+
+  &-more_about_me {
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 15px;
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+  &-home {
+
+    &-description {
+      margin: 0 20px;
+    }
+  }
+
 }

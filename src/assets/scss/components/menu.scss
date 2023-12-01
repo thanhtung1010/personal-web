@@ -1,5 +1,5 @@
 &-menu_container {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 99999;
@@ -31,10 +31,17 @@
   transition: unset !important;
 }
 
-&-menu_content {
-  z-index: 5;
+&-menu_wrap_content {
+  height: 100vh;
+  width: 100%;
   display: flex;
-  align-items: center;
+  overflow: auto;
+  z-index: 5;
+}
+
+&-menu_content {
+  display: flex;
+  align-items: flex-start;
   justify-content: space-between;
   position: relative;
   color: #{$whiteColor};
@@ -42,7 +49,8 @@
   width: 100%;
   max-width: 1200px;
   height: fit-content;
-  margin: auto;
+  padding: 0 50px;
+  margin: 150px auto auto auto;
 }
 
 &-close_menu {
@@ -62,7 +70,6 @@
   width: 100%;
   max-width: 500px;
   font-size: #{$xxxLaggerFontSize};
-  min-height: 450px;
 
   a {
     color: #{$whiteColor} !important;
@@ -99,7 +106,6 @@
   flex-direction: column;
   gap: 50px;
   font-size: #{$xLaggerFontSize};
-  min-height: 450px;
 
   &-item {
     display: flex;
@@ -113,4 +119,66 @@
     color: #939393;
     font-size: #{$laggerFontSize};
   }
+}
+
+@media only screen and (max-width: 950px) {
+
+  &-menu_content {
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+  &-menu_content {
+    margin-top: 100px;
+  }
+
+  &-menu_aside {
+    gap: 25px;
+    font-size: #{$xxLaggerFontSize};
+  }
+
+  &-menu_section {
+    gap: 25px;
+    font-size: #{$laggerFontSize};
+
+    &-item {
+      gap: 15px;
+    }
+
+    &-header {
+      font-size: #{$mediumFontSize};
+    }
+  }
+
+}
+
+@media only screen and (max-width: 450px) {
+
+  &-menu_section {
+    gap: 20px;
+    font-size: #{$mediumFontSize};
+
+    &-item {
+      gap: 10px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 400px) {
+
+  &-menu_content {
+    gap: 25px;
+  }
+
+  &-menu_aside {
+    font-size: #{$xLaggerFontSize};
+  }
+
 }

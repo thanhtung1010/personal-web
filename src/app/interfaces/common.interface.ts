@@ -12,7 +12,8 @@ export interface IAppConfig {
 export interface IMenuItem {
   label: string;
   show: boolean;
-  href: string
+  href: string;
+  active: boolean;
 }
 
 export interface ILang {label: string, lang: LANG_TYPE}

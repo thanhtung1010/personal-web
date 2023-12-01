@@ -1,6 +1,4 @@
 import { Injectable } from "@angular/core";
-import { DomSanitizer } from "@angular/platform-browser";
-import { Router } from "@angular/router";
 import { MENU } from "@app/constants";
 import { IMenuItem } from "@app/interfaces";
 import { BehaviorSubject } from "rxjs";
@@ -16,15 +14,31 @@ export class MenuService {
 
   hiddenScrollCls: string = 'tt-hidden_scroll';
 
-  constructor(private saniti: DomSanitizer) {}
+  constructor() {}
 
   init() {
-    const _menu = MENU.filter(menuItem => menuItem.show);
+    const _menu = MENU.filter(menuItem => menuItem.show).map(menu => {
+      return {
+        ...menu,
+        active: location.pathname === menu.href,
+      }
+    });
     this.menu$.next(_menu);
   }
 
   get getMenu(): IMenuItem[] {
     return this.menu$.value;
+  }
+
+  activeRouter(activeIndex: number) {
+    const _menu = this.menu$.value.map((menu, index) => {
+      const active = activeIndex === index;
+      return {
+        ...menu,
+        active: active
+      }
+    });
+    this.menu$.next(_menu);
   }
 
   scrollBody(scroll: boolean) {
