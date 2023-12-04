@@ -16,7 +16,7 @@
         <section class="tt-my_skill-container">
           <section class="tt-my_skill-content">
             <ng-container *ngFor="let item of skillData; let last = last">
-              <section class="tt-my_skill-item" [ngClass]="{'tt-unset_border': last}">
+              <section class="tt-my_skill-item" [ngClass]="{'tt-unset_border tt-unset_background': last}">
                 <section class="tt-my_skill-header_item">
                   <img [src]="item.iconName | TTAssetsLink:item.iconType" [alt]="item.iconName">
                   <h5>{{item.title | translate}}</h5>
@@ -48,8 +48,7 @@
         <section class="tt-experiences-table">
           <div class="tt-experiences-table_header">
             <ng-container *ngFor="let head of experienceTableHeader">
-              <div class="tt-experiences-header_item"
-                [style]="'--tableHeaderWidth: ' + head.width + ';--tableHeaderMinWidth: ' + head.minWidth">
+              <div [class]="'tt-experiences-header_item' + ' _' + head.field">
                 {{head.title | translate}}
               </div>
             </ng-container>
@@ -59,8 +58,7 @@
             <div class="tt-experiences-wrap_table_data">
               <div class="tt-experiences-table_data">
                 <ng-container *ngFor="let head of experienceTableHeader">
-                  <div class="tt-experiences-data_item" [ngClass]="{'icon': head.field === ''}"
-                    [style]="'--tableHeaderWidth: ' + head.width + ';--tableHeaderMinWidth: ' + head.minWidth">
+                  <div [class]="'tt-experiences-data_item' + ' _' + head.field" [ngClass]="{'icon': head.field === ''}">
                     <ng-container *ngIf="head.field === ''">
                       <img [src]="'expand' | TTAssetsLink:'svg'" alt="expand">
                     </ng-container>
@@ -73,6 +71,8 @@
                     <ng-container *ngIf="head.field === 'jobTitle'">
                       <p class="main">{{('JOB_DETAIL.' + data.jobTitle) | translate}}</p>
                       <p class="extra">{{('JOB_DETAIL.' + data.jobType) | translate}}</p>
+                      <p class="extra extra-company_responsive">{{data.companyName}}</p>
+                      <p class="extra extra-time_responsive">{{[data.fromWorkingTime, data.toWorkingTime] | TTFromToDate}}</p>
                     </ng-container>
                     <ng-container *ngIf="head.field === 'companyName'">
                       {{data.companyName}}
@@ -91,8 +91,7 @@
         <section class="tt-experiences-table">
           <div class="tt-experiences-table_header">
             <ng-container *ngFor="let head of projectTableHeader">
-              <div class="tt-experiences-header_item"
-                [style]="'--tableHeaderWidth: ' + head.width + ';--tableHeaderMinWidth: ' + head.minWidth">
+              <div [class]="'tt-experiences-header_item' + ' _' + head.field">
                 {{head.title | translate}}
               </div>
             </ng-container>
@@ -102,13 +101,14 @@
             <div class="tt-experiences-wrap_table_data">
               <div class="tt-experiences-table_data">
                 <ng-container *ngFor="let head of projectTableHeader">
-                  <div class="tt-experiences-data_item" [ngClass]="{'icon': head.field === ''}"
-                    [style]="'--tableHeaderWidth: ' + head.width + ';--tableHeaderMinWidth: ' + head.minWidth">
+                  <div [class]="'tt-experiences-data_item' + ' _' + head.field" [ngClass]="{'icon': head.field === ''}">
                     <ng-container *ngIf="head.field === ''">
                       <img [src]="'expand' | TTAssetsLink:'svg'" alt="expand">
                     </ng-container>
                     <ng-container *ngIf="head.field === 'projectTitle'">
                       <p class="main">{{data.projectName + ' | ' + ([data.fromWorkingTime, data.toWorkingTime] | TTFromToDate)}}</p>
+                      <p class="main main-responsive">{{data.projectName + ' | ' + ([data.fromWorkingTime, data.toWorkingTime] | TTFromToDate:undefined:undefined:true)}}</p>
+                      <p class="extra extra-position_responsive">{{('JOB_DETAIL.' + data.position) | translate}}</p>
                       <p class="extra">{{data.basicDescription[currentLang]}}</p>
                     </ng-container>
                     <ng-container *ngIf="head.field === 'position'">

@@ -12,7 +12,8 @@ export const enviroment = {
       date: "DD/MM/YYYY",
       time: "HH:mm:ss a",
       dateTime: "DD/MM/YYYY HH:mm:ss",
-      portfolioDate: "MMM - yyyy"
+      portfolioDate: "MMM - yyyy",
+      portfolioDateResponsive: "yyyy"
     },
   },
   FIREBASE_CONFIG: {

@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IAMTable, IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
-import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
-import { LANG_TYPE } from '@app/types';
-import { LangService } from '@app/services/lang.service';
-import { Subject, takeUntil } from 'rxjs';
+import { IAntTableElement } from '@app/interfaces';
 import { MenuService } from '@app/services';
+import { LangService } from '@app/services/lang.service';
+import { LANG_TYPE } from '@app/types';
+import { Subject, takeUntil } from 'rxjs';
+import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
+import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
 
 @Component({
   selector: 'tt-about-me',
@@ -70,52 +71,45 @@ export class AboutMeComponent implements OnInit, OnDestroy {
       ],
     },
   ];
-  experienceTableHeader: IAMTable<EXPERIENCES_TABLE_HEADER_FIELD_TYPE>[] = [
-    {
-      field: '',
-      title: 'EMPTY',
-      width: '10%',
-      minWidth: '100px',
-      align: 'center',
-    },
+  experienceTableHeader: IAntTableElement<EXPERIENCES_TABLE_HEADER_FIELD_TYPE>[] = [
     {
       field: 'time',
       title: 'COMMON.TIME',
       width: '25%',
-      minWidth: '250px',
     },
     {
       field: 'jobTitle',
       title: 'COMMON.JOB_TITLE',
       width: '25%',
-      minWidth: '250px',
     },
     {
       field: 'companyName',
       title: 'COMMON.COMPANY_NAME',
       width: '40%',
-      minWidth: '400px',
     },
-  ];
-  projectTableHeader: IAMTable<PROJECTS_TABLE_HEADER_FIELD_TYPE>[] = [
     {
       field: '',
       title: 'EMPTY',
       width: '10%',
-      minWidth: '100px',
       align: 'center',
     },
+  ];
+  projectTableHeader: IAntTableElement<PROJECTS_TABLE_HEADER_FIELD_TYPE>[] = [
     {
       field: 'projectTitle',
       title: 'COMMON.TITLE',
       width: '65%',
-      minWidth: '650px',
     },
     {
       field: 'position',
       title: 'COMMON.POSITION',
       width: '25%',
-      minWidth: '250px',
+    },
+    {
+      field: '',
+      title: 'EMPTY',
+      width: '10%',
+      align: 'center',
     },
   ];
   experienceData: IExperienceItem[] = [
