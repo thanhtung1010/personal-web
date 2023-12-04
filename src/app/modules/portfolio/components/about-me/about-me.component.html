@@ -54,9 +54,9 @@
             </ng-container>
           </div>
 
-          <ng-container *ngFor="let data of experienceData">
+          <ng-container *ngFor="let data of experienceData; let index = index">
             <div class="tt-experiences-wrap_table_data">
-              <div class="tt-experiences-table_data">
+              <div class="tt-experiences-table_data" (click)="onToggleExpand(index, 'experience')">
                 <ng-container *ngFor="let head of experienceTableHeader">
                   <div [class]="'tt-experiences-data_item' + ' _' + head.field" [ngClass]="{'icon': head.field === ''}">
                     <ng-container *ngIf="head.field === ''">
@@ -80,6 +80,21 @@
                   </div>
                 </ng-container>
               </div>
+              <nz-collapse [nzBordered]="false">
+                <nz-collapse-panel [(nzActive)]="data.expand" [nzHeader]="undefined" [nzShowArrow]="false">
+                  <section class="tt-experiences-data_detail">
+                    <h6 class="tt-experiences-data_detail-title">
+                      <img [src]="'scope-of-work' | TTAssetsLink:'svg'" alt="scope-of-work">
+                      <p>{{'COMMON.SCOPE_OF_WORK' | translate}}</p>
+                    </h6>
+                    <ul class="tt-projects-data_detail-content">
+                      <ng-container  *ngFor="let detail of data.detail">
+                          <li>{{detail[currentLang]}}</li>
+                      </ng-container>
+                    </ul>
+                  </section>
+                </nz-collapse-panel>
+              </nz-collapse>
             </div>
           </ng-container>
         </section>
@@ -97,9 +112,9 @@
             </ng-container>
           </div>
 
-          <ng-container *ngFor="let data of projectData">
+          <ng-container *ngFor="let data of projectData; let index = index">
             <div class="tt-experiences-wrap_table_data">
-              <div class="tt-experiences-table_data">
+              <div class="tt-experiences-table_data" (click)="onToggleExpand(index, 'project')">
                 <ng-container *ngFor="let head of projectTableHeader">
                   <div [class]="'tt-experiences-data_item' + ' _' + head.field" [ngClass]="{'icon': head.field === ''}">
                     <ng-container *ngIf="head.field === ''">
@@ -117,6 +132,21 @@
                   </div>
                 </ng-container>
               </div>
+              <nz-collapse [nzBordered]="false">
+                <nz-collapse-panel [(nzActive)]="data.expand" [nzHeader]="undefined" [nzShowArrow]="false">
+                  <section class="tt-projects-data_detail">
+                    <ng-container  *ngFor="let detail of data.detail">
+                      <article class="tt-projects-data_detail-item">
+                        <div class="tt-projects-data_detail-item_title">
+                          <img [src]="detail.icon | TTAssetsLink:'svg'" [alt]="detail.icon">
+                          <p>{{detail.title | translate}}</p>
+                        </div>
+                        <p class="tt-projects-data_detail-item_content">{{detail[currentLang]}}</p>
+                      </article>
+                    </ng-container>
+                  </section>
+                </nz-collapse-panel>
+              </nz-collapse>
             </div>
           </ng-container>
         </section>

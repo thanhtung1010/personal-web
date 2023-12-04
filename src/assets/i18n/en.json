@@ -51,7 +51,11 @@
     "YEAR": "Year",
     "MONTH": "Month",
     "VERSION": "Version",
-    "TO": "to"
+    "TO": "to",
+    "DESCRIPTOPN": "Description",
+    "RESPONSIBILITIES": "Responsibilities",
+    "EXPERIENCE": "Experiences",
+    "SCOPE_OF_WORK": "Scope of work"
   },
   "JOB_DETAIL": {
     "SOFTWARE_ENGINEER": "Software Engieer",

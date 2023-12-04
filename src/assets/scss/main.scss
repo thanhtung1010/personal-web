@@ -50,5 +50,13 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
+    @media only screen and (max-width: 500px) {
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+    }
   }
 }

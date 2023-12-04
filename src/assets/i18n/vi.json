@@ -7,8 +7,8 @@
     "EN": "Tiếng Anh"
   },
   "MENU": {
-    "HOME": "Trang chủ",
-    "ABOUT_ME": "Sơ Lược"
+    "HOME": "Home",
+    "ABOUT_ME": "About Me"
   },
   "COMMON": {
     "LOGO": "Tungne",
@@ -51,7 +51,11 @@
     "YEAR": "Year",
     "MONTH": "Month",
     "VERSION": "Version",
-    "TO": "to"
+    "TO": "to",
+    "DESCRIPTION": "Description",
+    "RESPONSIBILITIES": "Responsibilities",
+    "EXPERIENCE": "Experiences",
+    "SCOPE_OF_WORK": "Scope of work"
   },
   "JOB_DETAIL": {
     "SOFTWARE_ENGINEER": "Software Engieer",

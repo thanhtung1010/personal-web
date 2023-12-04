@@ -203,6 +203,41 @@
     }
   }
 
+  &-data_detail {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    cursor: auto;
+    margin-top: 20px;
+
+    &-title {
+      gap: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 30px;
+      }
+
+      p {
+        font-size: #{$laggerFontSize};
+        font-weight: 600;
+      }
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 30px;
+      margin-bottom: unset;
+      font-size: #{$mediumFontSize};
+    }
+  }
+
   ._ {
     flex-basis: 10%;
   }
@@ -221,6 +256,37 @@
 }
 
 &-projects {
+
+  &-data_detail {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+    cursor: auto;
+    margin-top: 20px;
+
+    &-item_title {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 30px;
+      }
+
+      p {
+        font-size: #{$laggerFontSize};
+        font-weight: 600;
+      }
+    }
+
+    &-item_content {
+      font-size: #{$mediumFontSize};
+      text-indent: 30px;
+    }
+  }
 
   ._ {
     flex-basis: 10%;

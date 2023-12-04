@@ -28,6 +28,7 @@ import { VersionComponent } from './components/version/version.component';
 import { HiddenOnSrollDirective } from './directives/hidden-on-scroll.directive';
 import { PortfolioComponent } from './portfolio.component';
 import { NzTableModule } from 'ng-zorro-antd/table';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { FromToDatePipe } from './pipes';
 import { AppearOnViewDirective } from './directives';
 
@@ -60,6 +61,7 @@ const routes: Route[] = [
 
     NzSelectModule,
     NzTableModule,
+    NzCollapseModule,
 
     LinkButtonLayoutComponent,
     LogoComponent,

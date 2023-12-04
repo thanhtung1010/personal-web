@@ -14,6 +14,7 @@ export interface ISkillItem {
 
 export interface IExperienceItem {
   id: string;
+  expand: boolean;
   fromWorkingTime: number;
   toWorkingTime: number | null;
   wokingTime: {
@@ -24,11 +25,15 @@ export interface IExperienceItem {
   jobTitle: string;
   companyName: string;
   updatedAt: number;
-  detail: string[];
+  detail: {
+    en: string;
+    vi: string;
+  }[];
 }
 
 export interface IProjectItem {
   id: string;
+  expand: boolean;
   fromWorkingTime: number;
   toWorkingTime: number | null;
   projectName: string;
@@ -38,5 +43,10 @@ export interface IProjectItem {
   };
   position: string;
   updatedAt: number;
-  detail: string[];
+  detail: {
+    title: string;
+    icon: string;
+    en: string;
+    vi: string;
+  }[];
 }
