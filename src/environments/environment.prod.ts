@@ -9,6 +9,7 @@ export const enviroment = {
   email: 'trinhthanhtung1010@gmail.com',
   phoneNumber: '+84836450670',
   defaultPageSize: 10,
+  TIME_OUT_MS: 180000,
   SETTING_FORMAT: {
     dateTime: {
       date: "DD/MM/YYYY",

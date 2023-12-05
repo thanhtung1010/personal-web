@@ -31,7 +31,6 @@ export class APIService {
     headers = headers.append('Content-Language', _cookie.getCurrentLang);
     headers = headers.append('Content-Type', 'application/json');
     headers = headers.append('X-Time-Zone', Intl.DateTimeFormat().resolvedOptions().timeZone);
-    headers = headers.append('Access-Control-Allow-Origin', '*');
 
     if (_customHeader) {
       for (let d in _customHeader) {

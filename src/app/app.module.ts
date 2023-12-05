@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { enviroment } from '@environments/environment';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -15,6 +15,7 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 import { APIService, DeviceIdService, MenuService } from './services';
 import { FirebaseModule } from './modules/firebase/firebase.module';
 import { NotFoundComponent } from './components';
+import { HttpLogInterceptor } from './_interceptors/http.interceptors';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -54,6 +55,11 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
     MenuService,
     DeviceIdService,
     APIService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpLogInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

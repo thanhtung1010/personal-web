@@ -9,13 +9,13 @@ const routes: Routes = [
     loadComponent: () => import('./components/not-found/not-found.component').then((e) => e.NotFoundComponent),
   },
   {
-    path: ROUTE.PORTFOLIO,
-    loadChildren: () => import('./modules/portfolio/portfolio.module').then((e) => e.PortfolioModule),
-  },
-  {
     path: ROUTE.MANAGEMENT,
     loadChildren: () => import('./modules/management/management.module').then((e) => e.ManagementModule),
     canActivate: [managementActiveGuard]
+  },
+  {
+    path: ROUTE.PORTFOLIO,
+    loadChildren: () => import('./modules/portfolio/portfolio.module').then((e) => e.PortfolioModule),
   },
   {
     path: '**',
