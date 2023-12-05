@@ -1,3 +1,5 @@
+import { IApiBaseMeta } from "./common.interface";
+
 export interface IApiObject {
   /**
    * API url
@@ -18,4 +20,12 @@ export interface IApiObject {
    * @default false
    */
   external?: boolean;
+}
+
+export interface IApiBaseResponse {
+  data: any;
+  message: string;
+  message_code: number;
+  status: string;
+  meta: IApiBaseMeta;
 }

@@ -1,3 +1,5 @@
+import { enviroment } from "@environments/environment";
+
 export class CookieStorageHelper {
   private static CookieStorageHelper: any = {};
 
@@ -9,7 +11,7 @@ export class CookieStorageHelper {
    * @param expires Expires time: Date string format
    * @param maxAge Others way to set expires and cookie will be deleted
    */
-  public static set(
+  public set(
     key: string,
     value: string,
     domain?: string,
@@ -26,14 +28,14 @@ export class CookieStorageHelper {
     document.cookie = _cookieStr;
   }
 
-  public static get(key: string) {
-    CookieStorageHelper.parseCookies();
+  public get(key: string) {
+    this.parseCookies();
     return !!CookieStorageHelper.CookieStorageHelper[key]
       ? CookieStorageHelper.CookieStorageHelper[key]
       : null;
   }
 
-  public static parseCookies(cookies = document.cookie) {
+  public parseCookies(cookies = document.cookie) {
     CookieStorageHelper.CookieStorageHelper = {};
     if (!!cookies === false) {
       return;
@@ -45,15 +47,15 @@ export class CookieStorageHelper {
     }
   }
 
-  public static remove(key: string) {
+  public remove(key: string) {
     document.cookie = `${key}=;;domain=${"localhost"};expires=Thu, 1 jan 1990 12:00:00 UTC; path=/`;
   }
 
-  public static getCurrentLang = (): string => {
-    return CookieStorageHelper.get("lang") || "vi";
+  public get getCurrentLang(): string {
+    return this.get(enviroment.cookieStorageLangKey) || "vi";
   };
 
-  public static clearAll() {
+  public clearAll() {
     const cookies = document.cookie.split("; ");
 
     for (let cookie of cookies) {

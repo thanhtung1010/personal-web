@@ -27,7 +27,7 @@ export class LangService {
   }
 
   initLang() {
-    const _lang = CookieStorageHelper.get(enviroment.cookieStorageLangKey);
+    const _lang = new CookieStorageHelper().get(enviroment.cookieStorageLangKey);
     this.setLang = _lang || enviroment.defaultLang;
   }
 
@@ -39,11 +39,11 @@ export class LangService {
     const _validate = this.validateLang(lang);
     if (_validate) {
       this.lang$.next(lang);
-      CookieStorageHelper.set(enviroment.cookieStorageLangKey, lang);
+      new CookieStorageHelper().set(enviroment.cookieStorageLangKey, lang);
       this.translateSer.use(lang);
     } else {
       this.lang$.next(DEFAULT_LANG);
-      CookieStorageHelper.set(enviroment.cookieStorageLangKey, DEFAULT_LANG);
+      new CookieStorageHelper().set(enviroment.cookieStorageLangKey, DEFAULT_LANG);
       this.translateSer.use(DEFAULT_LANG);
     }
   }

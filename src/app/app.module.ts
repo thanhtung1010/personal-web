@@ -12,7 +12,7 @@ import { LangService } from './services/lang.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { VersionService } from './services/version.service';
 import { NzMessageModule } from 'ng-zorro-antd/message';
-import { DeviceIdService, MenuService } from './services';
+import { APIService, DeviceIdService, MenuService } from './services';
 import { FirebaseModule } from './modules/firebase/firebase.module';
 import { NotFoundComponent } from './components';
 
@@ -53,6 +53,7 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
     VersionService,
     MenuService,
     DeviceIdService,
+    APIService,
   ],
   bootstrap: [AppComponent]
 })
