@@ -5,4 +5,6 @@ export const ROUTE = {
 
   PORTFOLIO_HOME: 'home',
   PORTFOLIO_ABOUT_ME: 'about-me',
+
+  MANAGEMENT_AUTH: 'auth',
 };

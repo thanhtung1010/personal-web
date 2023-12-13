@@ -1,0 +1,19 @@
+&-login {
+  height: 100vh;
+  overflow: auto;
+  background: url('../../svg/login-background.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+}
+
+&-login_container {
+  margin: auto;
+  height: 500px;
+  width: 300px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #d7d7d7;
+  box-shadow: 10px 10px 35px 6px #d7d7d7;
+}
