@@ -1,3 +1,35 @@
 <section class="tt-login">
-  <section class="tt-login_container"></section>
+  <section class="tt-login_container">
+    <h2 class="tt-login_title">{{'COMMON.LOG_IN' | translate}}</h2>
+    <section class="tt-login_form">
+      <form nz-form [formGroup]="loginForm">
+        <ng-container *ngIf="loginForm.contains('mail')">
+          <nz-form-item>
+            <nz-form-control>
+              <input nz-input formControlName="mail" [placeholder]="'FORM.EMAIL_HOLDER' | translate"/>
+            </nz-form-control>
+          </nz-form-item>
+        </ng-container>
+        <ng-container *ngIf="loginForm.contains('password')">
+          <nz-form-item>
+            <nz-form-control>
+              <input nz-input formControlName="password" [placeholder]="'FORM.PASSWORD_HOLDER' | translate"/>
+            </nz-form-control>
+          </nz-form-item>
+        </ng-container>
+        <button class="tt-login_submit_btn" nz-button nzShape="round" nzType="primary">
+          <span>{{'COMMON.LOG_IN' | translate}}</span>
+        </button>
+      </form>
+      <div class="tt-login_form-bottom">
+        <p>{{'COMMON.FORGOT_PASSWORD' | translate}}</p>
+        <p>{{'COMMON.GO_TO_SIGN_UP' | translate}}</p>
+      </div>
+    </section>
+    <p class="tt-login_or">{{'COMMON.ANOTHE_SIGNIN_METHOD' | translate}}</p>
+    <button class="tt-login_google">
+      <img [src]="'google-logo' | TTAssetsLink:'svg'" alt="google-logo">
+      <span>{{'COMMON.CONTINUE_WITH_GG' | translate}}</span>
+    </button>
+  </section>
 </section>

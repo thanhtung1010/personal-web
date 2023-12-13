@@ -85,3 +85,40 @@
     }
   }
 }
+
+.ant-input {
+  height: 40px;
+  border-radius: 20px !important;
+}
+
+.tt-theme-primary {
+
+  .ant-input:hover, .ant-input:focus {
+    border-color: #{$purpleColor};
+    box-shadow: unset;
+  }
+
+  .ant-btn {
+    height: 40px;
+    font-size: #{$mediumFontSize};
+  }
+
+  .ant-btn-primary {
+    background-color: #{$purpleColor};
+    border-color: #{$purpleColor};
+  }
+
+  .ant-btn-default {
+    color: #{$purpleColor};
+    border-color: #{$purpleColor};
+  }
+
+  .ant-btn-primary:hover, .ant-btn-primary:focus {
+    background-color: #{$purpleColor};
+    border-color: #{$purpleColor};
+  }
+
+  .ant-btn-primary:hover {
+    opacity: .8;
+  }
+}

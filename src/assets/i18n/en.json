@@ -55,7 +55,14 @@
     "DESCRIPTOPN": "Description",
     "RESPONSIBILITIES": "Responsibilities",
     "EXPERIENCE": "Experiences",
-    "SCOPE_OF_WORK": "Scope of work"
+    "SCOPE_OF_WORK": "Scope of work",
+    "LOG_IN": "Log In",
+    "SIGN_UP": "Sign Up",
+    "GO_TO_SIGN_UP": "Sign Up >",
+    "LOG_OUT": "Log Out",
+    "ANOTHE_SIGNIN_METHOD": "Or you can sign in with",
+    "CONTINUE_WITH_GG": "Continue with Google",
+    "FORGOT_PASSWORD": "Forgot password?"
   },
   "JOB_DETAIL": {
     "SOFTWARE_ENGINEER": "Software Engieer",
@@ -75,6 +82,12 @@
     "MORE_ABOUT_ME": "More about me",
     "SAY_HI": "Say hi to me",
     "BACK_TO_HOME": "Back to home"
+  },
+  "FORM": {
+    "EMAIL": "Email",
+    "EMAIL_HOLDER": "Enter your email",
+    "PASSWORD": "Password",
+    "PASSWORD_HOLDER": "Enter your password"
   },
   "EMPTY": ""
 }
