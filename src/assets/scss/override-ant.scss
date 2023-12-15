@@ -86,16 +86,32 @@
   }
 }
 
+.tt-login_container {
+
+  .ant-input {
+    font-size: #{$mediumFontSize} !important;
+  }
+
+  .ant-input-affix-wrapper {
+    font-size: #{$mediumFontSize} !important;
+  }
+}
+
 .ant-input {
   height: 40px;
   border-radius: 20px !important;
 }
 
+.ant-input-affix-wrapper {
+  height: 50px;
+  border-radius: 25px !important;
+}
+
 .tt-theme-primary {
 
-  .ant-input:hover, .ant-input:focus {
-    border-color: #{$purpleColor};
-    box-shadow: unset;
+  .ant-input:hover, .ant-input:focus, .ant-input-affix-wrapper:hover, .ant-input-affix-wrapper.focus , .ant-input-affix-wrapper-focused {
+    border-color: #{$purpleColor} !important;
+    box-shadow: unset !important;
   }
 
   .ant-btn {

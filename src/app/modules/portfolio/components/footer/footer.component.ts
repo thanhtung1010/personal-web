@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '@app/services/common.service';
 import { enviroment } from '@environments/environment';
 import { ISocialNetwork } from '../../interfaces';
-import { TranslateService } from '@ngx-translate/core';
-import { NzMessageService } from 'ng-zorro-antd/message';
-import { CommonService } from '@app/services/common.service';
 
 @Component({
   selector: 'tt-footer',

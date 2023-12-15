@@ -61,8 +61,11 @@
     "GO_TO_SIGN_UP": "Sign Up >",
     "LOG_OUT": "Log Out",
     "ANOTHE_SIGNIN_METHOD": "Or you can sign in with",
+    "ANOTHE_SIGNUP_METHOD": "Or you can sign up with",
     "CONTINUE_WITH_GG": "Continue with Google",
-    "FORGOT_PASSWORD": "Forgot password?"
+    "CONTINUE_WITH_FB": "Continue with Facebook",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "BACK_TO_LOGIN": "< Back to login"
   },
   "JOB_DETAIL": {
     "SOFTWARE_ENGINEER": "Software Engieer",
