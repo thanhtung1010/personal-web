@@ -6,5 +6,11 @@ export const ROUTE = {
   PORTFOLIO_HOME: 'home',
   PORTFOLIO_ABOUT_ME: 'about-me',
 
-  MANAGEMENT_AUTH: 'auth',
+  OUTSIDE_MANAGEMENT: 'auth',
+  OUTSIDE_MANAGEMENT_LOGIN: '',
+  OUTSIDE_MANAGEMENT_LOGOUT: 'log-out',
+
+  INSIDE_MANAGEMENT: 'home',
+  INSIDE_HOME_MANAGEMENT: 'manager-home-page',
+  INSIDE_ABOUT_ME_MANAGEMENT: 'manager-about-me-page',
 };

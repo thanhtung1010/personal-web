@@ -1,17 +1,9 @@
-import { NzFormModule } from 'ng-zorro-antd/form';
-import { NzInputModule } from 'ng-zorro-antd/input';
-import { NzGridModule } from 'ng-zorro-antd/grid';
-import { NzButtonModule } from 'ng-zorro-antd/button';
 
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ManagementComponent } from './management.component';
+import { NgModule } from '@angular/core';
 import { Route, RouterModule } from '@angular/router';
 import { ROUTE } from '@app/constants';
-import { LoginComponent } from './components/login/login.component';
-import { AssetsLink } from '@app/pipes/assets-link.pipe';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
+import { ManagementComponent } from './management.component';
 
 const routes: Route[] = [
   {
@@ -19,15 +11,19 @@ const routes: Route[] = [
     component: ManagementComponent,
     children: [
       {
-        path: ROUTE.MANAGEMENT_AUTH,
-        component: LoginComponent,
+        path: ROUTE.OUTSIDE_MANAGEMENT,
+        loadChildren: () => import('./modules/outside/outside.module').then((e) => e.OutsideModule),
+      },
+      {
+        path: ROUTE.INSIDE_MANAGEMENT,
+        loadChildren: () => import('./modules/inside/inside.module').then((e) => e.InsideModule),
       },
       {
         path: '**',
         pathMatch: 'full',
-        redirectTo: ROUTE.MANAGEMENT_AUTH,
+        redirectTo: ROUTE.OUTSIDE_MANAGEMENT,
       },
-    ]
+    ],
   }
 ];
 
@@ -35,20 +31,9 @@ const routes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    ReactiveFormsModule,
-    FormsModule,
-    TranslateModule,
-
-    NzInputModule,
-    NzFormModule,
-    NzGridModule,
-    NzButtonModule,
-
-    AssetsLink,
   ],
   declarations: [
     ManagementComponent,
-    LoginComponent,
   ]
 })
 export class ManagementModule { }

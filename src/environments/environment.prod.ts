@@ -5,6 +5,7 @@ export const enviroment = {
   defaultLang: 'vi',
   TOKEN_KEY: '_token',
   ASSETS_URL: 'https://personal-web-livid.vercel.app/',
+  ASSETS_REACT_MANAGEMENT_URL: 'https://management-reactjs-seven.vercel.app/',
   API_URL: 'https://spending-management.up.railway.app/',
   email: 'trinhthanhtung1010@gmail.com',
   phoneNumber: '+84836450670',
@@ -30,5 +31,8 @@ export const enviroment = {
   },
   GOOGLE_CONFIG: {
     downloadCV: "https://drive.google.com/uc?export=download&id=13GFK_OWfcxseMy5gjG2TyLLbIPcc8LML",
+  },
+  WEB_COMPONENT: {
+    reactManagement: "https://management-reactjs-seven.vercel.app/dist/static/js/main.c06c346.js",
   },
 }

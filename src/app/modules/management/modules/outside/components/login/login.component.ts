@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ValidationErrors, Validators } from '@angular/forms';
 import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
-import { invisibleEyeEnter, invisibleEyeLeave } from '../../animations';
+import { invisibleEyeEnter, invisibleEyeLeave } from '../../../../animations';
 
 @Component({
   selector: 'app-login',

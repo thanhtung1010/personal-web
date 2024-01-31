@@ -5,6 +5,7 @@ export const enviroment = {
   cookieStorageDeviceIdKey: '_deviceId',
   TOKEN_KEY: '_token',
   ASSETS_URL: 'http://localhost:8081/',
+  ASSETS_REACT_MANAGEMENT_URL: 'http://localhost:3000/',
   API_URL: 'http://localhost:9090/',
   email: 'trinhthanhtung1010@gmail.com',
   phoneNumber: '+84836450670',
@@ -30,5 +31,8 @@ export const enviroment = {
   },
   GOOGLE_CONFIG: {
     downloadCV: "https://drive.google.com/uc?export=download&id=13GFK_OWfcxseMy5gjG2TyLLbIPcc8LML",
+  },
+  WEB_COMPONENT: {
+    reactManagement: "http://localhost:3000/static/js/bundle.js",
   },
 }
