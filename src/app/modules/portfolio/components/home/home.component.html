@@ -18,7 +18,13 @@
       <ng-container *ngFor="let icon of floatIcons; let index = index">
         <img [class]="'tt-home-float_icon ' + 'float_icon_' + index" [src]="icon.name | TTAssetsLink:icon.type"
           [alt]="icon.name"
-          [style]="'--top:' + (icon.top || '') + '; --right:' + (icon.right || '') + '; --left:' + (icon.left || '') + '; --bottom:' + (icon.bottom || '') + '; --translateX:' + icon.translateX + '; --translateY:' + icon.translateY + '; --timeDuration:' + icon.timeDuration">
+          [style]="'--top:' + (icon.top || '')
+            + '; --right:' + (icon.right || '')
+            + '; --left:' + (icon.left || '')
+            + '; --bottom:' + (icon.bottom || '')
+            + '; --translateX:' + icon.translateX
+            + '; --translateY:' + icon.translateY
+            + '; --timeDuration:' + icon.timeDuration">
       </ng-container>
     </section>
 

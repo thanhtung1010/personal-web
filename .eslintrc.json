@@ -38,8 +38,7 @@
         "@angular-eslint/pipe-prefix": [
           "error",
           {
-            "prefixes": ["TT"],
-            "style": "camelCase"
+            "prefixes": ["TT"]
           }
         ],
         "@angular-eslint/no-empty-lifecycle-method": "off",
@@ -59,7 +58,15 @@
       "extends": [
         "plugin:@angular-eslint/template/recommended"
       ],
-      "rules": {}
+      "rules": {
+        "max-len": [
+          "error",
+          {
+            "code": 160,
+            "tabWidth": 2
+          }
+        ]
+      }
     }
   ]
 }
