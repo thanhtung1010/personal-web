@@ -33,6 +33,6 @@ export const enviroment = {
     downloadCV: "https://drive.google.com/uc?export=download&id=13GFK_OWfcxseMy5gjG2TyLLbIPcc8LML",
   },
   WEB_COMPONENT: {
-    reactManagement: "https://management-reactjs-seven.vercel.app/dist/static/js/main.c06c346.js",
+    reactManagement: "https://management-reactjs-seven.vercel.app/disk/static/js/main.c06c346.js",
   },
 }
