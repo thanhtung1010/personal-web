@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-outside',
+  selector: 'tt-outside',
   templateUrl: './outside.component.html',
 })
 export class OutsideComponent implements OnInit {

@@ -92,3 +92,8 @@ export interface IDeviceID {
   uuid: string;
   accepted: boolean;
 }
+
+export interface ICustomAttributeLazyLoadScript {
+  isCustomElements: boolean;
+  [key: string]: any;
+}

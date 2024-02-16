@@ -15,7 +15,6 @@ const _routes: Route[] = [
   imports: [
     CommonModule,
     RouterModule.forChild(_routes),
-
   ],
   declarations: [InsideComponent],
   schemas: [

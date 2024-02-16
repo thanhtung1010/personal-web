@@ -4,7 +4,7 @@ import { AbstractControl, FormBuilder, FormGroup } from '@angular/forms';
 import { invisibleEyeEnter, invisibleEyeLeave } from '../../../../animations';
 
 @Component({
-  selector: 'app-login',
+  selector: 'tt-login',
   templateUrl: './login.component.html',
   animations: [invisibleEyeEnter, invisibleEyeLeave]
 })

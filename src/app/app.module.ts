@@ -16,6 +16,7 @@ import { APIService, DeviceIdService, MenuService } from './services';
 import { FirebaseModule } from './modules/firebase/firebase.module';
 import { NotFoundComponent } from './components';
 import { HttpLogInterceptor } from './_interceptors/http.interceptors';
+import { LazyLoadScriptService } from './services/lazy-load-script.service';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -55,6 +56,7 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
     MenuService,
     DeviceIdService,
     APIService,
+    LazyLoadScriptService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpLogInterceptor,

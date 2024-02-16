@@ -1,14 +1,19 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LazyLoadScriptService } from '@app/services/lazy-load-script.service';
 
 @Component({
-  selector: 'app-inside',
+  selector: 'tt-inside',
   templateUrl: './inside.component.html',
 })
 export class InsideComponent implements OnInit {
+  LOAD_LINK_COMPONENT: string = 'http://localhost:3000/static/js/bundle.js';
 
-  constructor() { }
+  constructor(private lazyLoadService: LazyLoadScriptService) { }
 
   ngOnInit() {
+    this.lazyLoadService.loadScript(this.LOAD_LINK_COMPONENT, {isCustomElements: true}).subscribe(_ => {
+      console.log('Jquery is loaded!')
+    });
   }
 
 }
