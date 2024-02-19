@@ -94,6 +94,5 @@ export interface IDeviceID {
 }
 
 export interface ICustomAttributeLazyLoadScript {
-  isCustomElements: boolean;
   [key: string]: any;
 }

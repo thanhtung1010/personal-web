@@ -11,7 +11,7 @@ export class InsideComponent implements OnInit {
   constructor(private lazyLoadService: LazyLoadScriptService) { }
 
   ngOnInit() {
-    this.lazyLoadService.loadScript(this.LOAD_LINK_COMPONENT, {isCustomElements: true}).subscribe(_ => {
+    this.lazyLoadService.loadScript(this.LOAD_LINK_COMPONENT, {defer: true}).subscribe(_ => {
       console.log('Jquery is loaded!')
     });
   }

@@ -22,7 +22,7 @@ export class LazyLoadScriptService {
         script.src = url;
 
         if (customAttribute && size(customAttribute)) {
-          script.defer = customAttribute.isCustomElements;
+          script.defer = !!customAttribute['defer'];
 
           // do something else
         }
