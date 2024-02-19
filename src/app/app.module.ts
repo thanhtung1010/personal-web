@@ -1,22 +1,29 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
-
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import {
+  HTTP_INTERCEPTORS,
+  HttpClient,
+  HttpClientModule,
+} from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { enviroment } from '@environments/environment';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { AngularSvgIconModule } from 'angular-svg-icon';
+import { NzMessageModule } from 'ng-zorro-antd/message';
+import { HttpLogInterceptor } from './_interceptors/http.interceptors';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LangService } from './services/lang.service';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { VersionService } from './services/version.service';
-import { NzMessageModule } from 'ng-zorro-antd/message';
-import { APIService, DeviceIdService, MenuService } from './services';
-import { FirebaseModule } from './modules/firebase/firebase.module';
 import { NotFoundComponent } from './components';
-import { HttpLogInterceptor } from './_interceptors/http.interceptors';
-import { LazyLoadScriptService } from './services/lazy-load-script.service';
+import { FirebaseModule } from './modules/firebase/firebase.module';
+import {
+  APIService,
+  DeviceIdService,
+  LangService,
+  LazyLoadScriptService,
+  MenuService,
+  VersionService,
+} from './services';
 
 export function HTTPLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -25,9 +32,7 @@ export function HTTPLoaderFactory(http: HttpClient) {
 const fireBaseConfig = enviroment.FIREBASE_CONFIG;
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     AppRoutingModule,
     HttpClientModule,
@@ -35,16 +40,14 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
     BrowserAnimationsModule,
     NzMessageModule,
 
-    TranslateModule.forRoot(
-      {
-        defaultLanguage: enviroment.defaultLang,
-        loader: {
-          provide: TranslateLoader,
-          useFactory: HTTPLoaderFactory,
-          deps: [HttpClient]
-        }
+    TranslateModule.forRoot({
+      defaultLanguage: enviroment.defaultLang,
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HTTPLoaderFactory,
+        deps: [HttpClient],
       },
-    ),
+    }),
     AngularSvgIconModule.forRoot(),
     FirebaseModule.forRoot(fireBaseConfig),
     NotFoundComponent,
@@ -60,9 +63,9 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpLogInterceptor,
-      multi: true
-    }
+      multi: true,
+    },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
