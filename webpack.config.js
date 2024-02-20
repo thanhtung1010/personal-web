@@ -1,7 +1,9 @@
 const path = require('path');
 
 const config = {
-  entry : './src/main.ts',
+  entry : {
+    main: './src/main.ts',
+  },
   module: {
     rules: [
       {
@@ -12,7 +14,7 @@ const config = {
     ],
   },
   output : {
-    filename : 'main.bundle.js',
+    filename : '[name].bundle.js',
     path : path.resolve(__dirname, 'disk'),
   },
   resolve: {
@@ -21,7 +23,7 @@ const config = {
       '@environments': path.resolve(__dirname, 'src/environments'),
       '@assets': path.resolve(__dirname, 'src/assets'),
     },
-    extensions: ['.ts', '.js', '.json'],
+    extensions: ['.ts', '.js'],
   },
 }
 
