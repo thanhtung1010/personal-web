@@ -4,7 +4,7 @@ export const enviroment = {
   cookieStorageDeviceIdKey: '_deviceId',
   defaultLang: 'vi',
   TOKEN_KEY: '_token',
-  ASSETS_URL: 'https://personal-web-livid.vercel.app/',
+  ASSETS_URL: 'https://pi-portfolio-livid.vercel.app/',
   ASSETS_REACT_MANAGEMENT_URL: 'https://management-reactjs-seven.vercel.app/',
   API_URL: 'https://spending-management.up.railway.app/',
   email: 'trinhthanhtung1010@gmail.com',
