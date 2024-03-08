@@ -7,7 +7,9 @@ import * as _ from 'lodash';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class APIService {
   constructor(
     private readonly http: HttpClient

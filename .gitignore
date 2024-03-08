@@ -6,6 +6,7 @@
 /tmp
 /out-tsc
 /bazel-out
+/.nx/cache
 package-lock.json
 
 # Node

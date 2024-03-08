@@ -8,10 +8,15 @@ import { DeviceIdService, MenuService } from './services';
 import * as _ from 'lodash';
 import { VersionService } from './services/version.service';
 import { FirebaseService } from './modules/firebase/firebase.service';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'tt-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  imports: [
+    RouterOutlet,
+  ],
+  standalone: true,
 })
 export class AppComponent implements OnInit, AfterViewInit {
 

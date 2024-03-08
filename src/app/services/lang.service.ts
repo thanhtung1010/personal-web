@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, inject } from "@angular/core";
 import { LANG_TYPE } from "../types/index";
 import { enviroment } from "@environments/environment";
 import { DEFAULT_LANG, LANG_LIST } from "@app/constants";
@@ -14,7 +14,8 @@ import { CookieStorageHelper } from "@app/helpers";
 export class LangService {
   lang$: BehaviorSubject<LANG_TYPE> = new BehaviorSubject(DEFAULT_LANG);
   langs$: BehaviorSubject<Array<ILang>> = new BehaviorSubject([] as Array<ILang>);
-  constructor(private translateSer: TranslateService) {}
+  translateSer = inject(TranslateService);
+  constructor() {}
 
   init() {
     this.initLangList();

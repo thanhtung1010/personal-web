@@ -4,7 +4,9 @@ import { DOCUMENT } from '@angular/common';
 import { ICustomAttributeLazyLoadScript } from '@app/interfaces';
 import { size } from 'lodash';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LazyLoadScriptService {
     loadedLibraries: { [url: string]: ReplaySubject<void> } = {};
 

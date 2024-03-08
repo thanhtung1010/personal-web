@@ -38,7 +38,9 @@
         "@angular-eslint/pipe-prefix": [
           "error",
           {
-            "prefixes": ["TT"]
+            "prefixes": [
+              "TT"
+            ]
           }
         ],
         "@angular-eslint/no-empty-lifecycle-method": "off",

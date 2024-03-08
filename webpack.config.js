@@ -1,30 +1,15 @@
-const path = require('path');
+const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
-const config = {
-  entry : {
-    main: './src/main.ts',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  output : {
-    filename : '[name].bundle.js',
-    path : path.resolve(__dirname, 'disk'),
-  },
-  resolve: {
-    alias: {
-      '@app': path.resolve(__dirname, 'src/app'),
-      '@environments': path.resolve(__dirname, 'src/environments'),
-      '@assets': path.resolve(__dirname, 'src/assets'),
-    },
-    extensions: ['.ts', '.js'],
-  },
-}
+module.exports = withModuleFederationPlugin({
 
-module.exports = config;
+  name: 'portfolio',
+
+  exposes: {
+    './component': './src/app/app.component.ts',
+  },
+
+  shared: {
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
+  },
+
+});
