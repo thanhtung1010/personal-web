@@ -51,7 +51,7 @@ export const appConfig: ApplicationConfig = {
       MenuService,
       DeviceIdService,
       APIService,
-      FirebaseModule.forRoot(fireBaseConfig),
+      // FirebaseModule.forRoot(fireBaseConfig),
 
       BrowserAnimationsModule,
       TranslateModule.forRoot({

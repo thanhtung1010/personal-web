@@ -11,7 +11,7 @@ import { FirebaseService } from './modules/firebase/firebase.service';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'tt-root',
+  selector: 'tt-app-porfolio',
   templateUrl: './app.component.html',
   imports: [
     RouterOutlet,
@@ -30,8 +30,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     private langSer: LangService,
     private menuSer: MenuService,
     private versionSer: VersionService,
-    private firebaseSer: FirebaseService,
-    private deviceIdSer: DeviceIdService,
+    // private firebaseSer: FirebaseService,
+    // private deviceIdSer: DeviceIdService,
   ) {}
 
   ngOnInit(): void {
@@ -48,8 +48,8 @@ export class AppComponent implements OnInit, AfterViewInit {
     this.langSer.init();
     this.menuSer.init();
     this.versionSer.init();
-    this.firebaseSer.init();
-    this.deviceIdSer.init();
+    // this.firebaseSer.init();
+    // this.deviceIdSer.init();
   }
 
   ngAfterViewInit(): void {
