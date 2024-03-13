@@ -1,17 +1,7 @@
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { Routes, provideRouter } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 import { ROUTE } from './constants';
 import { managementActiveGuard } from './guards';
-import { AngularSvgIconModule } from 'angular-svg-icon';
-import { BrowserModule, Title } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptors } from '@angular/common/http';
-import { HttpLogInterceptor } from './_interceptors/http.interceptors';
-import { LangService, VersionService, MenuService, DeviceIdService, APIService, LazyLoadScriptService } from './services';
-import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
-import { enviroment } from '@environments/environment';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { FirebaseModule } from './modules/firebase/firebase.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const routes: Routes = [
   {
@@ -34,37 +24,9 @@ const routes: Routes = [
   },
 ];
 
-export function HTTPLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
-}
+@NgModule({
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
+})
 
-const fireBaseConfig = enviroment.FIREBASE_CONFIG;
-
-export const appConfig: ApplicationConfig = {
-  providers: [
-    provideRouter(routes),
-    importProvidersFrom([
-      LazyLoadScriptService,
-      Title,
-      LangService,
-      VersionService,
-      MenuService,
-      DeviceIdService,
-      APIService,
-      // FirebaseModule.forRoot(fireBaseConfig),
-
-      BrowserAnimationsModule,
-      TranslateModule.forRoot({
-        defaultLanguage: enviroment.defaultLang,
-        loader: {
-          provide: TranslateLoader,
-          useFactory: HTTPLoaderFactory,
-          deps: [HttpClient],
-        },
-      }),
-    ]),
-    provideHttpClient(
-      withInterceptors([HttpLogInterceptor]),
-    ),
-  ]
-};
+export class AppRoutingModule { }
