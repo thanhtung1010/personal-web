@@ -2,7 +2,7 @@ const { shareAll, withModuleFederationPlugin } = require('@angular-architects/mo
 
 module.exports = withModuleFederationPlugin({
 
-  name: 'portfolio',
+  name: '@tt-portfolio',
 
   exposes: {
     './module': './src/app/app.module.ts',

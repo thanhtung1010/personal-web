@@ -35,6 +35,7 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    BrowserModule,
     AppRoutingModule,
     NzMessageModule,
 

@@ -12,7 +12,8 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'tt-app-porfolio',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrl: '../assets/scss/main.scss'
 })
 export class AppComponent implements OnInit, AfterViewInit {
 
