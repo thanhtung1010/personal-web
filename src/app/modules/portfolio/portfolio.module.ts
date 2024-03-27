@@ -21,7 +21,6 @@ import { AssetsLink } from '@app/pipes/assets-link.pipe';
 import { NavLinkPipe } from '@app/pipes/nav-link.pipe';
 import { SvgIconPipe } from '@app/pipes/svg-icon.pipe';
 import { TranslateModule } from '@ngx-translate/core';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { MenuComponent } from './components/menu/menu.component';
 import { VersionComponent } from './components/version/version.component';
@@ -51,12 +50,10 @@ const routes: Route[] = [
 @NgModule({
   imports: [
     CommonModule,
-    HttpClientModule,
     FormsModule,
     NgOptimizedImage,
 
     TranslateModule,
-    AngularSvgIconModule,
     RouterModule.forChild(routes),
 
     NzSelectModule,

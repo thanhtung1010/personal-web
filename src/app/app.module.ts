@@ -1,16 +1,12 @@
-import { NgModule, importProvidersFrom } from '@angular/core';
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
-  HttpClientModule,
-  provideHttpClient,
 } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { enviroment } from '@environments/environment';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { AngularSvgIconModule } from 'angular-svg-icon';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { HttpLogInterceptor } from './_interceptors/http.interceptors';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,19 +31,8 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
     AppRoutingModule,
     NzMessageModule,
-
-    TranslateModule.forRoot({
-      defaultLanguage: enviroment.defaultLang,
-      loader: {
-        provide: TranslateLoader,
-        useFactory: HTTPLoaderFactory,
-        deps: [HttpClient],
-      },
-    }),
-    AngularSvgIconModule.forRoot(),
     FirebaseModule.forRoot(fireBaseConfig),
     NotFoundComponent,
   ],
@@ -64,8 +49,6 @@ const fireBaseConfig = enviroment.FIREBASE_CONFIG;
       useClass: HttpLogInterceptor,
       multi: true,
     },
-    provideHttpClient(),
-    importProvidersFrom([])
   ],
   bootstrap: [AppComponent],
 })
