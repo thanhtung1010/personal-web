@@ -1,10 +1,8 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import {
-  EmptyComponent,
   LinkButtonLayoutComponent,
   LogoComponent,
 } from '@app/components';
@@ -18,7 +16,6 @@ import {
   PageLayoutComponent,
 } from '@app/modules/portfolio/components';
 import { AssetsLink } from '@app/pipes/assets-link.pipe';
-import { NavLinkPipe } from '@app/pipes/nav-link.pipe';
 import { SvgIconPipe } from '@app/pipes/svg-icon.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzSelectModule } from 'ng-zorro-antd/select';
@@ -26,10 +23,11 @@ import { MenuComponent } from './components/menu/menu.component';
 import { VersionComponent } from './components/version/version.component';
 import { HiddenOnSrollDirective } from './directives/hidden-on-scroll.directive';
 import { PortfolioComponent } from './portfolio.component';
-import { NzTableModule } from 'ng-zorro-antd/table';
+// import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { FromToDatePipe } from './pipes';
 import { AppearOnViewDirective } from './directives';
+import { EmptyComponent } from '@tt-library-angular-porfolio';
 
 const routes: Route[] = [
   {
@@ -57,7 +55,7 @@ const routes: Route[] = [
     RouterModule.forChild(routes),
 
     NzSelectModule,
-    NzTableModule,
+    // NzTableModule,
     NzCollapseModule,
 
     LinkButtonLayoutComponent,
@@ -77,7 +75,6 @@ const routes: Route[] = [
     MenuComponent,
     VersionComponent,
 
-    NavLinkPipe,
     FromToDatePipe,
 
     HiddenOnSrollDirective,

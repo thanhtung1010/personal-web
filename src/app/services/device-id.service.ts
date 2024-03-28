@@ -3,8 +3,8 @@ import { CookieStorageHelper } from "@app/helpers";
 import { IDeviceID } from "@app/interfaces";
 import { enviroment } from "@environments/environment";
 import { DeviceUUID } from 'device-uuid';
-import { APIService } from "./api.service";
 import { DEVICE_ID_API } from "@app/constants/api.constant";
+import { APIService } from '@tt-library-angular-porfolio';
 
 @Injectable({
   providedIn: 'root'
