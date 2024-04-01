@@ -27,7 +27,7 @@ import { PortfolioComponent } from './portfolio.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { FromToDatePipe } from './pipes';
 import { AppearOnViewDirective } from './directives';
-import { EmptyComponent } from '@tt-library-angular-porfolio';
+import { EmptyComponent } from 'tt-library-angular-porfolio';
 
 const routes: Route[] = [
   {

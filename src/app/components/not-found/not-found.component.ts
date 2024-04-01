@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { EmptyComponent } from '@tt-library-angular-porfolio';
+import { EmptyComponent } from 'tt-library-angular-porfolio';
 import { AssetsLink } from '../../pipes/assets-link.pipe';
 import { LinkButtonLayoutComponent } from '../link-button-layout/link-button-layout.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { IAntTableElement } from '@app/interfaces';
 import { MenuService } from '@app/services';
-import { LangService } from '@tt-library-angular-porfolio';
+import { LangService } from 'tt-library-angular-porfolio';
 import { LANG_TYPE } from '@app/types';
 import { Subject, takeUntil } from 'rxjs';
 import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
