@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ROUTE } from '@app/constants';
+import { ROUTE } from 'tt-library-angular-porfolio';
 import { MenuService } from '@app/services';
 import { Subject, takeUntil } from 'rxjs';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';

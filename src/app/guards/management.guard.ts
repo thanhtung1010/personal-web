@@ -1,6 +1,6 @@
 import { inject } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { ROUTE } from "@app/constants";
+import { ROUTE } from "tt-library-angular-porfolio";
 import { DeviceIdService } from "@app/services";
 import { Observable } from "rxjs";
 

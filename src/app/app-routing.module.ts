@@ -1,17 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ROUTE } from './constants';
-import { managementActiveGuard } from './guards';
+import { ROUTE } from 'tt-library-angular-porfolio';
 
 const routes: Routes = [
   {
     path: ROUTE.NOT_FOUND,
     loadComponent: () => import('./components/not-found/not-found.component').then((e) => e.NotFoundComponent),
-  },
-  {
-    path: ROUTE.MANAGEMENT,
-    loadChildren: () => import('./modules/management/management.module').then((e) => e.ManagementModule),
-    canActivate: [managementActiveGuard]
   },
   {
     path: ROUTE.PORTFOLIO,

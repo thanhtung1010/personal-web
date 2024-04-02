@@ -6,7 +6,7 @@ import {
   LinkButtonLayoutComponent,
   LogoComponent,
 } from '@app/components';
-import { ROUTE } from '@app/constants';
+import { ROUTE } from 'tt-library-angular-porfolio';
 import {
   AboutMeComponent,
   AdjustLangComponent,
@@ -27,7 +27,7 @@ import { PortfolioComponent } from './portfolio.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { FromToDatePipe } from './pipes';
 import { AppearOnViewDirective } from './directives';
-import { EmptyComponent } from 'tt-library-angular-porfolio';
+import { SharedModule } from 'tt-library-angular-porfolio';
 
 const routes: Route[] = [
   {
@@ -50,6 +50,7 @@ const routes: Route[] = [
     CommonModule,
     FormsModule,
     NgOptimizedImage,
+    SharedModule,
 
     TranslateModule,
     RouterModule.forChild(routes),
@@ -61,7 +62,6 @@ const routes: Route[] = [
     LinkButtonLayoutComponent,
     LogoComponent,
     AssetsLink,
-    EmptyComponent,
     SvgIconPipe,
   ],
   declarations: [

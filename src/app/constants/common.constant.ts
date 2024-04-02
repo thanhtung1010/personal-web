@@ -1,6 +1,6 @@
 import { ILang, IMenuItem } from "@app/interfaces";
 import { LANG_TYPE } from "@app/types";
-import { ROUTE } from "./route.constant";
+import { ROUTE } from "tt-library-angular-porfolio";
 
 export const DEFAULT_LANG: LANG_TYPE = 'vi';
 export const LANG_LIST: Array<ILang> = [
