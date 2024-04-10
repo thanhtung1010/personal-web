@@ -6,7 +6,7 @@ import {
   LinkButtonLayoutComponent,
   LogoComponent,
 } from '@app/components';
-import { ROUTE } from 'tt-library-angular-porfolio';
+import { EmptyComponent, ROUTE } from 'tt-library-angular-porfolio';
 import {
   AboutMeComponent,
   AdjustLangComponent,
@@ -63,6 +63,7 @@ const routes: Route[] = [
     LogoComponent,
     AssetsLink,
     SvgIconPipe,
+    EmptyComponent,
   ],
   declarations: [
     PortfolioComponent,

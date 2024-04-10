@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedModule } from 'tt-library-angular-porfolio';
+import { EmptyComponent, SharedModule } from 'tt-library-angular-porfolio';
 import { AssetsLink } from '../../pipes/assets-link.pipe';
 import { LinkButtonLayoutComponent } from '../link-button-layout/link-button-layout.component';
 import { NzButtonModule } from 'ng-zorro-antd/button';
@@ -14,7 +14,8 @@ import { TranslateModule } from '@ngx-translate/core';
     AssetsLink,
     LinkButtonLayoutComponent,
     NzButtonModule,
-    TranslateModule
+    TranslateModule,
+    EmptyComponent,
   ],
 })
 export class NotFoundComponent implements OnInit {

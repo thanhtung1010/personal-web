@@ -11,7 +11,7 @@ import { TranslateModule } from '@ngx-translate/core';
 })
 export class LogoComponent implements OnInit {
   @Input() showLogo: boolean = true;
-  @Input() showText: boolean = true;
+  // @Input() showText: boolean = true;
   @Input() customCls: string = '';
 
   constructor() { }
