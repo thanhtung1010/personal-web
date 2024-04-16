@@ -11,7 +11,7 @@ import { FIREBASE_CONFIG_TOKEN } from './firebase.constant';
   declarations: []
 })
 export class FirebaseModule {
-  static forRoot(config: IFirebaseConfig): ModuleWithProviders<FirebaseModule> {
+  static forRoot(config?: IFirebaseConfig): ModuleWithProviders<FirebaseModule> {
     return {
       ngModule: FirebaseModule,
       providers: [

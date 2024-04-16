@@ -1,6 +1,6 @@
 import { Pipe, PipeTransform } from "@angular/core";
 import { ASSETS_TYPE } from "@app/enums";
-import { enviroment } from "@environments/environment";
+import { AppConfigService } from 'tt-library-angular-porfolio';
 
 @Pipe({
   name: 'TTAssetsLink',
@@ -23,7 +23,7 @@ export class AssetsLink implements PipeTransform {
     },
   ];
 
-  constructor() {}
+  constructor(private appConfigService: AppConfigService) {}
 
   transform(name: string, type: string, ...args: any): string {
     try {
@@ -31,7 +31,7 @@ export class AssetsLink implements PipeTransform {
 
       if (!_existPath) return '';
 
-      return enviroment.ASSETS_URL + _existPath.path + type + '/' + name + '.' + type;
+      return this.appConfigService.appConfig.remoteModuleUrl.angularPortfolio + _existPath.path + type + '/' + name + '.' + type;
     } catch (error) {
       return '';
     }

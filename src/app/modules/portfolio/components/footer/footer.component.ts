@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonService } from '@app/services/common.service';
-import { enviroment } from '@environments/environment';
 import { ISocialNetwork } from '../../interfaces';
+import { AppConfigService, CommonService } from 'tt-library-angular-porfolio';
 
 @Component({
   selector: 'tt-footer',
   templateUrl: './footer.component.html'
 })
 export class FooterComponent implements OnInit {
-  env = enviroment;
+  env = this.appConfig.appConfig;
   socialNetworks: ISocialNetwork[] = [
     {
       name: 'facebook-logo',
@@ -42,7 +41,10 @@ export class FooterComponent implements OnInit {
     },
   ];
 
-  constructor(private commonSer: CommonService) { }
+  constructor(
+    private commonSer: CommonService,
+    private appConfig: AppConfigService,
+  ) { }
 
   ngOnInit() {
   }

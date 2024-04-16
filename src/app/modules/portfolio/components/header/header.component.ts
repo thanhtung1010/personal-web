@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuService } from '@app/services';
+import { MenuService } from 'tt-library-angular-porfolio';
 
 @Component({
   selector: 'tt-header',

@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DEFAULT_LANG } from '@app/constants';
-import { ILang } from '@app/interfaces';
-import { LANG_TYPE } from '@app/types';
-import { LangService } from 'tt-library-angular-porfolio';
+import { DEFAULT_LANG, ILang, LANG_TYPE, LangService } from 'tt-library-angular-porfolio';
 
 @Component({
   selector: 'tt-adjust-lang',

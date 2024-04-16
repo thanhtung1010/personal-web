@@ -1,4 +1,5 @@
-import { enviroment } from "@environments/environment";
+import { inject } from "@angular/core";
+import { AppConfigService } from "tt-library-angular-porfolio";
 
 export class CookieStorageHelper {
   private static CookieStorageHelper: any = {};
@@ -52,7 +53,7 @@ export class CookieStorageHelper {
   }
 
   public get getCurrentLang(): string {
-    return this.get(enviroment.cookieStorageLangKey) || "vi";
+    return this.get(inject(AppConfigService).appConfig.cookieStorageLangKey || '') || "vi";
   };
 
   public clearAll() {
