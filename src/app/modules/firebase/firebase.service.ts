@@ -4,6 +4,7 @@ import { FirebaseApp, initializeApp } from "firebase/app";
 import { FIREBASE_CONFIG_TOKEN } from "./firebase.constant";
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import { Observable, Subscriber } from "rxjs";
+import { AppConfigService } from "tt-library-angular-porfolio";
 
 @Injectable({
   providedIn: 'root'
@@ -12,13 +13,20 @@ import { Observable, Subscriber } from "rxjs";
 export class FirebaseService {
   firebaseApp?: FirebaseApp;
 
-  constructor(@Inject(FIREBASE_CONFIG_TOKEN) private config: IFirebaseConfig) {
+  constructor(
+    @Inject(FIREBASE_CONFIG_TOKEN) private config: IFirebaseConfig,
+    private appConfigService: AppConfigService,
+  ) {
   }
 
   init() {
     try {
       if (!this.config) {
-        console.error('firebase config is invalid');
+        const appConfig = this.appConfigService.appConfig;
+        if (!appConfig || !appConfig.firebaseConfig) {
+          console.error('firebase config is invalid');
+        }
+        this.firebaseApp = initializeApp(appConfig.firebaseConfig);
       } else {
         this.firebaseApp = initializeApp(this.config);
       }

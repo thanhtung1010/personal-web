@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from "@angular/core";
-import { enviroment } from "@environments/environment";
+import { AppConfigService } from 'tt-library-angular-porfolio';
 import { TranslateService } from "@ngx-translate/core";
 import { format } from 'date-fns';
 import { union } from "lodash";
@@ -10,11 +10,17 @@ import { union } from "lodash";
 
 export class FromToDatePipe implements PipeTransform {
   defaultLetterJoin: string = 'COMMON.TO';
-  constructor(private translateService: TranslateService) {}
+  appConfig = this.appConfigService.appConfig;
+
+  constructor(
+    private translateService: TranslateService,
+    private appConfigService: AppConfigService,
+  ) {}
 
   transform(values: Array<number | null>, letterJoin?: string, dateFormat?: string, responsive: boolean = false, args?: any[]) {
     if (!values || !values.length) return '';
-    const _format = dateFormat || (!responsive ? enviroment.SETTING_FORMAT.dateTime.portfolioDate : enviroment.SETTING_FORMAT.dateTime.portfolioDateResponsive);
+    const _format = dateFormat ||
+      (!responsive ? this.appConfig.settingFormat.dateTime.portfolioDate : this.appConfig.settingFormat.dateTime.portfolioDateResponsive);
     const _newValues = values.map(elm => {
       if (!elm) {
         return 'Now'

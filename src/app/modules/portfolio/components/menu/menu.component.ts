@@ -1,8 +1,6 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IMenuItem } from '@app/interfaces';
-import { MenuService } from '@app/services';
-import { enviroment } from '@environments/environment';
 import { menuFloatIn, menuFloatOut } from '../../animations';
+import { AppConfigService, IMenuItem, MenuService } from 'tt-library-angular-porfolio';
 
 @Component({
   selector: 'tt-menu',
@@ -15,9 +13,12 @@ export class MenuComponent implements OnInit, OnDestroy {
   @Input() visible: boolean = false;
 
   menu: IMenuItem[] = [];
-  env = enviroment;
+  env = this.appConfig.appConfig;
 
-  constructor(private menuService: MenuService) { }
+  constructor(
+    private menuService: MenuService,
+    private appConfig: AppConfigService,
+  ) { }
 
   ngOnInit() {
     this.menu = this.menuService.getMenu;

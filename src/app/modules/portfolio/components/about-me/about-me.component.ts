@@ -1,8 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IAntTableElement } from '@app/interfaces';
-import { MenuService } from '@app/services';
-import { LangService } from 'tt-library-angular-porfolio';
-import { LANG_TYPE } from '@app/types';
+import { IAntTableElement, LANG_TYPE, LangService, MenuService } from 'tt-library-angular-porfolio';
 import { Subject, takeUntil } from 'rxjs';
 import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
 import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';

@@ -1,10 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ROUTE } from 'tt-library-angular-porfolio';
-import { MenuService } from '@app/services';
+import { AppConfigService, MenuService, ROUTE } from 'tt-library-angular-porfolio';
 import { Subject, takeUntil } from 'rxjs';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
 import { aboutMeLeftInOut, aboutMeRightInOut } from '../../animations';
-import { enviroment } from '@environments/environment';
 
 @Component({
   selector: 'tt-home',
@@ -147,9 +145,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   ROUTE = ROUTE;
   visibleMenu: boolean = false;
   appearAboutMe: boolean = false;
-  downloadCVURL: string = enviroment.GOOGLE_CONFIG.downloadCV;
+  downloadCVURL: string = this.appConfig.appConfig?.googleConfig?.downloadCV || '';
 
-  constructor(private menuService: MenuService) { }
+  constructor(
+    private menuService: MenuService,
+    private appConfig: AppConfigService,
+  ) { }
 
   ngOnInit() {
     this.menuService.toggleVisibleMenu$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {

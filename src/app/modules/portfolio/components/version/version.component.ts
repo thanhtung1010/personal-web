@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { VersionService } from '@app/services/version.service';
 
 @Component({
   selector: 'tt-version',
@@ -11,10 +10,8 @@ export class VersionComponent implements OnInit {
 
   currentVersion: string = '';
 
-  constructor(private versionSer: VersionService) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.currentVersion = this.versionSer.currentVersion;
-  }
+  ngOnInit() {}
 
 }
