@@ -27,6 +27,7 @@ import { PortfolioComponent } from './portfolio.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { FromToDatePipe } from './pipes';
 import { AppearOnViewDirective } from './directives';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { SharedModule } from 'tt-library-angular-porfolio';
 
 const routes: Route[] = [
@@ -58,6 +59,7 @@ const routes: Route[] = [
     NzSelectModule,
     // NzTableModule,
     NzCollapseModule,
+    // NzEmptyModule,
 
     LinkButtonLayoutComponent,
     LogoComponent,

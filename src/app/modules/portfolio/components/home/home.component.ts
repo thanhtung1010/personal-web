@@ -2,12 +2,16 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AppConfigService, MenuService, ROUTE } from 'tt-library-angular-porfolio';
 import { Subject, takeUntil } from 'rxjs';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
-import { aboutMeLeftInOut, aboutMeRightInOut } from '../../animations';
+import { aboutMeLeftInOut, aboutMeRightInOut, floatInFromBottom } from '../../animations';
 
 @Component({
   selector: 'tt-home',
   templateUrl: './home.component.html',
-  animations: [aboutMeLeftInOut, aboutMeRightInOut]
+  animations: [
+    aboutMeLeftInOut,
+    aboutMeRightInOut,
+    floatInFromBottom,
+  ]
 })
 export class HomeComponent implements OnInit, OnDestroy {
   destroyComponentNotier: Subject<number> = new Subject();
@@ -145,6 +149,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   ROUTE = ROUTE;
   visibleMenu: boolean = false;
   appearAboutMe: boolean = false;
+  appearSummaryExp: boolean = false;
   downloadCVURL: string = this.appConfig.appConfig?.googleConfig?.downloadCV || '';
 
   constructor(
@@ -173,6 +178,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   showSVGAboutMe(appear: boolean) {
     if (!this.appearAboutMe)
     this.appearAboutMe = appear;
+  }
+
+  showSVGSummaryExp(appear: boolean) {
+    if (!this.appearSummaryExp)
+    this.appearSummaryExp = appear;
   }
 
   toggleMousePosition() {
