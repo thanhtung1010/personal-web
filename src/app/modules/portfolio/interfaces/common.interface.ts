@@ -1,4 +1,4 @@
-import { ASSETS_TYPE, htmlATagTarget } from "@app/enums";
+import { ASSETS_TYPE, htmlATagTarget } from "tt-library-angular-porfolio";
 
 export interface ISocialNetwork {
   name: string;

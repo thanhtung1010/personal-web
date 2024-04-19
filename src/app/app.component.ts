@@ -1,6 +1,5 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import { AppConfigService } from 'tt-library-angular-porfolio';
-import { AppLoadingHelper } from './helpers';
+import { AppConfigService, AppLoadingHelper } from 'tt-library-angular-porfolio';
 
 @Component({
   selector: 'tt-root-portfolio',

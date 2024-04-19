@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ROUTE } from 'tt-library-angular-porfolio';
+import { NotFoundComponent, ROUTE } from 'tt-library-angular-porfolio';
 
 const routes: Routes = [
   {
     path: ROUTE.NOT_FOUND,
-    loadComponent: () => import('./components/not-found/not-found.component').then((e) => e.NotFoundComponent),
+    loadComponent: () => NotFoundComponent,
   },
   {
     path: ROUTE.PORTFOLIO,
