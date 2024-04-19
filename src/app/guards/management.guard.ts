@@ -1,7 +1,6 @@
 import { inject } from "@angular/core";
 import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
-import { ROUTE } from "tt-library-angular-porfolio";
-import { DeviceIdService } from "@app/services";
+import { ROUTE, DeviceIdService } from "tt-library-angular-porfolio";
 import { Observable } from "rxjs";
 
 export const managementActiveGuard: CanActivateFn = (

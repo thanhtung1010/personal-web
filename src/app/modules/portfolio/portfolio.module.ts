@@ -3,10 +3,12 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Route, RouterModule } from '@angular/router';
 import {
+  EmptyComponent,
+  ROUTE,
   LinkButtonLayoutComponent,
   LogoComponent,
-} from '@app/components';
-import { EmptyComponent, ROUTE } from 'tt-library-angular-porfolio';
+  AssetsLink,
+} from 'tt-library-angular-porfolio';
 import {
   AboutMeComponent,
   AdjustLangComponent,
@@ -15,8 +17,6 @@ import {
   HomeComponent,
   PageLayoutComponent,
 } from '@app/modules/portfolio/components';
-import { AssetsLink } from '@app/pipes/assets-link.pipe';
-import { SvgIconPipe } from '@app/pipes/svg-icon.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { MenuComponent } from './components/menu/menu.component';
@@ -27,6 +27,7 @@ import { PortfolioComponent } from './portfolio.component';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { FromToDatePipe } from './pipes';
 import { AppearOnViewDirective } from './directives';
+import { NzEmptyModule } from 'ng-zorro-antd/empty';
 import { SharedModule } from 'tt-library-angular-porfolio';
 
 const routes: Route[] = [
@@ -58,12 +59,12 @@ const routes: Route[] = [
     NzSelectModule,
     // NzTableModule,
     NzCollapseModule,
+    // NzEmptyModule,
 
     LinkButtonLayoutComponent,
     LogoComponent,
-    AssetsLink,
-    SvgIconPipe,
     EmptyComponent,
+    AssetsLink,
   ],
   declarations: [
     PortfolioComponent,

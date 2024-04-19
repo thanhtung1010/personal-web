@@ -28,9 +28,9 @@
       </ng-container>
     </section>
 
-    <section class="tt-summary_exp">
-      <ng-container *ngFor="let expItem of summaryExpItems">
-        <section class="tt-summary_exp-item">
+    <section class="tt-summary_exp" (tt-appear)="showSVGSummaryExp($event)">
+      <ng-container *ngFor="let expItem of summaryExpItems; let index = index">
+        <section [@floatInFromBottom]="appearSummaryExp ? 'open' : 'close' + (index + 1)" class="tt-summary_exp-item">
           <h3 class="tt-summary_exp-title_item">
             <img [src]="expItem.iconName | TTAssetsLink:expItem.iconType" [alt]="expItem.iconName">
             <span>{{expItem.count}}</span>

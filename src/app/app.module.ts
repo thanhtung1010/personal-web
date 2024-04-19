@@ -7,7 +7,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NzMessageModule } from 'ng-zorro-antd/message';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NotFoundComponent } from './components';
+import { NotFoundComponent } from "tt-library-angular-porfolio";
 import { FirebaseModule } from './modules/firebase/firebase.module';
 import {
   SharedModule,

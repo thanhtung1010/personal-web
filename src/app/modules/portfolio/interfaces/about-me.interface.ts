@@ -1,4 +1,4 @@
-import { ASSETS_TYPE } from "@app/enums";
+import { ASSETS_TYPE } from "tt-library-angular-porfolio";
 
 export interface ISkillItem {
   iconName: string;
