@@ -3,7 +3,7 @@
     <section class="tt-intro_am">
       <h1 class="tt-intro_am-header">{{'COMMON.HI_FIRST_NAME' | translate}}</h1>
       <p class="tt-intro_am-description">{{'COMMON.ABOUT_ME_DESCRIPTION' | translate}}</p>
-      <img class="tt-intro_am-img" [src]="'avatar-am' | TTAssetsLink:'svg'" [alt]="'all-device.svg'">
+      <img loading="lazy" class="tt-intro_am-img" [src]="'avatar-am' | TTAssetsLink:'svg'" [alt]="'all-device.svg'">
     </section>
 
     <section class="tt-content_am">
@@ -60,7 +60,7 @@
                 <ng-container *ngFor="let head of experienceTableHeader">
                   <div [class]="'tt-experiences-data_item' + ' _' + head.field" [ngClass]="{'icon': head.field === ''}">
                     <ng-container *ngIf="head.field === ''">
-                      <img [src]="'expand' | TTAssetsLink:'svg'" alt="expand.svg">
+                      <img loading="lazy" [src]="'expand' | TTAssetsLink:'svg'" alt="expand.svg">
                     </ng-container>
                     <ng-container *ngIf="head.field === 'time'">
                       <p class="main">{{[data.fromWorkingTime, data.toWorkingTime] | TTFromToDate}}</p>
@@ -84,7 +84,7 @@
                 <nz-collapse-panel [(nzActive)]="data.expand" [nzHeader]="undefined" [nzShowArrow]="false">
                   <section class="tt-experiences-data_detail">
                     <h6 class="tt-experiences-data_detail-title">
-                      <img [src]="'scope-of-work' | TTAssetsLink:'svg'" alt="scope-of-work.svg">
+                      <img loading="lazy" [src]="'scope-of-work' | TTAssetsLink:'svg'" alt="scope-of-work.svg">
                       <p>{{'COMMON.SCOPE_OF_WORK' | translate}}</p>
                     </h6>
                     <ul class="tt-projects-data_detail-content">
@@ -118,7 +118,7 @@
                 <ng-container *ngFor="let head of projectTableHeader">
                   <div [class]="'tt-experiences-data_item' + ' _' + head.field" [ngClass]="{'icon': head.field === ''}">
                     <ng-container *ngIf="head.field === ''">
-                      <img [src]="'expand' | TTAssetsLink:'svg'" alt="expand.svg">
+                      <img loading="lazy" [src]="'expand' | TTAssetsLink:'svg'" alt="expand.svg">
                     </ng-container>
                     <ng-container *ngIf="head.field === 'projectTitle'">
                       <p class="main">{{data.projectName + ' | ' + ([data.fromWorkingTime, data.toWorkingTime] | TTFromToDate)}}</p>
@@ -138,7 +138,7 @@
                     <ng-container  *ngFor="let detail of data.detail">
                       <article class="tt-projects-data_detail-item">
                         <div class="tt-projects-data_detail-item_title">
-                          <img [src]="detail.icon | TTAssetsLink:'svg'" [alt]="detail.icon + '.svg'">
+                          <img loading="lazy" [src]="detail.icon | TTAssetsLink:'svg'" [alt]="detail.icon + '.svg'">
                           <p>{{detail.title | translate}}</p>
                         </div>
                         <p class="tt-projects-data_detail-item_content">{{detail[currentLang]}}</p>
