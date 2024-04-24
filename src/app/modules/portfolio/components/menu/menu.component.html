@@ -1,6 +1,6 @@
 <nav *ngIf="visible" @menuFloatIn @menuFloatOut class="tt-menu_container">
   <div class="tt-menu_wrap">
-    <img [src]="'close' | TTAssetsLink:'svg'" alt="close.svg" class="tt-close_menu" (click)="closeMenu()">
+    <img loading="lazy" [src]="'close' | TTAssetsLink:'svg'" alt="close.svg" class="tt-close_menu" (click)="closeMenu()">
     <div class="tt-menu_background"></div>
     <div class="tt-menu_wrap_content">
       <div class="tt-menu_content">

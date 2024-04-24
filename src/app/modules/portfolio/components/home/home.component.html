@@ -16,7 +16,7 @@
       </section>
 
       <ng-container *ngFor="let icon of floatIcons; let index = index">
-        <img [class]="'tt-home-float_icon ' + 'float_icon_' + index" [src]="icon.name | TTAssetsLink:icon.type"
+        <img loading="lazy" [class]="'tt-home-float_icon ' + 'float_icon_' + index" [src]="icon.name | TTAssetsLink:icon.type"
           [alt]="icon.name + '.' + icon.type"
           [style]="'--top:' + (icon.top || '')
             + '; --right:' + (icon.right || '')
@@ -32,7 +32,7 @@
       <ng-container *ngFor="let expItem of summaryExpItems; let index = index">
         <section [@floatInFromBottom]="appearSummaryExp ? 'open' : 'close' + (index + 1)" class="tt-summary_exp-item">
           <h3 class="tt-summary_exp-title_item">
-            <img [src]="expItem.iconName | TTAssetsLink:expItem.iconType" [alt]="expItem.iconName + '.' + expItem.iconType">
+            <img loading="lazy" [src]="expItem.iconName | TTAssetsLink:expItem.iconType" [alt]="expItem.iconName + '.' + expItem.iconType">
             <span>{{expItem.count}}</span>
           </h3>
           <h2>{{expItem.label | translate}}</h2>
@@ -45,7 +45,7 @@
 
       <section [@aboutMeLeftInOut]="appearAboutMe ? 'open' : 'close'" class="tt-summary_about_me-left">
         <ng-container *ngFor="let abItem of leftAboutMeItems">
-          <img [src]="abItem.name | TTAssetsLink:abItem.type" [alt]="abItem.name + '.' + abItem.type">
+          <img loading="lazy" [src]="abItem.name | TTAssetsLink:abItem.type" [alt]="abItem.name + '.' + abItem.type">
         </ng-container>
       </section>
 
@@ -62,7 +62,7 @@
 
       <section [@aboutMeRightInOut]="appearAboutMe ? 'open' : 'close'" class="tt-summary_about_me-right">
         <ng-container *ngFor="let abItem of rightAboutMeItems">
-          <img [src]="abItem.name | TTAssetsLink:abItem.type" [alt]="abItem.name + '.' + abItem.type">
+          <img loading="lazy" [src]="abItem.name | TTAssetsLink:abItem.type" [alt]="abItem.name + '.' + abItem.type">
         </ng-container>
       </section>
     </section>
