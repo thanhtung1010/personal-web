@@ -6,7 +6,7 @@
         <tt-link-button-layout [target]="'_self'" [href]="'mailto:' + (env.email) + '?Subject=New%20Friend&body=Hi!%20I%20saw%20you%20on%20your%20portfolio.'">
           <ng-container hrefContent>
             <button class="tt-mailto">
-              <img [src]="'chat' | TTAssetsLink:'svg'" alt="chat">
+              <img [src]="'chat' | TTAssetsLink:'svg'" alt="chat.svg">
               <p>{{'BUTTON.SAY_HI' | translate}}</p>
             </button>
           </ng-container>
@@ -33,14 +33,14 @@
             <ng-container *ngIf="item.action === 'url'">
               <tt-link-button-layout [href]="item.href || ''" [target]="item.target || '_blank'">
                 <ng-container hrefContent>
-                  <img [src]="item.name| TTAssetsLink:item.type" [alt]="item.name">
+                  <img [src]="item.name| TTAssetsLink:item.type" [alt]="item.name + '.' + item.type">
                 </ng-container>
               </tt-link-button-layout>
             </ng-container>
 
             <ng-container *ngIf="item.action === 'copy'">
               <button (click)="copyContent(item.content)">
-                <img [src]="item.name| TTAssetsLink:item.type" [alt]="item.name">
+                <img [src]="item.name| TTAssetsLink:item.type" [alt]="item.name + '.' + item.type">
               </button>
             </ng-container>
           </ng-container>

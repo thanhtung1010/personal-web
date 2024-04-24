@@ -2,11 +2,11 @@
   (initPosition)="handleHeaderInit($event)">
   <tt-link-button-layout [href]="'#'" [target]="'_self'">
     <ng-container hrefContent>
-      <tt-logo [customImgStyle]="'width: 70px;'"></tt-logo>
+      <tt-logo [customImgCls]="'pen-w-70'"></tt-logo>
     </ng-container>
   </tt-link-button-layout>
 
   <div class="tt-menu-icon" (click)="openMenu()">
-    <img [src]="'menu' | TTAssetsLink:'svg'" alt="logo">
+    <img [src]="'menu' | TTAssetsLink:'svg'" alt="logo.svg">
   </div>
 </header>

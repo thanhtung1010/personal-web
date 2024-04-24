@@ -14,7 +14,7 @@ const routes: Routes = [
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: ROUTE.PORTFOLIO,
+    redirectTo: ROUTE.NOT_FOUND,
   },
 ];
 
