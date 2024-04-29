@@ -16,7 +16,7 @@
       </section>
 
       <ng-container *ngFor="let icon of floatIcons; let index = index">
-        <img loading="lazy" [class]="'tt-home-float_icon ' + 'float_icon_' + index" [src]="icon.name | TTAssetsLink:icon.type"
+        <img [loading]="icon.loading ?? 'lazy'" [class]="'tt-home-float_icon ' + 'float_icon_' + index" [src]="icon.name | TTAssetsLink:icon.type"
           [alt]="icon.name + '.' + icon.type"
           [style]="'--top:' + (icon.top || '')
             + '; --right:' + (icon.right || '')

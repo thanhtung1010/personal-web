@@ -1,9 +1,10 @@
-import { AnimationBuilder, AnimationFactory, AnimationMetadata, AnimationPlayer, animate, style } from "@angular/animations";
-import { AfterViewInit, Directive, ElementRef, EventEmitter, HostListener, Input, OnDestroy, OnInit, Output } from "@angular/core";
-import { Observable, Subject, Subscriber, distinctUntilChanged, fromEvent, map, share, takeUntil } from "rxjs";
+import { AnimationMetadata } from "@angular/animations";
+import { Directive, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output } from "@angular/core";
+import { Observable, Subject, distinctUntilChanged, fromEvent, map, share, takeUntil } from "rxjs";
 
 @Directive({
-  selector: '[tt-appear]'
+  selector: '[tt-appear]',
+  standalone: true
 })
 
 export class AppearOnViewDirective implements OnDestroy, OnInit {

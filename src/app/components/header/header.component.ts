@@ -1,10 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { MenuService } from 'tt-library-angular-porfolio';
+import { HiddenOnSrollDirective } from '@app/directives';
+import { AssetsLink, LinkButtonLayoutComponent, LogoComponent, MenuService } from 'tt-library-angular-porfolio';
 
 @Component({
   selector: 'tt-header',
-  templateUrl: './header.component.html'
+  templateUrl: './header.component.html',
+  standalone: true,
+  imports: [
+    HiddenOnSrollDirective,
+    CommonModule,
+    LinkButtonLayoutComponent,
+    LogoComponent,
+    AssetsLink,
+  ]
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('header') header!: ElementRef<HTMLHeadingElement>;

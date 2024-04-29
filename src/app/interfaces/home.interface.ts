@@ -10,6 +10,7 @@ export interface IFloatItem {
   right?: string;
   left?: string;
   bottom?: string;
+  loading?: 'lazy' | 'eager';
 }
 
 export interface ISummaryExp {
