@@ -4,11 +4,12 @@ import { Subject, takeUntil } from 'rxjs';
 import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
 import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { PageLayoutComponent } from '../page-layout/page-layout.component';
 import { FromToDatePipe } from '@app/pipes';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { MenuComponent } from '../menu/menu.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'tt-about-me',
@@ -231,15 +232,22 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   marginQuote: string = '150px';
   marginBottomSkill: string = '100px';
   currentLang: LANG_TYPE = 'vi';
+  titleSEO: string = 'SEO.TITLE_PORTPOLIO_ABOUT_ME';
   visibleMenu: boolean = false;
 
   constructor(
     private langService: LangService,
     private menuService: MenuService,
+    private titleService: Title,
+    private translateService: TranslateService,
   ) {}
 
   ngOnInit() {
     this.currentLang = this.langService.lang$.value;
+
+    this.translateService.get(this.titleSEO).subscribe(resp => {
+      this.titleService.setTitle(resp);
+    });
 
     this.langService.lang$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {
       this.currentLang = resp;
