@@ -1,11 +1,19 @@
 import { Component, ElementRef, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { menuFloatIn, menuFloatOut } from '../../animations';
-import { AppConfigService, IMenuItem, MenuService } from 'tt-library-angular-porfolio';
+import { AppConfigService, AssetsLink, IMenuItem, MenuService } from 'tt-library-angular-porfolio';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'tt-menu',
   templateUrl: './menu.component.html',
-  animations: [menuFloatIn, menuFloatOut]
+  animations: [menuFloatIn, menuFloatOut],
+  standalone: true,
+  imports: [
+    CommonModule,
+    AssetsLink,
+    TranslateModule,
+  ]
 })
 export class MenuComponent implements OnInit, OnDestroy {
   @ViewChild('menu') menuElement!: ElementRef<HTMLElement>;

@@ -3,7 +3,8 @@ import * as _ from "lodash";
 import { BehaviorSubject, Observable, Subject, distinctUntilChanged, filter, fromEvent, map, pairwise, share, takeUntil } from "rxjs";
 
 @Directive({
-  selector: '[tt-hidden-on-scroll]'
+  selector: '[tt-hidden-on-scroll]',
+  standalone: true,
 })
 
 export class HiddenOnSrollDirective implements OnDestroy, AfterViewInit {

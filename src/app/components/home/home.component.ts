@@ -1,8 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AppConfigService, MenuService, ROUTE } from 'tt-library-angular-porfolio';
+import { AppConfigService, AssetsLink, LinkButtonLayoutComponent, MenuService, ROUTE } from 'tt-library-angular-porfolio';
 import { Subject, takeUntil } from 'rxjs';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
 import { aboutMeLeftInOut, aboutMeRightInOut, floatInFromBottom } from '../../animations';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { MenuComponent } from '../menu/menu.component';
+import { PageLayoutComponent } from '../page-layout/page-layout.component';
+import { AppearOnViewDirective } from '@app/directives';
 
 @Component({
   selector: 'tt-home',
@@ -11,6 +16,16 @@ import { aboutMeLeftInOut, aboutMeRightInOut, floatInFromBottom } from '../../an
     aboutMeLeftInOut,
     aboutMeRightInOut,
     floatInFromBottom,
+  ],
+  standalone: true,
+  imports: [
+    CommonModule,
+    TranslateModule,
+    AssetsLink,
+    MenuComponent,
+    PageLayoutComponent,
+    LinkButtonLayoutComponent,
+    AppearOnViewDirective,
   ]
 })
 export class HomeComponent implements OnInit, OnDestroy {
@@ -24,6 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
       right: '5%',
       translateX: '0%',
       translateY: '-50%',
+      loading: 'eager'
     },
     {
       name: 'mouse',

@@ -1,13 +1,30 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { IAntTableElement, LANG_TYPE, LangService, MenuService } from 'tt-library-angular-porfolio';
+import { AssetsLink, IAntTableElement, LANG_TYPE, LangService, MenuService } from 'tt-library-angular-porfolio';
 import { Subject, takeUntil } from 'rxjs';
 import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
 import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
+import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { PageLayoutComponent } from '../page-layout/page-layout.component';
+import { FromToDatePipe } from '@app/pipes';
+import { NzCollapseModule } from 'ng-zorro-antd/collapse';
+import { MenuComponent } from '../menu/menu.component';
 
 @Component({
   selector: 'tt-about-me',
   templateUrl: './about-me.component.html',
+  standalone: true,
+  imports: [
+    CommonModule,
+    TranslateModule,
+    AssetsLink,
+    PageLayoutComponent,
+    FromToDatePipe,
+    NzCollapseModule,
+    MenuComponent,
+  ]
 })
+
 export class AboutMeComponent implements OnInit, OnDestroy {
   destroyComponentNotier: Subject<number> = new Subject();
   skillData: ISkillItem[] = [

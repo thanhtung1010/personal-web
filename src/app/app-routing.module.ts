@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NotFoundComponent, ROUTE } from 'tt-library-angular-porfolio';
+import { ROUTE } from 'tt-library-angular-porfolio';
 
 const routes: Routes = [
   {
-    path: ROUTE.NOT_FOUND,
-    loadComponent: () => NotFoundComponent,
+    path: ROUTE.PORTFOLIO_HOME,
+    loadComponent: () => import('./components/home/home.component').then(c => c.HomeComponent),
   },
   {
-    path: ROUTE.PORTFOLIO,
-    loadChildren: () => import('./modules/portfolio/portfolio.module').then((e) => e.PortfolioModule),
+    path: ROUTE.PORTFOLIO_ABOUT_ME,
+    loadComponent: () => import('./components/about-me/about-me.component').then(c => c.AboutMeComponent),
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: ROUTE.NOT_FOUND,
+    redirectTo: ROUTE.PORTFOLIO_HOME,
   },
 ];
 

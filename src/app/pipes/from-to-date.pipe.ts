@@ -5,7 +5,8 @@ import { format } from 'date-fns';
 import { union } from "lodash";
 
 @Pipe({
-  name: 'TTFromToDate'
+  name: 'TTFromToDate',
+  standalone: true,
 })
 
 export class FromToDatePipe implements PipeTransform {
