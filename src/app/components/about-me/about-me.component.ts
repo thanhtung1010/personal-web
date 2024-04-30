@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AssetsLink, IAntTableElement, LANG_TYPE, LangService, MenuService } from 'tt-library-angular-porfolio';
+import { AppConfigService, AssetsLink, IAntTableElement, LANG_TYPE, LangService, MenuService } from 'tt-library-angular-porfolio';
 import { Subject, takeUntil } from 'rxjs';
 import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
 import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
@@ -240,6 +240,7 @@ export class AboutMeComponent implements OnInit, OnDestroy {
     private menuService: MenuService,
     private titleService: Title,
     private translateService: TranslateService,
+    private appConfig: AppConfigService,
   ) {}
 
   ngOnInit() {
@@ -255,13 +256,15 @@ export class AboutMeComponent implements OnInit, OnDestroy {
 
     this.menuService.toggleVisibleMenu$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {
       this.visibleMenu = resp;
-      if (resp) {
-        this.menuService.scrollBody(false);
-      } else {
-        const timeout = setTimeout(() => {
-          this.menuService.scrollBody(true);
-          clearTimeout(timeout);
-        }, 500);
+      if (this.appConfig.appInit) {
+        if (resp) {
+          this.menuService.scrollBody(false);
+        } else {
+          const timeout = setTimeout(() => {
+            this.menuService.scrollBody(true);
+            clearTimeout(timeout);
+          }, 500);
+        }
       }
     })
   }

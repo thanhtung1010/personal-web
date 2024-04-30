@@ -4,11 +4,10 @@ import { Subject, takeUntil } from 'rxjs';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
 import { aboutMeLeftInOut, aboutMeRightInOut, floatInFromBottom } from '../../animations';
 import { CommonModule } from '@angular/common';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { MenuComponent } from '../menu/menu.component';
 import { PageLayoutComponent } from '../page-layout/page-layout.component';
 import { AppearOnViewDirective } from '@app/directives';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'tt-home',
@@ -163,8 +162,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     },
   ];
 
-  titleSEO: string = 'SEO.TITLE_PORTPOLIO_HOME';
-
   ROUTE = ROUTE;
   visibleMenu: boolean = false;
   appearAboutMe: boolean = false;
@@ -174,23 +171,20 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private menuService: MenuService,
     private appConfig: AppConfigService,
-    private titleService: Title,
-    private translateService: TranslateService,
   ) { }
 
   ngOnInit() {
-    this.translateService.get(this.titleSEO).subscribe(resp => {
-      this.titleService.setTitle(resp);
-    });
     this.menuService.toggleVisibleMenu$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {
       this.visibleMenu = resp;
-      if (resp) {
-        this.menuService.scrollBody(false);
-      } else {
-        const timeout = setTimeout(() => {
-          this.menuService.scrollBody(true);
-          clearTimeout(timeout);
-        }, 500);
+      if (this.appConfig.appInit) {
+        if (resp) {
+          this.menuService.scrollBody(false);
+        } else {
+          const timeout = setTimeout(() => {
+            this.menuService.scrollBody(true);
+            clearTimeout(timeout);
+          }, 500);
+        }
       }
     })
   }
