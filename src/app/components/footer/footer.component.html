@@ -39,9 +39,9 @@
             </ng-container>
 
             <ng-container *ngIf="item.action === 'copy'">
-              <button (click)="copyContent(item.content)">
+              <a (click)="copyContent(item.content)">
                 <img loading="lazy" [src]="item.name| TTAssetsLink:item.type" [alt]="item.name + '.' + item.type">
-              </button>
+              </a>
             </ng-container>
           </ng-container>
         </figure>
