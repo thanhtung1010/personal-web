@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { HiddenOnSrollDirective } from '@app/directives';
-import { AssetsLink, LinkButtonLayoutComponent, LogoComponent, MenuService } from 'tt-library-angular-porfolio';
+import { AssetsLink, LinkButtonLayoutComponent, LogoComponent, MenuService, ROUTE } from 'tt-library-angular-porfolio';
 
 @Component({
   selector: 'tt-header',
@@ -18,6 +18,8 @@ import { AssetsLink, LinkButtonLayoutComponent, LogoComponent, MenuService } fro
 })
 export class HeaderComponent implements OnInit {
   @ViewChild('header') header!: ElementRef<HTMLHeadingElement>;
+
+  route = ROUTE;
 
   logoSVGIcon: string = "simple-icon";
   hiddenCls: string = 'tt-header-hidden';

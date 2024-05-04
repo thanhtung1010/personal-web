@@ -62,7 +62,7 @@ export class FooterComponent implements OnInit {
   }
 
   copyContent(content: any) {
-    this.commonSer.copyToClipboard(content);
+    this.commonSer.copyToClipboard(content, {success: 'MESSAGE.SKYPE_ID_COPY_SUCCESS', error: 'MESSAGE.SOMTHING_WAS_WRONG'});
   }
 
 }
