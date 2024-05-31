@@ -1,13 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { AppConfigService, AssetsLink, LinkButtonLayoutComponent, MenuService, ROUTE } from 'tt-library-angular-porfolio';
 import { Subject, takeUntil } from 'rxjs';
 import { IFloatItem, ISummaryAboutMe, ISummaryExp } from '../../interfaces';
 import { aboutMeLeftInOut, aboutMeRightInOut, floatInFromBottom } from '../../animations';
 import { CommonModule } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MenuComponent } from '../menu/menu.component';
 import { PageLayoutComponent } from '../page-layout/page-layout.component';
 import { AppearOnViewDirective } from '@app/directives';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'tt-home',
@@ -28,7 +29,7 @@ import { AppearOnViewDirective } from '@app/directives';
     AppearOnViewDirective,
   ]
 })
-export class HomeComponent implements OnInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   destroyComponentNotier: Subject<number> = new Subject();
 
   floatIcons: IFloatItem[] = [
@@ -167,10 +168,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   appearAboutMe: boolean = false;
   appearSummaryExp: boolean = false;
   downloadCVURL: string = this.appConfig.appConfig?.googleConfig?.downloadCV || '';
+  seoTitle: string = 'SEO.TITLE_PORTPOLIO_HOME';
 
   constructor(
     private menuService: MenuService,
     private appConfig: AppConfigService,
+    private translateService: TranslateService,
+    private title: Title,
   ) { }
 
   ngOnInit() {
@@ -187,6 +191,11 @@ export class HomeComponent implements OnInit, OnDestroy {
         }
       }
     })
+  }
+
+  ngAfterViewInit(): void {
+    const titleTranslate = this.translateService.instant(this.seoTitle);
+    this.title.setTitle(titleTranslate);
   }
 
   ngOnDestroy(): void {

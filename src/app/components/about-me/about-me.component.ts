@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
 import { AppConfigService, AssetsLink, IAntTableElement, LANG_TYPE, LangService, MenuService } from 'tt-library-angular-porfolio';
 import { Subject, takeUntil } from 'rxjs';
 import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
@@ -26,7 +26,7 @@ import { Title } from '@angular/platform-browser';
   ]
 })
 
-export class AboutMeComponent implements OnInit, OnDestroy {
+export class AboutMeComponent implements OnInit, OnDestroy, AfterViewInit {
   destroyComponentNotier: Subject<number> = new Subject();
   skillData: ISkillItem[] = [
     {
@@ -232,23 +232,19 @@ export class AboutMeComponent implements OnInit, OnDestroy {
   marginQuote: string = '150px';
   marginBottomSkill: string = '100px';
   currentLang: LANG_TYPE = 'vi';
-  titleSEO: string = 'SEO.TITLE_PORTPOLIO_ABOUT_ME';
+  seoTitle: string = 'SEO.TITLE_PORTPOLIO_ABOUT_ME';
   visibleMenu: boolean = false;
 
   constructor(
     private langService: LangService,
     private menuService: MenuService,
-    private titleService: Title,
+    private title: Title,
     private translateService: TranslateService,
     private appConfig: AppConfigService,
   ) {}
 
   ngOnInit() {
     this.currentLang = this.langService.lang$.value;
-
-    this.translateService.get(this.titleSEO).subscribe(resp => {
-      this.titleService.setTitle(resp);
-    });
 
     this.langService.lang$.pipe(takeUntil(this.destroyComponentNotier)).subscribe(resp => {
       this.currentLang = resp;
@@ -267,6 +263,11 @@ export class AboutMeComponent implements OnInit, OnDestroy {
         }
       }
     })
+  }
+
+  ngAfterViewInit(): void {
+    const titleTranslate = this.translateService.instant(this.seoTitle);
+    this.title.setTitle(titleTranslate);
   }
 
   ngOnDestroy(): void {
