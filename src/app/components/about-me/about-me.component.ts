@@ -5,7 +5,7 @@ import { IExperienceItem, IProjectItem, ISkillItem } from '../../interfaces';
 import { EXPERIENCES_TABLE_HEADER_FIELD_TYPE, PROJECTS_TABLE_HEADER_FIELD_TYPE } from '../../types';
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { PageLayoutComponent } from '../page-layout/page-layout.component';
+import { PageLayoutComponent } from 'tt-library-angular-porfolio';
 import { FromToDatePipe } from '@app/pipes';
 import { NzCollapseModule } from 'ng-zorro-antd/collapse';
 import { MenuComponent } from '../menu/menu.component';

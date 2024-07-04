@@ -6,7 +6,7 @@ import { aboutMeLeftInOut, aboutMeRightInOut, floatInFromBottom } from '../../an
 import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { MenuComponent } from '../menu/menu.component';
-import { PageLayoutComponent } from '../page-layout/page-layout.component';
+import { PageLayoutComponent } from 'tt-library-angular-porfolio';
 import { AppearOnViewDirective } from '@app/directives';
 import { Title } from '@angular/platform-browser';
 
